@@ -14,11 +14,21 @@
 
 struct Login_handler
 {
+    /**
+     * logs in user
+     *
+     * @param non
+     * @return pair of user and whether successfully logged in or not
+     */
     std::pair<User, bool> login();
-    int user_exists(User user);
+
+    /**
+     * check whether user exist in database
+     *
+     * @param user
+     * @return user id if exist or -1 if not
+     */
+    std::pair<User, bool> user_exists(User user);
 };
-
-
-
 
 #endif /* LOGIN_HANDLER_HPP_ */

@@ -1,12 +1,1 @@
-11:40:33 **** Rebuild of configuration Debug for project askme-project ****
-Info: Internal Builder is used for build
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -o menu.o "..\\menu.cpp" 
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -o login_handler.o "..\\login_handler.cpp" 
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -o signup_handler.o "..\\signup_handler.cpp" 
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -o error.o "..\\error.cpp" 
-g++ -o askme-project.exe app.o error.o login_handler.o main.o menu.o signup_handler.o 
-
-11:40:38 Build Finished. 0 errors, 0 warnings. (took 5s.640ms)
-
+Info: Nothing to build for askme-project

@@ -11,7 +11,8 @@
 #include <fstream>
 #include <sstream>
 
-int Signup_handler::generate_id(){
+int Signup_handler::generate_id()
+{
 	std::string path = "users.txt";
 	std::fstream file_handler(path.c_str());
 
@@ -22,10 +23,9 @@ int Signup_handler::generate_id(){
 	}
 
 	std::string line;
-	int count = 1;
+	int count = 0;
 	while (getline(file_handler, line))
 	{
-		std::stringstream iss(line);
 		count++;
 	}
 
@@ -35,23 +35,31 @@ int Signup_handler::generate_id(){
 bool Signup_handler::signup()
 {
 	int id;
-    std::string username, password;
+	std::string username, password;
+	bool allowAnonQs;
+	char ans;
 
-    std::cout << "Please enter UserName and Password: ";
-    std::cin >> username >> password;
-    id = generate_id();
-    std::ofstream fout("users.txt", std::ios_base::app);
+	std::cout << "Please enter UserName and Password: ";
+	std::cin >> username >> password;
+	do
+	{
+		std::cout << "Allow anonymous questions? (y/n): ";
+		std::cin >> ans;
 
-    if (fout.fail())
-    {
-    	std::cout << "Can't open file\n";
-        return 0;
-    }
+	} while (ans != 'y' && ans != 'n');
 
-    fout << id << ' ' << username << ' ' << password<<'\n';
-    std::cout<<"\n---------------- Signed Up Successfully ------------- \n\n";
+	allowAnonQs = ans == 'y' ? 1 : 0;
+	id = generate_id();
+	std::ofstream fout("users.txt", std::ios_base::app);
 
-    return 1;
+	if (fout.fail())
+	{
+		std::cout << "Can't open file\n";
+		return 0;
+	}
+
+	fout << id << ' ' << username << ' ' << password << ' ' << allowAnonQs << '\n';
+	std::cout << "\n---------------- Signed Up Successfully ------------- \n\n";
+
+	return 1;
 }
-
-

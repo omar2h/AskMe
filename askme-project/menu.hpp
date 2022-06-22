@@ -18,17 +18,31 @@ struct Menu
 	 * @param menu string to display
 	 * @return non
 	 */
-    void print(std::string);
+	void print(std::string);
 
-    /**
-     * prompts user to enter choice
-     *
-     * @param menu string
-     * @return user choice
-     */
-    int get_choice(std::string);
+	/**
+	 * prompts user to enter choice
+	 *
+	 * @param menu string
+	 * @return user choice
+	 */
+	int get_choice(std::string);
+
+	/**
+	 * displays first menu login
+	 *
+	 * @param non
+	 * @return user choice
+	 */
+	int menu_login();
+
+	/**
+	 * displays main menu
+	 *
+	 * @param non
+	 * @return user choice
+	 */
+	int menu_main();
 };
-
-
 
 #endif /* MENU_HPP_ */

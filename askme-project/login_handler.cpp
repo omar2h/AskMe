@@ -5,55 +5,53 @@
  *      Author: omarh
  */
 
-
 #include "login_handler.hpp"
 
 #include <fstream>
 #include <sstream>
 
-int Login_handler::user_exists(User user)
+std::pair<User, bool> Login_handler::user_exists(User user)
 {
-	int id;
-	std::string username, password;
-	std::string path = "users.txt";
-	std::fstream file_handler(path.c_str());
+    int id;
+    std::string username, password;
+    bool allowAnonQs;
+
+    std::pair<User, bool> userExistPair;
+    userExistPair.second = 0;
+    std::string path = "users.txt";
+    std::fstream file_handler(path.c_str());
 
     if (file_handler.fail())
     {
-    	std::cout << "\n -------- Can't open file -----------\n\n";
-        return -1;
+        std::cout << "\n -------- Can't open file -----------\n\n";
+        return userExistPair;
     }
 
     std::string line;
 
     while (getline(file_handler, line))
     {
-    	std::stringstream iss(line);
-        iss >> id >> username >> password;
+        std::stringstream iss(line);
+        iss >> id >> username >> password >> allowAnonQs;
 
         if (user.username == username && user.password == password)
-            return id;
+        {
+            userExistPair.first = user;
+            userExistPair.first.id = id, userExistPair.first.allowAnonQs = allowAnonQs;
+            userExistPair.second = 1;
+            return userExistPair;
+        }
     }
-    return -1;
+    return userExistPair;
 }
 
 std::pair<User, bool> Login_handler::login()
 {
-    std::pair<User, bool> userBool;
-    userBool.second = 1;
+    std::pair<User, bool> userLoginPair;
 
     std::cout << "Please enter UserName and Password: ";
-    std::cin >> userBool.first.username >> userBool.first.password;
+    std::cin >> userLoginPair.first.username >> userLoginPair.first.password;
 
-    int id = user_exists(userBool.first);
-    if (id != -1){
-    	userBool.first.id = id;
-        return userBool;
-    }
-    else
-    {
-        userBool.second = 0;
-        return userBool;
-    }
+    userLoginPair = user_exists(userLoginPair.first);
+    return userLoginPair;
 }
-

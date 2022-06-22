@@ -8,7 +8,8 @@
 #ifndef APP_HPP_
 #define APP_HPP_
 
-struct App{
+struct App
+{
 	/**
 	 * Main app run function
 	 *
@@ -18,7 +19,7 @@ struct App{
 	void run();
 
 	/**
-	 * verify login user input choice at login menu choice should be 1-3
+	 * verify login user input choice at login menu choice between 1-3
 	 *
 	 * @param user choice
 	 * @return whether choice is correct or not
@@ -26,14 +27,12 @@ struct App{
 	bool verify_login_choice(int);
 
 	/**
-	 * displays first menu login
+	 * verify main menu user input choice between 1-8
 	 *
-	 * @param non
-	 * @return user choice
+	 * @param user choice
+	 * @return whether choice is correct or not
 	 */
-	int menu_login();
+	bool verify_main_choice(int);
 };
-
-
 
 #endif /* APP_HPP_ */

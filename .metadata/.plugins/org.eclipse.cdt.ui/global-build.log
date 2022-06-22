@@ -72,3 +72,102 @@ g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp"
 g++ -O0 -g3 -Wall -c -fmessage-length=0 -o signup_handler.o "..\\signup_handler.cpp" 
 g++ -O0 -g3 -Wall -c -fmessage-length=0 -o error.o "..\\error.cpp" 
 g++ -o askme-project.exe app.o error.o login_handler.o main.o menu.o signup_handler.o 
+12:15:33 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o login_handler.o "..\\login_handler.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o menu.o "..\\menu.cpp" 
+g++ -o askme-project.exe app.o error.o login_handler.o main.o menu.o signup_handler.o 
+C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: app.o: in function `App::run()':
+H:\Career\Courses\C-C++ Data Structures & Algorithms\Dr Mostafa Saad\01-Mastering 4 critical SKILLS using C++ 17\Projects\01-Askme Project\askme-project\Debug/../app.cpp:72: undefined reference to `App::verify_main_choice(int)'
+collect2.exe: error: ld returned 1 exit status
+12:16:50 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -o askme-project.exe app.o error.o login_handler.o main.o menu.o signup_handler.o 
+Info: Nothing to build for askme-project
+12:48:20 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o menu.o "..\\menu.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o signup_handler.o "..\\signup_handler.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o login_handler.o "..\\login_handler.cpp" 
+..\login_handler.cpp: In member function 'std::pair<User, bool> Login_handler::user_exists(User)':
+..\login_handler.cpp:27:16: error: could not convert '-1' from 'int' to 'std::pair<User, bool>'
+   27 |         return -1;
+      |                ^~
+      |                |
+      |                int
+12:50:56 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o login_handler.o "..\\login_handler.cpp" 
+g++ -o askme-project.exe app.o error.o login_handler.o main.o menu.o signup_handler.o 
+12:52:05 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o login_handler.o "..\\login_handler.cpp" 
+g++ -o askme-project.exe app.o error.o login_handler.o main.o menu.o signup_handler.o 
+Info: Nothing to build for askme-project
+Info: Nothing to build for askme-project
+12:56:22 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -o askme-project.exe app.o error.o login_handler.o main.o menu.o signup_handler.o 
+Info: Nothing to build for askme-project
+12:58:51 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -o askme-project.exe app.o error.o login_handler.o main.o menu.o signup_handler.o 
+Info: Nothing to build for askme-project
+12:59:56 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o signup_handler.o "..\\signup_handler.cpp" 
+g++ -o askme-project.exe app.o error.o login_handler.o main.o menu.o signup_handler.o 
+C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file askme-project.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+13:00:08 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -o askme-project.exe app.o error.o login_handler.o main.o menu.o signup_handler.o 
+Info: Nothing to build for askme-project
+13:02:44 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o signup_handler.o "..\\signup_handler.cpp" 
+..\signup_handler.cpp: In member function 'int Signup_handler::generate_id()':
+..\signup_handler.cpp:27:37: warning: logical not is only applied to the left hand side of comparison [-Wlogical-not-parentheses]
+   27 |         while (!file_handler.peek() == std::ifstream::traits_type::eof() && getline(file_handler, line))
+      |                                     ^~
+..\signup_handler.cpp:27:16: note: add parentheses around left hand side expression to silence this warning
+   27 |         while (!file_handler.peek() == std::ifstream::traits_type::eof() && getline(file_handler, line))
+      |                ^~~~~~~~~~~~~~~~~~~~
+      |                (                   )
+..\signup_handler.cpp:27:37: warning: comparison of constant '-1' with boolean expression is always false [-Wbool-compare]
+   27 |         while (!file_handler.peek() == std::ifstream::traits_type::eof() && getline(file_handler, line))
+      |                ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+g++ -o askme-project.exe app.o error.o login_handler.o main.o menu.o signup_handler.o 
+13:04:34 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o signup_handler.o "..\\signup_handler.cpp" 
+g++ -o askme-project.exe app.o error.o login_handler.o main.o menu.o signup_handler.o 
+Info: Nothing to build for askme-project
+Info: Nothing to build for askme-project
+Info: Nothing to build for askme-project
+13:08:55 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o signup_handler.o "..\\signup_handler.cpp" 
+g++ -o askme-project.exe app.o error.o login_handler.o main.o menu.o signup_handler.o 
+Info: Nothing to build for askme-project
+13:10:32 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o signup_handler.o "..\\signup_handler.cpp" 
+g++ -o askme-project.exe app.o error.o login_handler.o main.o menu.o signup_handler.o 
+Info: Nothing to build for askme-project
+13:11:24 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o signup_handler.o "..\\signup_handler.cpp" 
+g++ -o askme-project.exe app.o error.o login_handler.o main.o menu.o signup_handler.o 
+Info: Nothing to build for askme-project
+13:12:25 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o signup_handler.o "..\\signup_handler.cpp" 
+g++ -o askme-project.exe app.o error.o login_handler.o main.o menu.o signup_handler.o 
+Info: Nothing to build for askme-project

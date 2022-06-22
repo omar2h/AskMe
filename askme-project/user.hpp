@@ -11,10 +11,9 @@
 #include <string>
 struct User
 {
-	int id;
+    int id;
     std::string username, password;
+    bool allowAnonQs;
 };
-
-
 
 #endif /* USER_HPP_ */
