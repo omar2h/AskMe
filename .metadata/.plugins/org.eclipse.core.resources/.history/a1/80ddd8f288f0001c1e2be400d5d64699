@@ -1,0 +1,20 @@
+/*
+ * app.hpp
+ *
+ *  Created on: Jun 20, 2022
+ *      Author: omarh
+ */
+
+#ifndef APP_HPP_
+#define APP_HPP_
+
+struct App{
+	void run();
+	void error_message();
+	bool verify_login_choice(int);
+	int menu_login();
+};
+
+
+
+#endif /* APP_HPP_ */

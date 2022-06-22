@@ -1,0 +1,33 @@
+/*
+ * signup_handler.cpp
+ *
+ *  Created on: Jun 20, 2022
+ *      Author: omarh
+ */
+
+#include "signup_handler.hpp"
+
+#include <iostream>
+#include <fstream>
+#include <sstream>
+
+bool Signup_handler::signup()
+{
+    std::string username, password;
+
+    std::cout << "Please enter UserName and Password: ";
+    std::cin >> username >> password;
+    std::ofstream fout("users.txt", std::ios_base::app);
+
+    if (fout.fail())
+    {
+        cout << "Can't open file\n";
+        return 0;
+    }
+
+    fout << username << " " << password<<'\n';
+
+    return 1;
+}
+
+

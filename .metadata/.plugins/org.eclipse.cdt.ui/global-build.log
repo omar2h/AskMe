@@ -1,0 +1,74 @@
+11:41:45 **** Rebuild of configuration Debug for project Askme ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -o Askme.exe main.o 
+C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/../../../../lib/libmingw32.a(lib64_libmingw32_a-crt0_c.o): in function `main':
+C:/M/mingw-w64-crt-git/src/mingw-w64/mingw-w64-crt/crt/crt0_c.c:18: undefined reference to `WinMain'
+collect2.exe: error: ld returned 1 exit status
+11:42:10 **** Incremental Build of configuration Debug for project Askme ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -o Askme.exe main.o 
+Info: Nothing to build for Askme
+Info: Nothing to build for Askme
+11:47:31 **** Incremental Build of configuration Debug for project Askme ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -o Askme.exe app.o main.o 
+Info: Nothing to build for Askme
+12:03:08 **** Incremental Build of configuration Debug for project Askme ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o menu.o "..\\menu.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o signup_handler.o "..\\signup_handler.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o login_handler.o "..\\login_handler.cpp" 
+g++ -o Askme.exe app.o login_handler.o main.o menu.o signup_handler.o 
+Info: Nothing to build for Askme
+13:10:18 **** Incremental Build of configuration Debug for project Askme ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o error.o "..\\error.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -o Askme.exe app.o error.o login_handler.o main.o menu.o signup_handler.o 
+Info: Nothing to build for Askme
+11:13:09 **** Rebuild of configuration Debug for project Askme ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o menu.o "..\\menu.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o login_handler.o "..\\login_handler.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o error.o "..\\error.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o signup_handler.o "..\\signup_handler.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -o Askme.exe app.o error.o login_handler.o main.o menu.o signup_handler.o 
+Info: Nothing to build for Askme
+11:22:03 **** Incremental Build of configuration Debug for project Askme ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o login_handler.o "..\\login_handler.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -o Askme.exe app.o error.o login_handler.o main.o menu.o signup_handler.o 
+Info: Nothing to build for Askme
+11:23:47 **** Incremental Build of configuration Debug for project Askme ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o signup_handler.o "..\\signup_handler.cpp" 
+g++ -o Askme.exe app.o error.o login_handler.o main.o menu.o signup_handler.o 
+Info: Nothing to build for Askme
+11:37:39 **** Incremental Build of configuration Debug for project Askme ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o signup_handler.o "..\\signup_handler.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o menu.o "..\\menu.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o error.o "..\\error.cpp" 
+g++ -o Askme.exe app.o error.o login_handler.o main.o menu.o signup_handler.o 
+Info: Nothing to build for Askme
+11:40:33 **** Rebuild of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o menu.o "..\\menu.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o login_handler.o "..\\login_handler.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o signup_handler.o "..\\signup_handler.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o error.o "..\\error.cpp" 
+g++ -o askme-project.exe app.o error.o login_handler.o main.o menu.o signup_handler.o 
