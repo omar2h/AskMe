@@ -1,0 +1,188 @@
+/*
+ * app.cpp
+ *
+ *  Created on: Jun 20, 2022
+ *      Author: omarh
+ */
+
+#include "app.hpp"
+#include "menu.hpp"
+#include "user.hpp"
+#include "login_handler.hpp"
+#include "signup_handler.hpp"
+#include "error.hpp"
+
+#include <iostream>
+#include <vector>
+#include <utility>
+#include <fstream>
+#include <sstream>
+
+bool App::verify_login_choice(int choice)
+{
+	if (choice < 1 && choice > 3)
+	{
+		return 0;
+	}
+	return 1;
+}
+
+bool App::verify_main_choice(int choice)
+{
+	if (choice < 1 && choice > 8)
+		return 0;
+	return 1;
+}
+
+bool id_exist(int id){
+	int tmpId;
+	std::string path = "users.txt";
+	std::fstream file_handler(path.c_str());
+
+	if (file_handler.fail())
+	{
+		std::cout << "\n -------- Can't open file -----------\n\n";
+		return 0;
+	}
+
+	std::string line;
+
+	while (getline(file_handler, line, ','))
+	{
+		std::stringstream iss(line);
+		iss >> tmpId;
+		if(tmpId == id)
+			return 1;
+	}
+	return 0;
+}
+
+void App::ask(){
+
+	int id;
+	while(1){
+	std::cout<<"Enter User ID You Want to Ask or -1 to cancel:  ";
+	std::cin>>id;
+	id_exist();
+	}
+
+}
+
+void App::list_users(){
+	int id;
+	std::string username, password;
+	bool allowAnonQs;
+
+	std::string path = "users.txt";
+	std::fstream file_handler(path.c_str());
+
+	if (file_handler.fail())
+	{
+		std::cout << "\n -------- Can't open file -----------\n\n";
+		return;
+	}
+
+	std::string line;
+
+	while (getline(file_handler, line, ','))
+	{
+		std::stringstream iss(line);
+		iss >> id >> username >> password >> allowAnonQs;
+		std::cout<<"ID: "<<id<<"\tUserName: "<<username<<'\n';
+	}
+
+	std::cout<<'\n';
+}
+
+void App::run()
+{
+	int choice;
+	User user;
+	Menu menu;
+	Login_handler login_handler;
+	Signup_handler signup_handler;
+	std::pair<User, bool> userLoginPair;
+	Error error;
+
+	while (1)
+	{
+		while (1)
+		{
+			choice = menu.menu_login();
+
+			if (!verify_login_choice(choice))
+			{
+				error.print(1);
+				continue;
+			}
+
+			if (choice == 1)
+			{
+				userLoginPair = login_handler.login();
+				if (userLoginPair.second)
+				{
+					user = userLoginPair.first;
+					std::cout << "\n-------------- Logged In Successfully -------------\n\n";
+					break;
+				}
+				else
+					error.print(2);
+			}
+
+			else if (choice == 2)
+			{
+				if (!signup_handler.signup())
+					continue;
+			}
+			else if (choice == 3)
+				exit(0);
+		}
+
+		while (1)
+		{
+			choice = menu.menu_main();
+			if (!verify_main_choice(choice))
+			{
+				error.print(1);
+				continue;
+			}
+
+			if (choice == 1)
+			{
+				// 1 print questions received
+			}
+
+			else if (choice == 2)
+			{
+				// 2 print questions i asked
+			}
+			else if (choice == 3)
+			{
+				// 3 answer questions
+			}
+			else if (choice == 4)
+			{
+				// 4 delete question
+			}
+			else if (choice == 5)
+			{
+				// 5: ask question
+				ask();
+			}
+			else if (choice == 6)
+			{
+				// 6: list system users
+				list_users();
+			}
+			else if (choice == 7)
+			{
+				// 7 feed
+			}
+			else if (choice == 8)
+			{
+				// 8: Logout
+				break;
+			}
+		}
+	}
+}

@@ -171,3 +171,1085 @@ Info: Internal Builder is used for build
 g++ -O0 -g3 -Wall -c -fmessage-length=0 -o signup_handler.o "..\\signup_handler.cpp" 
 g++ -o askme-project.exe app.o error.o login_handler.o main.o menu.o signup_handler.o 
 Info: Nothing to build for askme-project
+13:37:59 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o signup_handler.o "..\\signup_handler.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o login_handler.o "..\\login_handler.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+..\app.cpp: In member function 'void App::list_users()':
+..\app.cpp:41:35: error: variable 'std::fstream file_handler' has initializer but incomplete type
+   41 |         std::fstream file_handler(path.c_str());
+      |                                   ^~~~
+..\app.cpp:53:43: error: variable 'std::stringstream iss' has initializer but incomplete type
+   53 |                 std::stringstream iss(line);
+      |                                           ^
+13:38:26 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o menu.o "..\\menu.cpp" 
+g++ -o askme-project.exe app.o error.o login_handler.o main.o menu.o signup_handler.o 
+Info: Nothing to build for askme-project
+13:42:07 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o signup_handler.o "..\\signup_handler.cpp" 
+g++ -o askme-project.exe app.o error.o login_handler.o main.o menu.o signup_handler.o 
+Info: Nothing to build for askme-project
+13:43:54 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -o askme-project.exe app.o error.o login_handler.o main.o menu.o signup_handler.o 
+Info: Nothing to build for askme-project
+13:55:03 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o signup_handler.o "..\\signup_handler.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o login_handler.o "..\\login_handler.cpp" 
+..\login_handler.cpp: In member function 'std::pair<User, bool> Login_handler::user_exists(User)':
+..\login_handler.cpp:36:19: error: no match for 'operator>>' (operand types are 'std::basic_istream<char>::__istream_type' {aka 'std::basic_istream<char>'} and 'char')
+   36 |         iss >> id >> ',' >> username >> ',' >>password >> ',' >> allowAnonQs;
+      |         ~~~~~~~~~ ^~ ~~~
+      |             |        |
+      |             |        char
+      |             std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}
+In file included from C:/msys64/mingw64/include/c++/12.1.0/iostream:40,
+                 from ..\login_handler.hpp:12,
+                 from ..\login_handler.cpp:8:
+C:/msys64/mingw64/include/c++/12.1.0/istream:120:7: note: candidate: 'std::basic_istream<_CharT, _Traits>::__istream_type& std::basic_istream<_CharT, _Traits>::operator>>(__istream_type& (*)(__istream_type&)) [with _CharT = char; _Traits = std::char_traits<char>; __istream_type = std::basic_istream<char>]' (near match)
+  120 |       operator>>(__istream_type& (*__pf)(__istream_type&))
+      |       ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:120:7: note:   conversion of argument 1 would be ill-formed:
+..\login_handler.cpp:36:22: error: invalid conversion from 'char' to 'std::basic_istream<char>::__istream_type& (*)(std::basic_istream<char>::__istream_type&)' {aka 'std::basic_istream<char>& (*)(std::basic_istream<char>&)'} [-fpermissive]
+   36 |         iss >> id >> ',' >> username >> ',' >>password >> ',' >> allowAnonQs;
+      |                      ^~~
+      |                      |
+      |                      char
+C:/msys64/mingw64/include/c++/12.1.0/istream:124:7: note: candidate: 'std::basic_istream<_CharT, _Traits>::__istream_type& std::basic_istream<_CharT, _Traits>::operator>>(__ios_type& (*)(__ios_type&)) [with _CharT = char; _Traits = std::char_traits<char>; __istream_type = std::basic_istream<char>; __ios_type = std::basic_ios<char>]' (near match)
+  124 |       operator>>(__ios_type& (*__pf)(__ios_type&))
+      |       ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:124:7: note:   conversion of argument 1 would be ill-formed:
+..\login_handler.cpp:36:22: error: invalid conversion from 'char' to 'std::basic_istream<char>::__ios_type& (*)(std::basic_istream<char>::__ios_type&)' {aka 'std::basic_ios<char>& (*)(std::basic_ios<char>&)'} [-fpermissive]
+   36 |         iss >> id >> ',' >> username >> ',' >>password >> ',' >> allowAnonQs;
+      |                      ^~~
+      |                      |
+      |                      char
+C:/msys64/mingw64/include/c++/12.1.0/istream:131:7: note: candidate: 'std::basic_istream<_CharT, _Traits>::__istream_type& std::basic_istream<_CharT, _Traits>::operator>>(std::ios_base& (*)(std::ios_base&)) [with _CharT = char; _Traits = std::char_traits<char>; __istream_type = std::basic_istream<char>]' (near match)
+  131 |       operator>>(ios_base& (*__pf)(ios_base&))
+      |       ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:131:7: note:   conversion of argument 1 would be ill-formed:
+..\login_handler.cpp:36:22: error: invalid conversion from 'char' to 'std::ios_base& (*)(std::ios_base&)' [-fpermissive]
+   36 |         iss >> id >> ',' >> username >> ',' >>password >> ',' >> allowAnonQs;
+      |                      ^~~
+      |                      |
+      |                      char
+C:/msys64/mingw64/include/c++/12.1.0/istream:168:7: note: candidate: 'std::basic_istream<_CharT, _Traits>::__istream_type& std::basic_istream<_CharT, _Traits>::operator>>(bool&) [with _CharT = char; _Traits = std::char_traits<char>; __istream_type = std::basic_istream<char>]' (near match)
+  168 |       operator>>(bool& __n)
+      |       ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:168:7: note:   conversion of argument 1 would be ill-formed:
+..\login_handler.cpp:36:22: error: cannot bind non-const lvalue reference of type 'bool&' to a value of type 'char'
+   36 |         iss >> id >> ',' >> username >> ',' >>password >> ',' >> allowAnonQs;
+      |                      ^~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:172:7: note: candidate: 'std::basic_istream<_CharT, _Traits>& std::basic_istream<_CharT, _Traits>::operator>>(short int&) [with _CharT = char; _Traits = std::char_traits<char>]' (near match)
+  172 |       operator>>(short& __n);
+      |       ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:172:7: note:   conversion of argument 1 would be ill-formed:
+..\login_handler.cpp:36:22: error: cannot bind non-const lvalue reference of type 'short int&' to a value of type 'char'
+   36 |         iss >> id >> ',' >> username >> ',' >>password >> ',' >> allowAnonQs;
+      |                      ^~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:175:7: note: candidate: 'std::basic_istream<_CharT, _Traits>::__istream_type& std::basic_istream<_CharT, _Traits>::operator>>(short unsigned int&) [with _CharT = char; _Traits = std::char_traits<char>; __istream_type = std::basic_istream<char>]' (near match)
+  175 |       operator>>(unsigned short& __n)
+      |       ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:175:7: note:   conversion of argument 1 would be ill-formed:
+..\login_handler.cpp:36:22: error: cannot bind non-const lvalue reference of type 'short unsigned int&' to a value of type 'char'
+   36 |         iss >> id >> ',' >> username >> ',' >>password >> ',' >> allowAnonQs;
+      |                      ^~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:179:7: note: candidate: 'std::basic_istream<_CharT, _Traits>& std::basic_istream<_CharT, _Traits>::operator>>(int&) [with _CharT = char; _Traits = std::char_traits<char>]' (near match)
+  179 |       operator>>(int& __n);
+      |       ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:179:7: note:   conversion of argument 1 would be ill-formed:
+..\login_handler.cpp:36:22: error: cannot bind non-const lvalue reference of type 'int&' to a value of type 'char'
+   36 |         iss >> id >> ',' >> username >> ',' >>password >> ',' >> allowAnonQs;
+      |                      ^~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:182:7: note: candidate: 'std::basic_istream<_CharT, _Traits>::__istream_type& std::basic_istream<_CharT, _Traits>::operator>>(unsigned int&) [with _CharT = char; _Traits = std::char_traits<char>; __istream_type = std::basic_istream<char>]' (near match)
+  182 |       operator>>(unsigned int& __n)
+      |       ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:182:7: note:   conversion of argument 1 would be ill-formed:
+..\login_handler.cpp:36:22: error: cannot bind non-const lvalue reference of type 'unsigned int&' to a value of type 'char'
+   36 |         iss >> id >> ',' >> username >> ',' >>password >> ',' >> allowAnonQs;
+      |                      ^~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:186:7: note: candidate: 'std::basic_istream<_CharT, _Traits>::__istream_type& std::basic_istream<_CharT, _Traits>::operator>>(long int&) [with _CharT = char; _Traits = std::char_traits<char>; __istream_type = std::basic_istream<char>]' (near match)
+  186 |       operator>>(long& __n)
+      |       ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:186:7: note:   conversion of argument 1 would be ill-formed:
+..\login_handler.cpp:36:22: error: cannot bind non-const lvalue reference of type 'long int&' to a value of type 'char'
+   36 |         iss >> id >> ',' >> username >> ',' >>password >> ',' >> allowAnonQs;
+      |                      ^~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:190:7: note: candidate: 'std::basic_istream<_CharT, _Traits>::__istream_type& std::basic_istream<_CharT, _Traits>::operator>>(long unsigned int&) [with _CharT = char; _Traits = std::char_traits<char>; __istream_type = std::basic_istream<char>]' (near match)
+  190 |       operator>>(unsigned long& __n)
+      |       ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:190:7: note:   conversion of argument 1 would be ill-formed:
+..\login_handler.cpp:36:22: error: cannot bind non-const lvalue reference of type 'long unsigned int&' to a value of type 'char'
+   36 |         iss >> id >> ',' >> username >> ',' >>password >> ',' >> allowAnonQs;
+      |                      ^~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:195:7: note: candidate: 'std::basic_istream<_CharT, _Traits>::__istream_type& std::basic_istream<_CharT, _Traits>::operator>>(long long int&) [with _CharT = char; _Traits = std::char_traits<char>; __istream_type = std::basic_istream<char>]' (near match)
+  195 |       operator>>(long long& __n)
+      |       ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:195:7: note:   conversion of argument 1 would be ill-formed:
+..\login_handler.cpp:36:22: error: cannot bind non-const lvalue reference of type 'long long int&' to a value of type 'char'
+   36 |         iss >> id >> ',' >> username >> ',' >>password >> ',' >> allowAnonQs;
+      |                      ^~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:199:7: note: candidate: 'std::basic_istream<_CharT, _Traits>::__istream_type& std::basic_istream<_CharT, _Traits>::operator>>(long long unsigned int&) [with _CharT = char; _Traits = std::char_traits<char>; __istream_type = std::basic_istream<char>]' (near match)
+  199 |       operator>>(unsigned long long& __n)
+      |       ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:199:7: note:   conversion of argument 1 would be ill-formed:
+..\login_handler.cpp:36:22: error: cannot bind non-const lvalue reference of type 'long long unsigned int&' to a value of type 'char'
+   36 |         iss >> id >> ',' >> username >> ',' >>password >> ',' >> allowAnonQs;
+      |                      ^~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:214:7: note: candidate: 'std::basic_istream<_CharT, _Traits>::__istream_type& std::basic_istream<_CharT, _Traits>::operator>>(float&) [with _CharT = char; _Traits = std::char_traits<char>; __istream_type = std::basic_istream<char>]' (near match)
+  214 |       operator>>(float& __f)
+      |       ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:214:7: note:   conversion of argument 1 would be ill-formed:
+..\login_handler.cpp:36:22: error: cannot bind non-const lvalue reference of type 'float&' to a value of type 'char'
+   36 |         iss >> id >> ',' >> username >> ',' >>password >> ',' >> allowAnonQs;
+      |                      ^~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:218:7: note: candidate: 'std::basic_istream<_CharT, _Traits>::__istream_type& std::basic_istream<_CharT, _Traits>::operator>>(double&) [with _CharT = char; _Traits = std::char_traits<char>; __istream_type = std::basic_istream<char>]' (near match)
+  218 |       operator>>(double& __f)
+      |       ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:218:7: note:   conversion of argument 1 would be ill-formed:
+..\login_handler.cpp:36:22: error: cannot bind non-const lvalue reference of type 'double&' to a value of type 'char'
+   36 |         iss >> id >> ',' >> username >> ',' >>password >> ',' >> allowAnonQs;
+      |                      ^~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:222:7: note: candidate: 'std::basic_istream<_CharT, _Traits>::__istream_type& std::basic_istream<_CharT, _Traits>::operator>>(long double&) [with _CharT = char; _Traits = std::char_traits<char>; __istream_type = std::basic_istream<char>]' (near match)
+  222 |       operator>>(long double& __f)
+      |       ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:222:7: note:   conversion of argument 1 would be ill-formed:
+..\login_handler.cpp:36:22: error: cannot bind non-const lvalue reference of type 'long double&' to a value of type 'char'
+   36 |         iss >> id >> ',' >> username >> ',' >>password >> ',' >> allowAnonQs;
+      |                      ^~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:235:7: note: candidate: 'std::basic_istream<_CharT, _Traits>::__istream_type& std::basic_istream<_CharT, _Traits>::operator>>(void*&) [with _CharT = char; _Traits = std::char_traits<char>; __istream_type = std::basic_istream<char>]' (near match)
+  235 |       operator>>(void*& __p)
+      |       ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:235:7: note:   conversion of argument 1 would be ill-formed:
+..\login_handler.cpp:36:22: error: invalid conversion from 'char' to 'void*' [-fpermissive]
+   36 |         iss >> id >> ',' >> username >> ',' >>password >> ',' >> allowAnonQs;
+      |                      ^~~
+      |                      |
+      |                      char
+..\login_handler.cpp:36:22: error: cannot bind rvalue '(void*)44' to 'void*&'
+C:/msys64/mingw64/include/c++/12.1.0/istream:259:7: note: candidate: 'std::basic_istream<_CharT, _Traits>& std::basic_istream<_CharT, _Traits>::operator>>(__streambuf_type*) [with _CharT = char; _Traits = std::char_traits<char>; __streambuf_type = std::basic_streambuf<char>]' (near match)
+  259 |       operator>>(__streambuf_type* __sb);
+      |       ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:259:7: note:   conversion of argument 1 would be ill-formed:
+..\login_handler.cpp:36:22: error: invalid conversion from 'char' to 'std::basic_istream<char>::__streambuf_type*' {aka 'std::basic_streambuf<char>*'} [-fpermissive]
+   36 |         iss >> id >> ',' >> username >> ',' >>password >> ',' >> allowAnonQs;
+      |                      ^~~
+      |                      |
+      |                      char
+..\login_handler.cpp:36:19: note: candidate: 'operator>>(int, int)' (built-in)
+   36 |         iss >> id >> ',' >> username >> ',' >>password >> ',' >> allowAnonQs;
+      |         ~~~~~~~~~~^~~~~~
+..\login_handler.cpp:36:19: note:   no known conversion for argument 1 from 'std::basic_istream<char>::__istream_type' {aka 'std::basic_istream<char>'} to 'int'
+In file included from C:/msys64/mingw64/include/c++/12.1.0/string:54,
+                 from ..\user.hpp:11,
+                 from ..\login_handler.hpp:10:
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.tcc:940:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> std::basic_istream<_CharT, _Traits>& std::operator>>(basic_istream<_CharT, _Traits>&, __cxx11::basic_string<_CharT, _Traits, _Allocator>&)'
+  940 |     operator>>(basic_istream<_CharT, _Traits>& __in,
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.tcc:940:5: note:   template argument deduction/substitution failed:
+..\login_handler.cpp:36:22: note:   mismatched types 'std::__cxx11::basic_string<_CharT, _Traits, _Allocator>' and 'char'
+   36 |         iss >> id >> ',' >> username >> ',' >>password >> ',' >> allowAnonQs;
+      |                      ^~~
+In file included from C:/msys64/mingw64/include/c++/12.1.0/istream:995:
+C:/msys64/mingw64/include/c++/12.1.0/bits/istream.tcc:960:5: note: candidate: 'std::basic_istream<_CharT, _Traits>& std::operator>>(basic_istream<_CharT, _Traits>&, _CharT&) [with _CharT = char; _Traits = char_traits<char>]' (near match)
+  960 |     operator>>(basic_istream<_CharT, _Traits>& __in, _CharT& __c)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/istream.tcc:960:5: note:   conversion of argument 2 would be ill-formed:
+..\login_handler.cpp:36:22: error: cannot bind non-const lvalue reference of type 'char&' to an rvalue of type 'char'
+   36 |         iss >> id >> ',' >> username >> ',' >>password >> ',' >> allowAnonQs;
+      |                      ^~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:756:5: note: candidate: 'template<class _Traits> std::basic_istream<char, _Traits>& std::operator>>(basic_istream<char, _Traits>&, unsigned char&)'
+  756 |     operator>>(basic_istream<char, _Traits>& __in, unsigned char& __c)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:756:5: note:   template argument deduction/substitution failed:
+..\login_handler.cpp:36:22: note:   cannot convert '','' (type 'char') to type 'unsigned char&'
+   36 |         iss >> id >> ',' >> username >> ',' >>password >> ',' >> allowAnonQs;
+      |                      ^~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:761:5: note: candidate: 'template<class _Traits> std::basic_istream<char, _Traits>& std::operator>>(basic_istream<char, _Traits>&, signed char&)'
+  761 |     operator>>(basic_istream<char, _Traits>& __in, signed char& __c)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:761:5: note:   template argument deduction/substitution failed:
+..\login_handler.cpp:36:22: note:   cannot convert '','' (type 'char') to type 'signed char&'
+   36 |         iss >> id >> ',' >> username >> ',' >>password >> ',' >> allowAnonQs;
+      |                      ^~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:803:5: note: candidate: 'template<class _CharT, class _Traits> std::basic_istream<_CharT, _Traits>& std::operator>>(basic_istream<_CharT, _Traits>&, _CharT*)'
+  803 |     operator>>(basic_istream<_CharT, _Traits>& __in, _CharT* __s)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:803:5: note:   template argument deduction/substitution failed:
+..\login_handler.cpp:36:22: note:   mismatched types '_CharT*' and 'char'
+   36 |         iss >> id >> ',' >> username >> ',' >>password >> ',' >> allowAnonQs;
+      |                      ^~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:825:5: note: candidate: 'template<class _Traits> std::basic_istream<char, _Traits>& std::operator>>(basic_istream<char, _Traits>&, unsigned char*)'
+  825 |     operator>>(basic_istream<char, _Traits>& __in, unsigned char* __s)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:825:5: note:   template argument deduction/substitution failed:
+..\login_handler.cpp:36:22: note:   cannot convert '','' (type 'char') to type 'unsigned char*'
+   36 |         iss >> id >> ',' >> username >> ',' >>password >> ',' >> allowAnonQs;
+      |                      ^~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:831:5: note: candidate: 'template<class _Traits> std::basic_istream<char, _Traits>& std::operator>>(basic_istream<char, _Traits>&, signed char*)'
+  831 |     operator>>(basic_istream<char, _Traits>& __in, signed char* __s)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:831:5: note:   template argument deduction/substitution failed:
+..\login_handler.cpp:36:22: note:   cannot convert '','' (type 'char') to type 'signed char*'
+   36 |         iss >> id >> ',' >> username >> ',' >>password >> ',' >> allowAnonQs;
+      |                      ^~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:985:5: note: candidate: 'template<class _Istream, class _Tp> _Istream&& std::operator>>(_Istream&&, _Tp&&)'
+  985 |     operator>>(_Istream&& __is, _Tp&& __x)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:985:5: note:   template argument deduction/substitution failed:
+C:/msys64/mingw64/include/c++/12.1.0/istream: In substitution of 'template<class _Istream, class _Tp> _Istream&& std::operator>>(_Istream&&, _Tp&&) [with _Istream = std::basic_istream<char>&; _Tp = char]':
+..\login_handler.cpp:36:22:   required from here
+C:/msys64/mingw64/include/c++/12.1.0/istream:985:5: error: no type named 'type' in 'struct std::enable_if<false, void>'
+13:55:40 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o login_handler.o "..\\login_handler.cpp" 
+..\login_handler.cpp: In member function 'std::pair<User, bool> Login_handler::user_exists(User)':
+..\login_handler.cpp:36:19: error: no match for 'operator>>' (operand types are 'std::basic_istream<char>::__istream_type' {aka 'std::basic_istream<char>'} and 'const char [2]')
+   36 |         iss >> id >> "," >> username >> "," >>password >> "," >> allowAnonQs;
+      |         ~~~~~~~~~ ^~ ~~~
+      |             |        |
+      |             |        const char [2]
+      |             std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}
+In file included from C:/msys64/mingw64/include/c++/12.1.0/iostream:40,
+                 from ..\login_handler.hpp:12,
+                 from ..\login_handler.cpp:8:
+C:/msys64/mingw64/include/c++/12.1.0/istream:168:7: note: candidate: 'std::basic_istream<_CharT, _Traits>::__istream_type& std::basic_istream<_CharT, _Traits>::operator>>(bool&) [with _CharT = char; _Traits = std::char_traits<char>; __istream_type = std::basic_istream<char>]' (near match)
+  168 |       operator>>(bool& __n)
+      |       ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:168:7: note:   conversion of argument 1 would be ill-formed:
+..\login_handler.cpp:36:22: error: cannot bind non-const lvalue reference of type 'bool&' to a value of type 'const char*'
+   36 |         iss >> id >> "," >> username >> "," >>password >> "," >> allowAnonQs;
+      |                      ^~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:172:7: note: candidate: 'std::basic_istream<_CharT, _Traits>& std::basic_istream<_CharT, _Traits>::operator>>(short int&) [with _CharT = char; _Traits = std::char_traits<char>]' (near match)
+  172 |       operator>>(short& __n);
+      |       ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:172:7: note:   conversion of argument 1 would be ill-formed:
+..\login_handler.cpp:36:22: error: invalid conversion from 'const char*' to 'short int' [-fpermissive]
+   36 |         iss >> id >> "," >> username >> "," >>password >> "," >> allowAnonQs;
+      |                      ^~~
+      |                      |
+      |                      const char*
+..\login_handler.cpp:36:22: error: cannot bind rvalue '(short int)((const char*)",")' to 'short int&'
+C:/msys64/mingw64/include/c++/12.1.0/istream:175:7: note: candidate: 'std::basic_istream<_CharT, _Traits>::__istream_type& std::basic_istream<_CharT, _Traits>::operator>>(short unsigned int&) [with _CharT = char; _Traits = std::char_traits<char>; __istream_type = std::basic_istream<char>]' (near match)
+  175 |       operator>>(unsigned short& __n)
+      |       ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:175:7: note:   conversion of argument 1 would be ill-formed:
+..\login_handler.cpp:36:22: error: invalid conversion from 'const char*' to 'short unsigned int' [-fpermissive]
+   36 |         iss >> id >> "," >> username >> "," >>password >> "," >> allowAnonQs;
+      |                      ^~~
+      |                      |
+      |                      const char*
+..\login_handler.cpp:36:22: error: cannot bind rvalue '(short unsigned int)((const char*)",")' to 'short unsigned int&'
+C:/msys64/mingw64/include/c++/12.1.0/istream:179:7: note: candidate: 'std::basic_istream<_CharT, _Traits>& std::basic_istream<_CharT, _Traits>::operator>>(int&) [with _CharT = char; _Traits = std::char_traits<char>]' (near match)
+  179 |       operator>>(int& __n);
+      |       ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:179:7: note:   conversion of argument 1 would be ill-formed:
+..\login_handler.cpp:36:22: error: invalid conversion from 'const char*' to 'int' [-fpermissive]
+   36 |         iss >> id >> "," >> username >> "," >>password >> "," >> allowAnonQs;
+      |                      ^~~
+      |                      |
+      |                      const char*
+..\login_handler.cpp:36:22: error: cannot bind rvalue '(int)((const char*)",")' to 'int&'
+C:/msys64/mingw64/include/c++/12.1.0/istream:182:7: note: candidate: 'std::basic_istream<_CharT, _Traits>::__istream_type& std::basic_istream<_CharT, _Traits>::operator>>(unsigned int&) [with _CharT = char; _Traits = std::char_traits<char>; __istream_type = std::basic_istream<char>]' (near match)
+  182 |       operator>>(unsigned int& __n)
+      |       ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:182:7: note:   conversion of argument 1 would be ill-formed:
+..\login_handler.cpp:36:22: error: invalid conversion from 'const char*' to 'unsigned int' [-fpermissive]
+   36 |         iss >> id >> "," >> username >> "," >>password >> "," >> allowAnonQs;
+      |                      ^~~
+      |                      |
+      |                      const char*
+..\login_handler.cpp:36:22: error: cannot bind rvalue '(unsigned int)((const char*)",")' to 'unsigned int&'
+C:/msys64/mingw64/include/c++/12.1.0/istream:186:7: note: candidate: 'std::basic_istream<_CharT, _Traits>::__istream_type& std::basic_istream<_CharT, _Traits>::operator>>(long int&) [with _CharT = char; _Traits = std::char_traits<char>; __istream_type = std::basic_istream<char>]' (near match)
+  186 |       operator>>(long& __n)
+      |       ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:186:7: note:   conversion of argument 1 would be ill-formed:
+..\login_handler.cpp:36:22: error: invalid conversion from 'const char*' to 'long int' [-fpermissive]
+   36 |         iss >> id >> "," >> username >> "," >>password >> "," >> allowAnonQs;
+      |                      ^~~
+      |                      |
+      |                      const char*
+..\login_handler.cpp:36:22: error: cannot bind rvalue '(long int)((const char*)",")' to 'long int&'
+C:/msys64/mingw64/include/c++/12.1.0/istream:190:7: note: candidate: 'std::basic_istream<_CharT, _Traits>::__istream_type& std::basic_istream<_CharT, _Traits>::operator>>(long unsigned int&) [with _CharT = char; _Traits = std::char_traits<char>; __istream_type = std::basic_istream<char>]' (near match)
+  190 |       operator>>(unsigned long& __n)
+      |       ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:190:7: note:   conversion of argument 1 would be ill-formed:
+..\login_handler.cpp:36:22: error: invalid conversion from 'const char*' to 'long unsigned int' [-fpermissive]
+   36 |         iss >> id >> "," >> username >> "," >>password >> "," >> allowAnonQs;
+      |                      ^~~
+      |                      |
+      |                      const char*
+..\login_handler.cpp:36:22: error: cannot bind rvalue '(long unsigned int)((const char*)",")' to 'long unsigned int&'
+C:/msys64/mingw64/include/c++/12.1.0/istream:195:7: note: candidate: 'std::basic_istream<_CharT, _Traits>::__istream_type& std::basic_istream<_CharT, _Traits>::operator>>(long long int&) [with _CharT = char; _Traits = std::char_traits<char>; __istream_type = std::basic_istream<char>]' (near match)
+  195 |       operator>>(long long& __n)
+      |       ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:195:7: note:   conversion of argument 1 would be ill-formed:
+..\login_handler.cpp:36:22: error: invalid conversion from 'const char*' to 'long long int' [-fpermissive]
+   36 |         iss >> id >> "," >> username >> "," >>password >> "," >> allowAnonQs;
+      |                      ^~~
+      |                      |
+      |                      const char*
+..\login_handler.cpp:36:22: error: cannot bind rvalue '(long long int)((const char*)",")' to 'long long int&'
+C:/msys64/mingw64/include/c++/12.1.0/istream:199:7: note: candidate: 'std::basic_istream<_CharT, _Traits>::__istream_type& std::basic_istream<_CharT, _Traits>::operator>>(long long unsigned int&) [with _CharT = char; _Traits = std::char_traits<char>; __istream_type = std::basic_istream<char>]' (near match)
+  199 |       operator>>(unsigned long long& __n)
+      |       ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:199:7: note:   conversion of argument 1 would be ill-formed:
+..\login_handler.cpp:36:22: error: invalid conversion from 'const char*' to 'long long unsigned int' [-fpermissive]
+   36 |         iss >> id >> "," >> username >> "," >>password >> "," >> allowAnonQs;
+      |                      ^~~
+      |                      |
+      |                      const char*
+..\login_handler.cpp:36:22: error: cannot bind rvalue '(long long unsigned int)((const char*)",")' to 'long long unsigned int&'
+C:/msys64/mingw64/include/c++/12.1.0/istream:235:7: note: candidate: 'std::basic_istream<_CharT, _Traits>::__istream_type& std::basic_istream<_CharT, _Traits>::operator>>(void*&) [with _CharT = char; _Traits = std::char_traits<char>; __istream_type = std::basic_istream<char>]' (near match)
+  235 |       operator>>(void*& __p)
+      |       ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:235:7: note:   conversion of argument 1 would be ill-formed:
+..\login_handler.cpp:36:22: error: invalid conversion from 'const void*' to 'void*' [-fpermissive]
+   36 |         iss >> id >> "," >> username >> "," >>password >> "," >> allowAnonQs;
+      |                      ^~~
+      |                      |
+      |                      const void*
+..\login_handler.cpp:36:22: error: cannot bind rvalue '(void*)((const void*)((const char*)","))' to 'void*&'
+C:/msys64/mingw64/include/c++/12.1.0/istream:120:7: note: candidate: 'std::basic_istream<_CharT, _Traits>::__istream_type& std::basic_istream<_CharT, _Traits>::operator>>(__istream_type& (*)(__istream_type&)) [with _CharT = char; _Traits = std::char_traits<char>; __istream_type = std::basic_istream<char>]'
+  120 |       operator>>(__istream_type& (*__pf)(__istream_type&))
+      |       ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:120:36: note:   no known conversion for argument 1 from 'const char [2]' to 'std::basic_istream<char>::__istream_type& (*)(std::basic_istream<char>::__istream_type&)' {aka 'std::basic_istream<char>& (*)(std::basic_istream<char>&)'}
+  120 |       operator>>(__istream_type& (*__pf)(__istream_type&))
+      |                  ~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:124:7: note: candidate: 'std::basic_istream<_CharT, _Traits>::__istream_type& std::basic_istream<_CharT, _Traits>::operator>>(__ios_type& (*)(__ios_type&)) [with _CharT = char; _Traits = std::char_traits<char>; __istream_type = std::basic_istream<char>; __ios_type = std::basic_ios<char>]'
+  124 |       operator>>(__ios_type& (*__pf)(__ios_type&))
+      |       ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:124:32: note:   no known conversion for argument 1 from 'const char [2]' to 'std::basic_istream<char>::__ios_type& (*)(std::basic_istream<char>::__ios_type&)' {aka 'std::basic_ios<char>& (*)(std::basic_ios<char>&)'}
+  124 |       operator>>(__ios_type& (*__pf)(__ios_type&))
+      |                  ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:131:7: note: candidate: 'std::basic_istream<_CharT, _Traits>::__istream_type& std::basic_istream<_CharT, _Traits>::operator>>(std::ios_base& (*)(std::ios_base&)) [with _CharT = char; _Traits = std::char_traits<char>; __istream_type = std::basic_istream<char>]'
+  131 |       operator>>(ios_base& (*__pf)(ios_base&))
+      |       ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:131:30: note:   no known conversion for argument 1 from 'const char [2]' to 'std::ios_base& (*)(std::ios_base&)'
+  131 |       operator>>(ios_base& (*__pf)(ios_base&))
+      |                  ~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:214:7: note: candidate: 'std::basic_istream<_CharT, _Traits>::__istream_type& std::basic_istream<_CharT, _Traits>::operator>>(float&) [with _CharT = char; _Traits = std::char_traits<char>; __istream_type = std::basic_istream<char>]'
+  214 |       operator>>(float& __f)
+      |       ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:214:25: note:   no known conversion for argument 1 from 'const char [2]' to 'float&'
+  214 |       operator>>(float& __f)
+      |                  ~~~~~~~^~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:218:7: note: candidate: 'std::basic_istream<_CharT, _Traits>::__istream_type& std::basic_istream<_CharT, _Traits>::operator>>(double&) [with _CharT = char; _Traits = std::char_traits<char>; __istream_type = std::basic_istream<char>]'
+  218 |       operator>>(double& __f)
+      |       ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:218:26: note:   no known conversion for argument 1 from 'const char [2]' to 'double&'
+  218 |       operator>>(double& __f)
+      |                  ~~~~~~~~^~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:222:7: note: candidate: 'std::basic_istream<_CharT, _Traits>::__istream_type& std::basic_istream<_CharT, _Traits>::operator>>(long double&) [with _CharT = char; _Traits = std::char_traits<char>; __istream_type = std::basic_istream<char>]'
+  222 |       operator>>(long double& __f)
+      |       ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:222:31: note:   no known conversion for argument 1 from 'const char [2]' to 'long double&'
+  222 |       operator>>(long double& __f)
+      |                  ~~~~~~~~~~~~~^~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:259:7: note: candidate: 'std::basic_istream<_CharT, _Traits>& std::basic_istream<_CharT, _Traits>::operator>>(__streambuf_type*) [with _CharT = char; _Traits = std::char_traits<char>; __streambuf_type = std::basic_streambuf<char>]'
+  259 |       operator>>(__streambuf_type* __sb);
+      |       ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:259:36: note:   no known conversion for argument 1 from 'const char [2]' to 'std::basic_istream<char>::__streambuf_type*' {aka 'std::basic_streambuf<char>*'}
+  259 |       operator>>(__streambuf_type* __sb);
+      |                  ~~~~~~~~~~~~~~~~~~^~~~
+In file included from C:/msys64/mingw64/include/c++/12.1.0/string:54,
+                 from ..\user.hpp:11,
+                 from ..\login_handler.hpp:10:
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.tcc:940:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> std::basic_istream<_CharT, _Traits>& std::operator>>(basic_istream<_CharT, _Traits>&, __cxx11::basic_string<_CharT, _Traits, _Allocator>&)'
+  940 |     operator>>(basic_istream<_CharT, _Traits>& __in,
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.tcc:940:5: note:   template argument deduction/substitution failed:
+..\login_handler.cpp:36:22: note:   mismatched types 'std::__cxx11::basic_string<_CharT, _Traits, _Allocator>' and 'const char [2]'
+   36 |         iss >> id >> "," >> username >> "," >>password >> "," >> allowAnonQs;
+      |                      ^~~
+In file included from C:/msys64/mingw64/include/c++/12.1.0/istream:995:
+C:/msys64/mingw64/include/c++/12.1.0/bits/istream.tcc:960:5: note: candidate: 'template<class _CharT, class _Traits> std::basic_istream<_CharT, _Traits>& std::operator>>(basic_istream<_CharT, _Traits>&, _CharT&)'
+  960 |     operator>>(basic_istream<_CharT, _Traits>& __in, _CharT& __c)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/istream.tcc:960:5: note:   template argument deduction/substitution failed:
+..\login_handler.cpp:36:22: note:   deduced conflicting types for parameter '_CharT' ('char' and 'const char [2]')
+   36 |         iss >> id >> "," >> username >> "," >>password >> "," >> allowAnonQs;
+      |                      ^~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:756:5: note: candidate: 'template<class _Traits> std::basic_istream<char, _Traits>& std::operator>>(basic_istream<char, _Traits>&, unsigned char&)'
+  756 |     operator>>(basic_istream<char, _Traits>& __in, unsigned char& __c)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:756:5: note:   template argument deduction/substitution failed:
+..\login_handler.cpp:36:22: note:   cannot convert '","' (type 'const char [2]') to type 'unsigned char&'
+   36 |         iss >> id >> "," >> username >> "," >>password >> "," >> allowAnonQs;
+      |                      ^~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:761:5: note: candidate: 'template<class _Traits> std::basic_istream<char, _Traits>& std::operator>>(basic_istream<char, _Traits>&, signed char&)'
+  761 |     operator>>(basic_istream<char, _Traits>& __in, signed char& __c)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:761:5: note:   template argument deduction/substitution failed:
+..\login_handler.cpp:36:22: note:   cannot convert '","' (type 'const char [2]') to type 'signed char&'
+   36 |         iss >> id >> "," >> username >> "," >>password >> "," >> allowAnonQs;
+      |                      ^~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:803:5: note: candidate: 'template<class _CharT, class _Traits> std::basic_istream<_CharT, _Traits>& std::operator>>(basic_istream<_CharT, _Traits>&, _CharT*)'
+  803 |     operator>>(basic_istream<_CharT, _Traits>& __in, _CharT* __s)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:803:5: note:   template argument deduction/substitution failed:
+..\login_handler.cpp:36:22: note:   deduced conflicting types for parameter '_CharT' ('char' and 'const char')
+   36 |         iss >> id >> "," >> username >> "," >>password >> "," >> allowAnonQs;
+      |                      ^~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:825:5: note: candidate: 'template<class _Traits> std::basic_istream<char, _Traits>& std::operator>>(basic_istream<char, _Traits>&, unsigned char*)'
+  825 |     operator>>(basic_istream<char, _Traits>& __in, unsigned char* __s)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:825:5: note:   template argument deduction/substitution failed:
+..\login_handler.cpp:36:22: note:   cannot convert '","' (type 'const char [2]') to type 'unsigned char*'
+   36 |         iss >> id >> "," >> username >> "," >>password >> "," >> allowAnonQs;
+      |                      ^~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:831:5: note: candidate: 'template<class _Traits> std::basic_istream<char, _Traits>& std::operator>>(basic_istream<char, _Traits>&, signed char*)'
+  831 |     operator>>(basic_istream<char, _Traits>& __in, signed char* __s)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:831:5: note:   template argument deduction/substitution failed:
+..\login_handler.cpp:36:22: note:   cannot convert '","' (type 'const char [2]') to type 'signed char*'
+   36 |         iss >> id >> "," >> username >> "," >>password >> "," >> allowAnonQs;
+      |                      ^~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:985:5: note: candidate: 'template<class _Istream, class _Tp> _Istream&& std::operator>>(_Istream&&, _Tp&&)'
+  985 |     operator>>(_Istream&& __is, _Tp&& __x)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:985:5: note:   template argument deduction/substitution failed:
+C:/msys64/mingw64/include/c++/12.1.0/istream: In substitution of 'template<class _Istream, class _Tp> _Istream&& std::operator>>(_Istream&&, _Tp&&) [with _Istream = std::basic_istream<char>&; _Tp = const char (&)[2]]':
+..\login_handler.cpp:36:22:   required from here
+C:/msys64/mingw64/include/c++/12.1.0/istream:985:5: error: no type named 'type' in 'struct std::enable_if<false, void>'
+13:57:06 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o login_handler.o "..\\login_handler.cpp" 
+g++ -o askme-project.exe app.o error.o login_handler.o main.o menu.o signup_handler.o 
+Info: Nothing to build for askme-project
+17:17:48 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o users_db.o "..\\users_db.cpp" 
+..\users_db.cpp: In member function 'std::pair<User, bool> UsersDb::get_user(int)':
+..\users_db.cpp:47:24: error: could not convert '0' from 'int' to 'std::pair<User, bool>'
+   47 |                 return 0;
+      |                        ^
+      |                        |
+      |                        int
+..\users_db.cpp: At global scope:
+..\users_db.cpp:111:6: error: 'UserDb' has not been declared
+  111 | void UserDb::print(){
+      |      ^~~~~~
+17:18:00 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o login_handler.o "..\\login_handler.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+..\app.cpp: In function 'std::pair<User, bool> id_exist(int)':
+..\app.cpp:50:24: error: could not convert '0' from 'int' to 'std::pair<User, bool>'
+   50 |                 return 0;
+      |                        ^
+      |                        |
+      |                        int
+..\app.cpp: In member function 'void App::ask(User)':
+..\app.cpp:88:27: error: expression cannot be used as a function
+   88 |         if(userPair.second())
+      |            ~~~~~~~~~~~~~~~^~
+17:18:33 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+..\app.cpp: In function 'std::pair<User, bool> id_exist(int)':
+..\app.cpp:50:24: error: could not convert '0' from 'int' to 'std::pair<User, bool>'
+   50 |                 return 0;
+      |                        ^
+      |                        |
+      |                        int
+17:18:57 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o database_manager.o "..\\database_manager.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o users_db.o "..\\users_db.cpp" 
+..\users_db.cpp: In member function 'std::pair<User, bool> UsersDb::get_user(int)':
+..\users_db.cpp:47:24: error: could not convert '0' from 'int' to 'std::pair<User, bool>'
+   47 |                 return 0;
+      |                        ^
+      |                        |
+      |                        int
+17:19:10 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o users_db.o "..\\users_db.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o signup_handler.o "..\\signup_handler.cpp" 
+..\signup_handler.cpp: In member function 'bool Signup_handler::signup()':
+..\signup_handler.cpp:16:13: warning: unused variable 'id' [-Wunused-variable]
+   16 |         int id;
+      |             ^~
+..\signup_handler.cpp:18:14: warning: unused variable 'allowAnonQs' [-Wunused-variable]
+   18 |         bool allowAnonQs;
+      |              ^~~~~~~~~~~
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o error.o "..\\error.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o signup_handler.o users_db.o 
+C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: login_handler.o: in function `Login_handler::login()':
+H:\Career\Courses\C-C++ Data Structures & Algorithms\Dr Mostafa Saad\01-Mastering 4 critical SKILLS using C++ 17\Projects\01-Askme Project\askme-project\Debug/../login_handler.cpp:22: undefined reference to `UsersDb::get_user_login(User)'
+collect2.exe: error: ld returned 1 exit status
+17:20:41 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o login_handler.o "..\\login_handler.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o signup_handler.o users_db.o 
+C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: login_handler.o: in function `Login_handler::login()':
+H:\Career\Courses\C-C++ Data Structures & Algorithms\Dr Mostafa Saad\01-Mastering 4 critical SKILLS using C++ 17\Projects\01-Askme Project\askme-project\Debug/../login_handler.cpp:22: undefined reference to `UsersDb::get_user_login(User)'
+collect2.exe: error: ld returned 1 exit status
+17:21:28 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o users_db.o "..\\users_db.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o signup_handler.o users_db.o 
+17:23:07 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o login_handler.o "..\\login_handler.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+17:25:07 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o login_handler.o "..\\login_handler.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+17:25:38 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o login_handler.o "..\\login_handler.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o signup_handler.o users_db.o 
+C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file askme-project.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+17:25:50 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+17:27:38 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o users_db.o "..\\users_db.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+Info: Nothing to build for askme-project
+Info: Nothing to build for askme-project
+17:29:32 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o users_db.o "..\\users_db.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+17:33:34 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o users_db.o "..\\users_db.cpp" 
+..\users_db.cpp: In member function 'std::pair<User, bool> UsersDb::get_user_login(User)':
+..\users_db.cpp:83:14: error: no match for 'operator>>' (operand types are 'std::string' {aka 'std::__cxx11::basic_string<char>'} and 'int')
+   83 |         line >> user.id >> username >> password >> user.allowAnonQs;
+      |         ~~~~ ^~ ~~~~~~~
+      |         |            |
+      |         |            int
+      |         std::string {aka std::__cxx11::basic_string<char>}
+In file included from C:/msys64/mingw64/include/c++/12.1.0/string:54,
+                 from ..\user.hpp:11,
+                 from ..\users_db.hpp:11,
+                 from ..\users_db.cpp:8:
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.tcc:940:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> std::basic_istream<_CharT, _Traits>& std::operator>>(basic_istream<_CharT, _Traits>&, __cxx11::basic_string<_CharT, _Traits, _Allocator>&)'
+  940 |     operator>>(basic_istream<_CharT, _Traits>& __in,
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.tcc:940:5: note:   template argument deduction/substitution failed:
+..\users_db.cpp:83:22: note:   'std::string' {aka 'std::__cxx11::basic_string<char>'} is not derived from 'std::basic_istream<_CharT, _Traits>'
+   83 |         line >> user.id >> username >> password >> user.allowAnonQs;
+      |                      ^~
+In file included from C:/msys64/mingw64/include/c++/12.1.0/istream:995,
+                 from C:/msys64/mingw64/include/c++/12.1.0/iostream:40,
+                 from ..\users_db.cpp:10:
+C:/msys64/mingw64/include/c++/12.1.0/bits/istream.tcc:960:5: note: candidate: 'template<class _CharT, class _Traits> std::basic_istream<_CharT, _Traits>& std::operator>>(basic_istream<_CharT, _Traits>&, _CharT&)'
+  960 |     operator>>(basic_istream<_CharT, _Traits>& __in, _CharT& __c)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/istream.tcc:960:5: note:   template argument deduction/substitution failed:
+..\users_db.cpp:83:22: note:   'std::string' {aka 'std::__cxx11::basic_string<char>'} is not derived from 'std::basic_istream<_CharT, _Traits>'
+   83 |         line >> user.id >> username >> password >> user.allowAnonQs;
+      |                      ^~
+C:/msys64/mingw64/include/c++/12.1.0/istream:756:5: note: candidate: 'template<class _Traits> std::basic_istream<char, _Traits>& std::operator>>(basic_istream<char, _Traits>&, unsigned char&)'
+  756 |     operator>>(basic_istream<char, _Traits>& __in, unsigned char& __c)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:756:5: note:   template argument deduction/substitution failed:
+..\users_db.cpp:83:22: note:   'std::string' {aka 'std::__cxx11::basic_string<char>'} is not derived from 'std::basic_istream<char, _Traits>'
+   83 |         line >> user.id >> username >> password >> user.allowAnonQs;
+      |                      ^~
+C:/msys64/mingw64/include/c++/12.1.0/istream:761:5: note: candidate: 'template<class _Traits> std::basic_istream<char, _Traits>& std::operator>>(basic_istream<char, _Traits>&, signed char&)'
+  761 |     operator>>(basic_istream<char, _Traits>& __in, signed char& __c)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:761:5: note:   template argument deduction/substitution failed:
+..\users_db.cpp:83:22: note:   'std::string' {aka 'std::__cxx11::basic_string<char>'} is not derived from 'std::basic_istream<char, _Traits>'
+   83 |         line >> user.id >> username >> password >> user.allowAnonQs;
+      |                      ^~
+C:/msys64/mingw64/include/c++/12.1.0/istream:803:5: note: candidate: 'template<class _CharT, class _Traits> std::basic_istream<_CharT, _Traits>& std::operator>>(basic_istream<_CharT, _Traits>&, _CharT*)'
+  803 |     operator>>(basic_istream<_CharT, _Traits>& __in, _CharT* __s)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:803:5: note:   template argument deduction/substitution failed:
+..\users_db.cpp:83:22: note:   'std::string' {aka 'std::__cxx11::basic_string<char>'} is not derived from 'std::basic_istream<_CharT, _Traits>'
+   83 |         line >> user.id >> username >> password >> user.allowAnonQs;
+      |                      ^~
+C:/msys64/mingw64/include/c++/12.1.0/istream:825:5: note: candidate: 'template<class _Traits> std::basic_istream<char, _Traits>& std::operator>>(basic_istream<char, _Traits>&, unsigned char*)'
+  825 |     operator>>(basic_istream<char, _Traits>& __in, unsigned char* __s)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:825:5: note:   template argument deduction/substitution failed:
+..\users_db.cpp:83:22: note:   'std::string' {aka 'std::__cxx11::basic_string<char>'} is not derived from 'std::basic_istream<char, _Traits>'
+   83 |         line >> user.id >> username >> password >> user.allowAnonQs;
+      |                      ^~
+C:/msys64/mingw64/include/c++/12.1.0/istream:831:5: note: candidate: 'template<class _Traits> std::basic_istream<char, _Traits>& std::operator>>(basic_istream<char, _Traits>&, signed char*)'
+  831 |     operator>>(basic_istream<char, _Traits>& __in, signed char* __s)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:831:5: note:   template argument deduction/substitution failed:
+..\users_db.cpp:83:22: note:   'std::string' {aka 'std::__cxx11::basic_string<char>'} is not derived from 'std::basic_istream<char, _Traits>'
+   83 |         line >> user.id >> username >> password >> user.allowAnonQs;
+      |                      ^~
+C:/msys64/mingw64/include/c++/12.1.0/istream:985:5: note: candidate: 'template<class _Istream, class _Tp> _Istream&& std::operator>>(_Istream&&, _Tp&&)'
+  985 |     operator>>(_Istream&& __is, _Tp&& __x)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/istream:985:5: note:   template argument deduction/substitution failed:
+C:/msys64/mingw64/include/c++/12.1.0/istream: In substitution of 'template<class _Istream, class _Tp> _Istream&& std::operator>>(_Istream&&, _Tp&&) [with _Istream = std::__cxx11::basic_string<char>&; _Tp = int&]':
+..\users_db.cpp:83:22:   required from here
+C:/msys64/mingw64/include/c++/12.1.0/istream:985:5: error: no type named 'type' in 'struct std::enable_if<false, void>'
+17:35:05 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o users_db.o "..\\users_db.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o signup_handler.o users_db.o 
+17:37:46 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o users_db.o "..\\users_db.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+Info: Nothing to build for askme-project
+Info: Nothing to build for askme-project
+17:39:14 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o users_db.o "..\\users_db.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+19:50:02 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o users_db.o "..\\users_db.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+19:51:32 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o users_db.o "..\\users_db.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+19:54:17 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o users_db.o "..\\users_db.cpp" 
+..\users_db.cpp: In member function 'std::pair<User, bool> UsersDb::get_user_login(User)':
+..\users_db.cpp:81:24: error: no matching function for call to 'getline(std::fstream&, std::string&, const char [2])'
+   81 |     while (std::getline(file_handler, line, ","))
+      |            ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/12.1.0/string:54,
+                 from ..\user.hpp:11,
+                 from ..\users_db.hpp:11,
+                 from ..\users_db.cpp:8:
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.tcc:1012:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> std::basic_istream<_CharT, _Traits>& std::getline(basic_istream<_CharT, _Traits>&, __cxx11::basic_string<_CharT, _Traits, _Allocator>&, _CharT)'
+ 1012 |     getline(basic_istream<_CharT, _Traits>& __in,
+      |     ^~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.tcc:1012:5: note:   template argument deduction/substitution failed:
+..\users_db.cpp:81:24: note:   deduced conflicting types for parameter '_CharT' ('char' and 'const char*')
+   81 |     while (std::getline(file_handler, line, ","))
+      |            ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/12.1.0/string:53:
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.h:3923:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> std::basic_istream<_CharT, _Traits>& std::getline(basic_istream<_CharT, _Traits>&, __cxx11::basic_string<_CharT, _Traits, _Allocator>&)'
+ 3923 |     getline(basic_istream<_CharT, _Traits>& __is,
+      |     ^~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.h:3923:5: note:   template argument deduction/substitution failed:
+..\users_db.cpp:81:24: note:   candidate expects 2 arguments, 3 provided
+   81 |     while (std::getline(file_handler, line, ","))
+      |            ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.h:3931:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> std::basic_istream<_CharT, _Traits>& std::getline(basic_istream<_CharT, _Traits>&&, __cxx11::basic_string<_CharT, _Traits, _Allocator>&, _CharT)'
+ 3931 |     getline(basic_istream<_CharT, _Traits>&& __is,
+      |     ^~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.h:3931:5: note:   template argument deduction/substitution failed:
+..\users_db.cpp:81:24: note:   deduced conflicting types for parameter '_CharT' ('char' and 'const char*')
+   81 |     while (std::getline(file_handler, line, ","))
+      |            ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.h:3938:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> std::basic_istream<_CharT, _Traits>& std::getline(basic_istream<_CharT, _Traits>&&, __cxx11::basic_string<_CharT, _Traits, _Allocator>&)'
+ 3938 |     getline(basic_istream<_CharT, _Traits>&& __is,
+      |     ^~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.h:3938:5: note:   template argument deduction/substitution failed:
+..\users_db.cpp:81:24: note:   candidate expects 2 arguments, 3 provided
+   81 |     while (std::getline(file_handler, line, ","))
+      |            ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+19:54:27 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o users_db.o "..\\users_db.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o signup_handler.o users_db.o 
+C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file askme-project.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+19:54:38 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o users_db.o "..\\users_db.cpp" 
+..\users_db.cpp: In member function 'std::pair<User, bool> UsersDb::get_user_login(User)':
+..\users_db.cpp:81:24: error: no matching function for call to 'getline(std::fstream&, std::string&, const char [2])'
+   81 |     while (std::getline(file_handler, line, ","))
+      |            ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/12.1.0/string:54,
+                 from ..\user.hpp:11,
+                 from ..\users_db.hpp:11,
+                 from ..\users_db.cpp:8:
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.tcc:1012:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> std::basic_istream<_CharT, _Traits>& std::getline(basic_istream<_CharT, _Traits>&, __cxx11::basic_string<_CharT, _Traits, _Allocator>&, _CharT)'
+ 1012 |     getline(basic_istream<_CharT, _Traits>& __in,
+      |     ^~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.tcc:1012:5: note:   template argument deduction/substitution failed:
+..\users_db.cpp:81:24: note:   deduced conflicting types for parameter '_CharT' ('char' and 'const char*')
+   81 |     while (std::getline(file_handler, line, ","))
+      |            ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/12.1.0/string:53:
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.h:3923:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> std::basic_istream<_CharT, _Traits>& std::getline(basic_istream<_CharT, _Traits>&, __cxx11::basic_string<_CharT, _Traits, _Allocator>&)'
+ 3923 |     getline(basic_istream<_CharT, _Traits>& __is,
+      |     ^~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.h:3923:5: note:   template argument deduction/substitution failed:
+..\users_db.cpp:81:24: note:   candidate expects 2 arguments, 3 provided
+   81 |     while (std::getline(file_handler, line, ","))
+      |            ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.h:3931:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> std::basic_istream<_CharT, _Traits>& std::getline(basic_istream<_CharT, _Traits>&&, __cxx11::basic_string<_CharT, _Traits, _Allocator>&, _CharT)'
+ 3931 |     getline(basic_istream<_CharT, _Traits>&& __is,
+      |     ^~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.h:3931:5: note:   template argument deduction/substitution failed:
+..\users_db.cpp:81:24: note:   deduced conflicting types for parameter '_CharT' ('char' and 'const char*')
+   81 |     while (std::getline(file_handler, line, ","))
+      |            ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.h:3938:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> std::basic_istream<_CharT, _Traits>& std::getline(basic_istream<_CharT, _Traits>&&, __cxx11::basic_string<_CharT, _Traits, _Allocator>&)'
+ 3938 |     getline(basic_istream<_CharT, _Traits>&& __is,
+      |     ^~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.h:3938:5: note:   template argument deduction/substitution failed:
+..\users_db.cpp:81:24: note:   candidate expects 2 arguments, 3 provided
+   81 |     while (std::getline(file_handler, line, ","))
+      |            ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+19:54:45 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o users_db.o "..\\users_db.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+19:58:30 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o users_db.o "..\\users_db.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o signup_handler.o users_db.o 
+C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file askme-project.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+19:58:33 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+20:00:04 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o users_db.o "..\\users_db.cpp" 
+..\users_db.cpp: In member function 'std::pair<User, bool> UsersDb::get_user_login(User)':
+..\users_db.cpp:85:21: error: no matching function for call to 'getline(std::string&, int&, char)'
+   85 |         std::getline(line, user.id, ',');
+      |         ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/12.1.0/string:54,
+                 from ..\user.hpp:11,
+                 from ..\users_db.hpp:11,
+                 from ..\users_db.cpp:8:
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.tcc:1012:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> std::basic_istream<_CharT, _Traits>& std::getline(basic_istream<_CharT, _Traits>&, __cxx11::basic_string<_CharT, _Traits, _Allocator>&, _CharT)'
+ 1012 |     getline(basic_istream<_CharT, _Traits>& __in,
+      |     ^~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.tcc:1012:5: note:   template argument deduction/substitution failed:
+..\users_db.cpp:85:21: note:   'std::string' {aka 'std::__cxx11::basic_string<char>'} is not derived from 'std::basic_istream<_CharT, _Traits>'
+   85 |         std::getline(line, user.id, ',');
+      |         ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/12.1.0/string:53:
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.h:3923:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> std::basic_istream<_CharT, _Traits>& std::getline(basic_istream<_CharT, _Traits>&, __cxx11::basic_string<_CharT, _Traits, _Allocator>&)'
+ 3923 |     getline(basic_istream<_CharT, _Traits>& __is,
+      |     ^~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.h:3923:5: note:   template argument deduction/substitution failed:
+..\users_db.cpp:85:21: note:   'std::string' {aka 'std::__cxx11::basic_string<char>'} is not derived from 'std::basic_istream<_CharT, _Traits>'
+   85 |         std::getline(line, user.id, ',');
+      |         ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.h:3931:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> std::basic_istream<_CharT, _Traits>& std::getline(basic_istream<_CharT, _Traits>&&, __cxx11::basic_string<_CharT, _Traits, _Allocator>&, _CharT)'
+ 3931 |     getline(basic_istream<_CharT, _Traits>&& __is,
+      |     ^~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.h:3931:5: note:   template argument deduction/substitution failed:
+..\users_db.cpp:85:21: note:   'std::string' {aka 'std::__cxx11::basic_string<char>'} is not derived from 'std::basic_istream<_CharT, _Traits>'
+   85 |         std::getline(line, user.id, ',');
+      |         ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.h:3938:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> std::basic_istream<_CharT, _Traits>& std::getline(basic_istream<_CharT, _Traits>&&, __cxx11::basic_string<_CharT, _Traits, _Allocator>&)'
+ 3938 |     getline(basic_istream<_CharT, _Traits>&& __is,
+      |     ^~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.h:3938:5: note:   template argument deduction/substitution failed:
+..\users_db.cpp:85:21: note:   'std::string' {aka 'std::__cxx11::basic_string<char>'} is not derived from 'std::basic_istream<_CharT, _Traits>'
+   85 |         std::getline(line, user.id, ',');
+      |         ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+20:00:24 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o users_db.o "..\\users_db.cpp" 
+..\users_db.cpp: In member function 'std::pair<User, bool> UsersDb::get_user_login(User)':
+..\users_db.cpp:85:21: error: no matching function for call to 'getline(std::stringstream&, int&, char)'
+   85 |         std::getline(ss, user.id, ',');
+      |         ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/12.1.0/string:54,
+                 from ..\user.hpp:11,
+                 from ..\users_db.hpp:11,
+                 from ..\users_db.cpp:8:
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.tcc:1012:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> std::basic_istream<_CharT, _Traits>& std::getline(basic_istream<_CharT, _Traits>&, __cxx11::basic_string<_CharT, _Traits, _Allocator>&, _CharT)'
+ 1012 |     getline(basic_istream<_CharT, _Traits>& __in,
+      |     ^~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.tcc:1012:5: note:   template argument deduction/substitution failed:
+..\users_db.cpp:85:21: note:   mismatched types 'std::__cxx11::basic_string<_CharT, _Traits, _Allocator>' and 'int'
+   85 |         std::getline(ss, user.id, ',');
+      |         ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/12.1.0/string:53:
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.h:3923:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> std::basic_istream<_CharT, _Traits>& std::getline(basic_istream<_CharT, _Traits>&, __cxx11::basic_string<_CharT, _Traits, _Allocator>&)'
+ 3923 |     getline(basic_istream<_CharT, _Traits>& __is,
+      |     ^~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.h:3923:5: note:   template argument deduction/substitution failed:
+..\users_db.cpp:85:21: note:   mismatched types 'std::__cxx11::basic_string<_CharT, _Traits, _Allocator>' and 'int'
+   85 |         std::getline(ss, user.id, ',');
+      |         ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.h:3931:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> std::basic_istream<_CharT, _Traits>& std::getline(basic_istream<_CharT, _Traits>&&, __cxx11::basic_string<_CharT, _Traits, _Allocator>&, _CharT)'
+ 3931 |     getline(basic_istream<_CharT, _Traits>&& __is,
+      |     ^~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.h:3931:5: note:   template argument deduction/substitution failed:
+..\users_db.cpp:85:21: note:   mismatched types 'std::__cxx11::basic_string<_CharT, _Traits, _Allocator>' and 'int'
+   85 |         std::getline(ss, user.id, ',');
+      |         ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.h:3938:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> std::basic_istream<_CharT, _Traits>& std::getline(basic_istream<_CharT, _Traits>&&, __cxx11::basic_string<_CharT, _Traits, _Allocator>&)'
+ 3938 |     getline(basic_istream<_CharT, _Traits>&& __is,
+      |     ^~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.h:3938:5: note:   template argument deduction/substitution failed:
+..\users_db.cpp:85:21: note:   mismatched types 'std::__cxx11::basic_string<_CharT, _Traits, _Allocator>' and 'int'
+   85 |         std::getline(ss, user.id, ',');
+      |         ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+20:00:49 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o users_db.o "..\\users_db.cpp" 
+..\users_db.cpp: In member function 'std::pair<User, bool> UsersDb::get_user_login(User)':
+..\users_db.cpp:85:22: error: 'cin' was not declared in this scope; did you mean 'std::cin'?
+   85 |         std::getline(cin, user.id, ',');
+      |                      ^~~
+      |                      std::cin
+In file included from ..\users_db.cpp:10:
+C:/msys64/mingw64/include/c++/12.1.0/iostream:60:18: note: 'std::cin' declared here
+   60 |   extern istream cin;           /// Linked to standard input
+      |                  ^~~
+20:00:59 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o users_db.o "..\\users_db.cpp" 
+..\users_db.cpp: In member function 'std::pair<User, bool> UsersDb::get_user_login(User)':
+..\users_db.cpp:85:21: error: no matching function for call to 'getline(std::istream&, int&, char)'
+   85 |         std::getline(std::cin, user.id, ',');
+      |         ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/12.1.0/string:54,
+                 from ..\user.hpp:11,
+                 from ..\users_db.hpp:11,
+                 from ..\users_db.cpp:8:
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.tcc:1012:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> std::basic_istream<_CharT, _Traits>& std::getline(basic_istream<_CharT, _Traits>&, __cxx11::basic_string<_CharT, _Traits, _Allocator>&, _CharT)'
+ 1012 |     getline(basic_istream<_CharT, _Traits>& __in,
+      |     ^~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.tcc:1012:5: note:   template argument deduction/substitution failed:
+..\users_db.cpp:85:21: note:   mismatched types 'std::__cxx11::basic_string<_CharT, _Traits, _Allocator>' and 'int'
+   85 |         std::getline(std::cin, user.id, ',');
+      |         ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/12.1.0/string:53:
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.h:3923:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> std::basic_istream<_CharT, _Traits>& std::getline(basic_istream<_CharT, _Traits>&, __cxx11::basic_string<_CharT, _Traits, _Allocator>&)'
+ 3923 |     getline(basic_istream<_CharT, _Traits>& __is,
+      |     ^~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.h:3923:5: note:   template argument deduction/substitution failed:
+..\users_db.cpp:85:21: note:   mismatched types 'std::__cxx11::basic_string<_CharT, _Traits, _Allocator>' and 'int'
+   85 |         std::getline(std::cin, user.id, ',');
+      |         ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.h:3931:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> std::basic_istream<_CharT, _Traits>& std::getline(basic_istream<_CharT, _Traits>&&, __cxx11::basic_string<_CharT, _Traits, _Allocator>&, _CharT)'
+ 3931 |     getline(basic_istream<_CharT, _Traits>&& __is,
+      |     ^~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.h:3931:5: note:   template argument deduction/substitution failed:
+..\users_db.cpp:85:21: note:   mismatched types 'std::__cxx11::basic_string<_CharT, _Traits, _Allocator>' and 'int'
+   85 |         std::getline(std::cin, user.id, ',');
+      |         ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.h:3938:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> std::basic_istream<_CharT, _Traits>& std::getline(basic_istream<_CharT, _Traits>&&, __cxx11::basic_string<_CharT, _Traits, _Allocator>&)'
+ 3938 |     getline(basic_istream<_CharT, _Traits>&& __is,
+      |     ^~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.h:3938:5: note:   template argument deduction/substitution failed:
+..\users_db.cpp:85:21: note:   mismatched types 'std::__cxx11::basic_string<_CharT, _Traits, _Allocator>' and 'int'
+   85 |         std::getline(std::cin, user.id, ',');
+      |         ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
+20:02:25 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o users_db.o "..\\users_db.cpp" 
+..\users_db.cpp: In member function 'std::pair<User, bool> UsersDb::get_user_login(User)':
+..\users_db.cpp:83:14: warning: unused variable 'token' [-Wunused-variable]
+   83 |         char token;
+      |              ^~~~~
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+20:03:27 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o users_db.o "..\\users_db.cpp" 
+..\users_db.cpp: In member function 'std::pair<User, bool> UsersDb::get_user_login(User)':
+..\users_db.cpp:83:14: warning: unused variable 'token' [-Wunused-variable]
+   83 |         char token;
+      |              ^~~~~
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o signup_handler.o users_db.o 
+C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file askme-project.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+20:03:31 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+20:04:13 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o users_db.o "..\\users_db.cpp" 
+..\users_db.cpp: In member function 'std::pair<User, bool> UsersDb::get_user_login(User)':
+..\users_db.cpp:86:21: error: no matching function for call to 'getline(std::istringstream&, int&, char)'
+   86 |         std::getline(iss, user.id, ',');
+      |         ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/12.1.0/string:54,
+                 from ..\user.hpp:11,
+                 from ..\users_db.hpp:11,
+                 from ..\users_db.cpp:8:
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.tcc:1012:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> std::basic_istream<_CharT, _Traits>& std::getline(basic_istream<_CharT, _Traits>&, __cxx11::basic_string<_CharT, _Traits, _Allocator>&, _CharT)'
+ 1012 |     getline(basic_istream<_CharT, _Traits>& __in,
+      |     ^~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.tcc:1012:5: note:   template argument deduction/substitution failed:
+..\users_db.cpp:86:21: note:   mismatched types 'std::__cxx11::basic_string<_CharT, _Traits, _Allocator>' and 'int'
+   86 |         std::getline(iss, user.id, ',');
+      |         ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/12.1.0/string:53:
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.h:3923:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> std::basic_istream<_CharT, _Traits>& std::getline(basic_istream<_CharT, _Traits>&, __cxx11::basic_string<_CharT, _Traits, _Allocator>&)'
+ 3923 |     getline(basic_istream<_CharT, _Traits>& __is,
+      |     ^~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.h:3923:5: note:   template argument deduction/substitution failed:
+..\users_db.cpp:86:21: note:   mismatched types 'std::__cxx11::basic_string<_CharT, _Traits, _Allocator>' and 'int'
+   86 |         std::getline(iss, user.id, ',');
+      |         ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.h:3931:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> std::basic_istream<_CharT, _Traits>& std::getline(basic_istream<_CharT, _Traits>&&, __cxx11::basic_string<_CharT, _Traits, _Allocator>&, _CharT)'
+ 3931 |     getline(basic_istream<_CharT, _Traits>&& __is,
+      |     ^~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.h:3931:5: note:   template argument deduction/substitution failed:
+..\users_db.cpp:86:21: note:   mismatched types 'std::__cxx11::basic_string<_CharT, _Traits, _Allocator>' and 'int'
+   86 |         std::getline(iss, user.id, ',');
+      |         ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.h:3938:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> std::basic_istream<_CharT, _Traits>& std::getline(basic_istream<_CharT, _Traits>&&, __cxx11::basic_string<_CharT, _Traits, _Allocator>&)'
+ 3938 |     getline(basic_istream<_CharT, _Traits>&& __is,
+      |     ^~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.h:3938:5: note:   template argument deduction/substitution failed:
+..\users_db.cpp:86:21: note:   mismatched types 'std::__cxx11::basic_string<_CharT, _Traits, _Allocator>' and 'int'
+   86 |         std::getline(iss, user.id, ',');
+      |         ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~
+..\users_db.cpp:83:14: warning: unused variable 'token' [-Wunused-variable]
+   83 |         char token;
+      |              ^~~~~
+20:04:54 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o users_db.o "..\\users_db.cpp" 
+..\users_db.cpp: In member function 'std::pair<User, bool> UsersDb::get_user_login(User)':
+..\users_db.cpp:83:14: warning: unused variable 'token' [-Wunused-variable]
+   83 |         char token;
+      |              ^~~~~
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o signup_handler.o users_db.o 
+C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file askme-project.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+20:05:00 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o signup_handler.o users_db.o 
+20:10:56 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o users_db.o "..\\users_db.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+20:12:23 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o users_db.o "..\\users_db.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o signup_handler.o users_db.o 
+C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file askme-project.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+20:12:40 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o users_db.o "..\\users_db.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+20:13:33 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o users_db.o "..\\users_db.cpp" 
+..\users_db.cpp:89:43: error: empty character constant
+   89 |         std::getline(iss, allowAnonQsStr, '');
+      |                                           ^~
+20:13:42 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o users_db.o "..\\users_db.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+20:19:39 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o signup_handler.o "..\\signup_handler.cpp" 
+..\signup_handler.cpp: In member function 'bool Signup_handler::signup()':
+..\signup_handler.cpp:16:13: warning: unused variable 'id' [-Wunused-variable]
+   16 |         int id;
+      |             ^~
+..\signup_handler.cpp:18:14: warning: unused variable 'allowAnonQs' [-Wunused-variable]
+   18 |         bool allowAnonQs;
+      |              ^~~~~~~~~~~
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o database_manager.o "..\\database_manager.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o login_handler.o "..\\login_handler.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o users_db.o "..\\users_db.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o signup_handler.o users_db.o 
+20:21:22 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o signup_handler.o "..\\signup_handler.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+20:25:13 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o users_db.o "..\\users_db.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+20:26:31 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o users_db.o "..\\users_db.cpp" 
+..\users_db.cpp: In member function 'int UsersDb::generate_id()':
+..\users_db.cpp:36:9: error: 'cout' was not declared in this scope; did you mean 'std::cout'?
+   36 |         cout<<stoi(idStr)<<'\n';
+      |         ^~~~
+      |         std::cout
+In file included from ..\users_db.cpp:10:
+C:/msys64/mingw64/include/c++/12.1.0/iostream:61:18: note: 'std::cout' declared here
+   61 |   extern ostream cout;          /// Linked to standard output
+      |                  ^~~~
+20:26:38 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o users_db.o "..\\users_db.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+20:27:29 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o users_db.o "..\\users_db.cpp" 
+..\users_db.cpp: In member function 'int UsersDb::generate_id()':
+..\users_db.cpp:34:17: error: 'cout' was not declared in this scope; did you mean 'std::cout'?
+   34 |                 cout<<idStr<<'\n';
+      |                 ^~~~
+      |                 std::cout
+In file included from ..\users_db.cpp:10:
+C:/msys64/mingw64/include/c++/12.1.0/iostream:61:18: note: 'std::cout' declared here
+   61 |   extern ostream cout;          /// Linked to standard output
+      |                  ^~~~
+20:27:35 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o users_db.o "..\\users_db.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+20:30:07 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o users_db.o "..\\users_db.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+Info: Nothing to build for askme-project
+Info: Nothing to build for askme-project
+20:32:06 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o users_db.o "..\\users_db.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+20:37:05 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o users_db.o "..\\users_db.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+20:38:11 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o users_db.o "..\\users_db.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project

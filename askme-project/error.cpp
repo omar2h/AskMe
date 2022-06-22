@@ -7,13 +7,14 @@
 
 #include "error.hpp"
 
-#include<iostream>
+#include <iostream>
 
-void Error::print(int c){
-	if(c==1)
+void Error::print(int c)
+{
+	if (c == 1)
 		std::cout << "---------- Invalid choice -----------\n\n";
-	else if(c==2)
-		std::cout<<"---------- Wrong UserName/Password ------------\n\n";
+	else if (c == 2)
+		std::cout << "---------- Wrong UserName/Password ------------\n\n";
+	else if (c == 3)
+		std::cout << "---------- User ID doesn't seem to exist ------------\n\n";
 }
-
-

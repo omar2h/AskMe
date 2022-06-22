@@ -1,0 +1,20 @@
+/*
+ * users_db.hpp
+ *
+ *  Created on: Jun 22, 2022
+ *      Author: omarh
+ */
+
+#ifndef USERS_DB_HPP_
+#define USERS_DB_HPP_
+
+#include "user.hpp"
+
+struct users_db{
+	User get_user(int id);
+	void print();
+};
+
+
+
+#endif /* USERS_DB_HPP_ */

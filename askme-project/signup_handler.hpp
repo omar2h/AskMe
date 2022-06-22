@@ -16,17 +16,7 @@ struct Signup_handler
 	 * @param non
 	 * @return successful sign up or not
 	 */
-    bool signup();
-
-    /**
-     * generate id for new user
-     *
-     * @param non
-     * @return new id
-     */
-    int generate_id();
+	bool signup();
 };
-
-
 
 #endif /* SIGNUP_HANDLER_HPP_ */

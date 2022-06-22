@@ -1,0 +1,40 @@
+/*
+ * users_db.cpp
+ *
+ *  Created on: Jun 22, 2022
+ *      Author: omarh
+ */
+#include <iostream>
+
+#include "users_db.hpp"
+
+std::pair<User, bool> UsersDb::get_user(int id){
+	User user;
+	std::pair<User, bool> userPair;
+	userPair.second = 0;
+
+	std::string path = "users.txt";
+	std::fstream file_handler(path.c_str());
+
+	if (file_handler.fail())
+	{
+		std::cout << "\n -------- Can't open file -----------\n\n";
+		return 0;
+	}
+
+	std::string line;
+
+	while (getline(file_handler, line, ','))
+	{
+		std::stringstream iss(line);
+		iss >> user.id >> user.username >> user.password>> user.allowAnonQs;
+		if(user.id == id){
+			userPair.first = user;
+			userPair.second = 1;
+			return userPair;
+		}
+	}
+	return userPair;
+}
+
+

@@ -21,14 +21,6 @@ struct Login_handler
      * @return pair of user and whether successfully logged in or not
      */
     std::pair<User, bool> login();
-
-    /**
-     * check whether user exist in database
-     *
-     * @param user
-     * @return user id if exist or -1 if not
-     */
-    std::pair<User, bool> user_exists(User user);
 };
 
 #endif /* LOGIN_HANDLER_HPP_ */
