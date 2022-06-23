@@ -12,7 +12,9 @@
 
 struct QuestionsDb
 {
-	Question get_question(int id);
+	int generate_id();
+	std::pair<Question, bool> get_question(const int);
+	bool add_question(Question &);
 	void print();
 };
 

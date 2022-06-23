@@ -13,9 +13,11 @@
 
 struct DbManager
 {
-
 	UsersDb usersDb;
 	QuestionsDb questionsDb;
+
+	bool check_user_has_q(const int, const int);
+	bool check_user_exist(User &);
 };
 
 #endif /* DATABASE_MANAGER_HPP_ */

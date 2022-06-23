@@ -27,7 +27,7 @@ struct App
 	 * @param Logged in user
 	 * @return non
 	 */
-	void main_menu(User);
+	void main_menu(User&);
 
 	/**
 	 * verify login user input choice at login menu choice between 1-3

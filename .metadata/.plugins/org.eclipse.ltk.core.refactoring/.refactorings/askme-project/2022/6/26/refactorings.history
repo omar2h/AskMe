@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;askme-project/question_db.cpp&apos; to &apos;questions_db.cpp&apos;" description="Rename resource &apos;question_db.cpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="question_db.cpp" name="questions_db.cpp" stamp="1655971837987" updateReferences="true"/>
+</session>

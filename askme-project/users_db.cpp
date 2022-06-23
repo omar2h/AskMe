@@ -36,7 +36,7 @@ int UsersDb::generate_id()
 	return stoi(idStr) + 1;
 }
 
-std::pair<User, bool> UsersDb::get_user(int id)
+std::pair<User, bool> UsersDb::get_user(const int id)
 {
 	User user;
 	std::pair<User, bool> userPair;
@@ -73,9 +73,9 @@ std::pair<User, bool> UsersDb::get_user(int id)
 	return userPair;
 }
 
-std::pair<User, bool> UsersDb::get_user_login(User &user)
+std::pair<User, bool> UsersDb::get_user_login(std::string username, std::string password)
 {
-	std::string username, password;
+	std::string tusername, tpassword;
 
 	std::pair<User, bool> userExistPair;
 	userExistPair.second = 0;
@@ -96,15 +96,14 @@ std::pair<User, bool> UsersDb::get_user_login(User &user)
 		std::istringstream iss(line);
 
 		std::getline(iss, idStr, ',');
-		std::getline(iss, username, ',');
-		std::getline(iss, password, ',');
+		std::getline(iss, tusername, ',');
+		std::getline(iss, tpassword, ',');
 		std::getline(iss, allowAnonQsStr, ',');
 
-		if (user.username == username && user.password == password)
+		if (username == tusername && password == tpassword)
 		{
-			user.id = stoi(idStr);
-			user.allowAnonQs = stoi(allowAnonQsStr);
-			userExistPair.first = user;
+			userExistPair.first.id = stoi(idStr);
+			userExistPair.first.allowAnonQs = stoi(allowAnonQsStr);
 			userExistPair.second = 1;
 			return userExistPair;
 		}
@@ -112,7 +111,7 @@ std::pair<User, bool> UsersDb::get_user_login(User &user)
 	return userExistPair;
 }
 
-bool UsersDb::add_user(User user)
+bool UsersDb::add_user(User &user)
 {
 	user.id = generate_id();
 	std::ofstream fout("users.txt", std::ios_base::app);

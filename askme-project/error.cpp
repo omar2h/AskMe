@@ -9,12 +9,14 @@
 
 #include <iostream>
 
-void Error::print(int c)
+void Error::print(const int c)
 {
 	if (c == 1)
-		std::cout << "---------- Invalid choice -----------\n\n";
+		std::cout << "\n---------- Invalid choice -----------\n\n";
 	else if (c == 2)
-		std::cout << "---------- Wrong UserName/Password ------------\n\n";
+		std::cout << "\n---------- Wrong UserName/Password ------------\n\n";
 	else if (c == 3)
-		std::cout << "---------- User ID doesn't seem to exist ------------\n\n";
+		std::cout << "\n---------- User ID doesn't seem to exist ------------\n\n";
+	else if (c == 4)
+		std::cout << "\n---------- Question ID doesn't seem to exist for this user ------------\n\n";
 }

@@ -18,9 +18,9 @@ struct Login_handler
      * logs in user
      *
      * @param non
-     * @return pair of user and whether successfully logged in or not
+     * @return bool indicating successful login or not
      */
-    std::pair<User, bool> login();
+    bool login(User &);
 };
 
 #endif /* LOGIN_HANDLER_HPP_ */

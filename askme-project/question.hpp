@@ -14,7 +14,7 @@ struct Question
 {
 	int id, threadId, fromId, toId;
 	bool answered;
-	std::string text;
+	std::string text, ans = "";
 };
 
 #endif /* QUESTION_HPP_ */

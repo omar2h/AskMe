@@ -39,6 +39,7 @@ bool App::verify_main_choice(int choice)
 std::string App::ask_new_q()
 {
 	std::string q;
+	std::cin.ignore();
 	std::cout << "Enter Your Question: ";
 	std::getline(std::cin, q);
 	return q;
@@ -47,34 +48,54 @@ std::string App::ask_new_q()
 void App::ask(User user)
 {
 	Question q;
-	std::pair<User, bool> userPair;
+	User toUser;
+	q.fromId = user.id;
 	Error error;
 	DbManager DB;
-	int id;
+	int uId;
 	while (1)
 	{
 		std::cout << "Enter User ID You Want to Ask or -1 to cancel:  ";
-		std::cin >> id;
-		if (id == -1)
+		std::cin >> uId;
+		if (uId == -1)
 			return;
 
-		userPair = DB.usersDb.get_user(id);
-		if (userPair.second)
+		toUser.id = uId;
+		if (DB.check_user_exist(toUser))
 			break;
 		error.print(3);
 	}
 
-	if (!userPair.first.allowAnonQs)
+	q.toId = toUser.id;
+	if (!toUser.allowAnonQs)
 		std::cout << "Note: This User doesn't Allow Anonymous Questions\n";
 	int qId;
-	std::cout << "Enter question thread ID or -1 to Ask a New Question: ";
-	std::cin >> qId;
-	if (qId == -1)
-		q.text = ask_new_q(), q.threadId = -1;
-	else
+	while (1)
 	{
-		// qId_exist();
+		std::cout << "Enter question thread ID or -1 to Ask a New Question: ";
+		std::cin >> qId;
+		if (qId == -1)
+		{
+			q.text = ask_new_q(), q.threadId = -1, q.answered = 0;
+			break;
+		}
+		else
+		{
+			if (DB.check_user_has_q(qId, uId))
+			{
+				q.threadId = qId, q.answered = 0;
+				q.text = ask_new_q();
+				break;
+			}
+			else
+			{
+				error.print(4);
+			}
+		}
 	}
+
+	DB.questionsDb.add_question(q);
+	std::cout << "\n\n--------- Question Saved ----------\n\n";
 }
 
 void App::list_users()
@@ -83,7 +104,7 @@ void App::list_users()
 	DB.usersDb.print();
 }
 
-void App::main_menu(User user)
+void App::main_menu(User &user)
 {
 	Menu menu;
 	Error error;
@@ -161,10 +182,8 @@ void App::run()
 
 			if (choice == 1)
 			{
-				userLoginPair = login_handler.login();
-				if (userLoginPair.second)
+				if (login_handler.login(user))
 				{
-					user = userLoginPair.first;
 					std::cout << "\n-------------- Logged In Successfully -------------\n\n";
 					main_menu(user);
 					break;
@@ -175,8 +194,8 @@ void App::run()
 
 			else if (choice == 2)
 			{
-				if (!signup_handler.signup())
-					continue;
+				if (signup_handler.signup())
+					std::cout << "\n-------------- Signed Up Successfully -------------\n\n";
 			}
 			else if (choice == 3)
 				exit(0);

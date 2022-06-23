@@ -26,7 +26,7 @@ struct UsersDb
 	 * @param user id
 	 * @return pair of user and bool if user is found via id
 	 */
-	std::pair<User, bool> get_user(int id);
+	std::pair<User, bool> get_user(const int id);
 
 	/**
 	 * save user to db
@@ -34,7 +34,7 @@ struct UsersDb
 	 * @param user to save
 	 * @return bool whether user is saved or not
 	 */
-	bool add_user(User);
+	bool add_user(User &);
 
 	/**
 	 * get user from db using username and password
@@ -42,7 +42,7 @@ struct UsersDb
 	 * @param User having username and password
 	 * @return pair of user and bool if user is found via username and password
 	 */
-	std::pair<User, bool> get_user_login(User &);
+	std::pair<User, bool> get_user_login(const std::string, const std::string);
 
 	/**
 	 * print all users id and username

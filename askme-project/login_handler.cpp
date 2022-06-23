@@ -8,15 +8,20 @@
 #include "login_handler.hpp"
 #include "database_manager.hpp"
 
-std::pair<User, bool> Login_handler::login()
+bool Login_handler::login(User &user)
 {
     DbManager DB;
+    std::string username, password;
     std::pair<User, bool> userLoginPair;
 
     std::cout << "Please enter UserName and Password: ";
-    std::cin >> userLoginPair.first.username >> userLoginPair.first.password;
+    std::cin >> username >> password;
 
-    userLoginPair = DB.usersDb.get_user_login(userLoginPair.first);
-    std::cout << "*******" << userLoginPair.first.username << '\n';
-    return userLoginPair;
+    userLoginPair = DB.usersDb.get_user_login(username, password);
+    if (userLoginPair.second)
+    {
+        user = userLoginPair.first;
+        return 1;
+    }
+    return 0;
 }

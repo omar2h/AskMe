@@ -15,7 +15,7 @@ struct Error{
 	 * @param error number
 	 * @return non
 	 */
-	void print(int);
+	void print(const int);
 };
 
 

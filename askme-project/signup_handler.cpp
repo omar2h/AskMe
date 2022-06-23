@@ -29,7 +29,6 @@ bool Signup_handler::signup()
 
 	if (DB.usersDb.add_user(user))
 	{
-		std::cout << "\n---------------- Signed Up Successfully ------------- \n\n";
 		return 1;
 	}
 

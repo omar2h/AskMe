@@ -1,3 +1,4 @@
+//org.eclipse.ui.commands/state/org.eclipse.ui.navigator.resources.nested.changeProjectPresentation/org.eclipse.ui.commands.radioState=false
 ACTIVE_HYPERLINK_COLOR=138,201,242
 CONFLICTING_COLOR=240,15,66
 CONTENT_ASSIST_BACKGROUND_COLOR=52,57,61
@@ -11,6 +12,7 @@ INCOMING_COLOR=31,179,235
 OPEN_ON_SINGLE_CLICK=true
 OUTGOING_COLOR=238,238,238
 RESOLVED_COLOR=108,210,17
+UIActivities.org.eclipse.cdt.debug.dsfgdbActivity=true
 eclipse.preferences.version=1
 org.eclipse.cdt.debug.ui.ModulesDetailPaneFont=1|Consolas|10.8|0|WINDOWS|1|-18|0|0|0|400|0|0|0|0|3|2|1|49|Consolas;
 org.eclipse.cdt.internal.ui.compare.AsmMergeViewer=1|Consolas|10.8|0|WINDOWS|1|-18|0|0|0|400|0|0|0|0|3|2|1|49|Consolas;

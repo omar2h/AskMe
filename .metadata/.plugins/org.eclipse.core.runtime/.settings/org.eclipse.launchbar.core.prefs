@@ -1,8 +1,10 @@
 LaunchTargetManager/configs/Askme.exe=org.eclipse.launchbar.core.launchTargetType.local\:Local
+LaunchTargetManager/configs/Askme.exe\ (1)=org.eclipse.launchbar.core.launchTargetType.local\:Local
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
-configDescList=org.eclipse.launchbar.core.descriptorType.default\:Askme.exe
+configDescList=org.eclipse.launchbar.core.descriptorType.default\:Askme.exe (1),org.eclipse.launchbar.core.descriptorType.default\:Askme.exe
 eclipse.preferences.version=1
+org.eclipse.launchbar.core.descriptorType.default\:Askme.exe\ (1)/activeLaunchMode=run
 org.eclipse.launchbar.core.descriptorType.default\:Askme.exe/activeLaunchMode=run
 org.eclipse.launchbar.core.descriptorType.default\:Askme.exe/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local

@@ -18,7 +18,7 @@ struct Menu
 	 * @param menu string to display
 	 * @return non
 	 */
-	void print(std::string);
+	void print(const std::string);
 
 	/**
 	 * prompts user to enter choice
@@ -26,7 +26,7 @@ struct Menu
 	 * @param menu string
 	 * @return user choice
 	 */
-	int get_choice(std::string);
+	int get_choice(const std::string);
 
 	/**
 	 * displays first menu login

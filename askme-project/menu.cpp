@@ -34,12 +34,12 @@ int Menu::menu_main()
     return get_choice(menuList);
 }
 
-void Menu::print(std::string menuList)
+void Menu::print(const std::string menuList)
 {
     std::cout << menuList;
 }
 
-int Menu::get_choice(std::string menuList)
+int Menu::get_choice(const std::string menuList)
 {
     int choice;
     print(menuList);
