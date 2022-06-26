@@ -1445,3 +1445,989 @@ Info: Internal Builder is used for build
 g++ -O0 -g3 -Wall -c -fmessage-length=0 -o signup_handler.o "..\\signup_handler.cpp" 
 g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o questions_db.o signup_handler.o users_db.o 
 Info: Nothing to build for askme-project
+11:01:06 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o users_db.o "..\\users_db.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o questions_db.o "..\\questions_db.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o signup_handler.o "..\\signup_handler.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o database_manager.o "..\\database_manager.cpp" 
+..\database_manager.cpp: In member function 'std::map<int, std::vector<Question> > DbManager::get_all_threads(int)':
+..\database_manager.cpp:35:23: warning: comparison of integer expressions of different signedness: 'int' and 'std::vector<Question>::size_type' {aka 'long long unsigned int'} [-Wsign-compare]
+   35 |         for(int i=0; i<questions.size(); i++){
+      |                      ~^~~~~~~~~~~~~~~~~
+..\database_manager.cpp:43:1: warning: control reaches end of non-void function [-Wreturn-type]
+   43 | }
+      | ^
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+..\app.cpp: In member function 'void App::main_menu(User&)':
+..\app.cpp:142:49: error: no matching function for call to 'App::print_questions_received()'
+  142 |                         print_questions_received();
+      |                         ~~~~~~~~~~~~~~~~~~~~~~~~^~
+..\app.cpp:48:6: note: candidate: 'void App::print_questions_received(int)'
+   48 | void App::print_questions_received(int uId){
+      |      ^~~
+..\app.cpp:48:6: note:   candidate expects 1 argument, 0 provided
+11:02:19 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o login_handler.o "..\\login_handler.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o database_manager.o "..\\database_manager.cpp" 
+..\database_manager.cpp: In member function 'std::map<int, std::vector<Question> > DbManager::get_all_threads(int)':
+..\database_manager.cpp:43:1: warning: control reaches end of non-void function [-Wreturn-type]
+   43 | }
+      | ^
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o questions_db.o signup_handler.o users_db.o 
+11:02:42 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o database_manager.o "..\\database_manager.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+18:12:54 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+18:14:37 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+..\app.cpp:56:28: warning: multi-character character constant [-Wmultichar]
+   56 |                 std::cout<<'\u2551';
+      |                            ^~~~~~~~
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o questions_db.o signup_handler.o users_db.o 
+C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file askme-project.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+18:14:46 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+18:15:50 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+..\app.cpp:56:28: warning: multi-character character constant [-Wmultichar]
+   56 |                 std::cout<<'186';
+      |                            ^~~~~
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o questions_db.o signup_handler.o users_db.o 
+C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file askme-project.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+18:15:54 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+18:16:38 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+..\app.cpp:56:34: warning: multi-character character constant [-Wmultichar]
+   56 |                 std::cout<<(char)'186';
+      |                                  ^~~~~
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o questions_db.o signup_handler.o users_db.o 
+C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file askme-project.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+18:16:41 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+18:18:13 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+18:20:55 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+18:23:09 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+18:24:17 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o questions_db.o signup_handler.o users_db.o 
+C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file askme-project.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+18:24:22 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+Info: Nothing to build for askme-project
+Info: Nothing to build for askme-project
+18:30:47 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o questions_db.o signup_handler.o users_db.o 
+C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file askme-project.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+18:30:51 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+18:31:35 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+18:32:16 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+18:32:43 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+18:34:25 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+18:34:58 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+18:35:21 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+18:36:00 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+18:37:03 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+..\app.cpp: In member function 'void App::print_questions_received(int)':
+..\app.cpp:59:39: error: invalid operands of types 'const char [2]' and 'const char [1]' to binary 'operator/'
+   59 |                         std::cout<<"/"/"";
+      |                                    ~~~^~~
+      |                                    |   |
+      |                                    |   const char [1]
+      |                                    const char [2]
+18:37:10 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+..\app.cpp: In member function 'void App::print_questions_received(int)':
+..\app.cpp:59:39: error: invalid operands of types 'const char [2]' and 'const char [1]' to binary 'operator/'
+   59 |                         std::cout<<"/"/"";
+      |                                    ~~~^~~
+      |                                    |   |
+      |                                    |   const char [1]
+      |                                    const char [2]
+18:37:27 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+18:38:13 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+18:38:50 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+18:49:38 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o database_manager.o "..\\database_manager.cpp" 
+In file included from C:/msys64/mingw64/include/c++/12.1.0/string:48,
+                 from C:/msys64/mingw64/include/c++/12.1.0/bits/locale_classes.h:40,
+                 from C:/msys64/mingw64/include/c++/12.1.0/bits/ios_base.h:41,
+                 from C:/msys64/mingw64/include/c++/12.1.0/ios:42,
+                 from C:/msys64/mingw64/include/c++/12.1.0/ostream:38,
+                 from C:/msys64/mingw64/include/c++/12.1.0/iostream:39,
+                 from ..\question.hpp:11,
+                 from ..\questions_db.hpp:11,
+                 from ..\database_manager.hpp:11,
+                 from ..\database_manager.cpp:8:
+C:/msys64/mingw64/include/c++/12.1.0/bits/stl_function.h: In instantiation of 'constexpr bool std::less<_Tp>::operator()(const _Tp&, const _Tp&) const [with _Tp = Question]':
+C:/msys64/mingw64/include/c++/12.1.0/bits/stl_map.h:509:32:   required from 'std::map<_Key, _Tp, _Compare, _Alloc>::mapped_type& std::map<_Key, _Tp, _Compare, _Alloc>::operator[](const key_type&) [with _Key = Question; _Tp = std::vector<Question>; _Compare = std::less<Question>; _Alloc = std::allocator<std::pair<const Question, std::vector<Question> > >; mapped_type = std::vector<Question>; key_type = Question]'
+..\database_manager.cpp:37:19:   required from here
+C:/msys64/mingw64/include/c++/12.1.0/bits/stl_function.h:408:20: error: no match for 'operator<' (operand types are 'const Question' and 'const Question')
+  408 |       { return __x < __y; }
+      |                ~~~~^~~~~
+In file included from C:/msys64/mingw64/include/c++/12.1.0/string:47:
+C:/msys64/mingw64/include/c++/12.1.0/bits/stl_iterator.h:451:5: note: candidate: 'template<class _Iterator> constexpr bool std::operator<(const reverse_iterator<_Iterator>&, const reverse_iterator<_Iterator>&)'
+  451 |     operator<(const reverse_iterator<_Iterator>& __x,
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/stl_iterator.h:451:5: note:   template argument deduction/substitution failed:
+C:/msys64/mingw64/include/c++/12.1.0/bits/stl_function.h:408:20: note:   'const Question' is not derived from 'const std::reverse_iterator<_Iterator>'
+  408 |       { return __x < __y; }
+      |                ~~~~^~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/stl_iterator.h:496:5: note: candidate: 'template<class _IteratorL, class _IteratorR> constexpr bool std::operator<(const reverse_iterator<_Iterator>&, const reverse_iterator<_IteratorR>&)'
+  496 |     operator<(const reverse_iterator<_IteratorL>& __x,
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/stl_iterator.h:496:5: note:   template argument deduction/substitution failed:
+C:/msys64/mingw64/include/c++/12.1.0/bits/stl_function.h:408:20: note:   'const Question' is not derived from 'const std::reverse_iterator<_Iterator>'
+  408 |       { return __x < __y; }
+      |                ~~~~^~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/stl_iterator.h:1683:5: note: candidate: 'template<class _IteratorL, class _IteratorR> constexpr bool std::operator<(const move_iterator<_IteratorL>&, const move_iterator<_IteratorR>&)'
+ 1683 |     operator<(const move_iterator<_IteratorL>& __x,
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/stl_iterator.h:1683:5: note:   template argument deduction/substitution failed:
+C:/msys64/mingw64/include/c++/12.1.0/bits/stl_function.h:408:20: note:   'const Question' is not derived from 'const std::move_iterator<_IteratorL>'
+  408 |       { return __x < __y; }
+      |                ~~~~^~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/stl_iterator.h:1748:5: note: candidate: 'template<class _Iterator> constexpr bool std::operator<(const move_iterator<_IteratorL>&, const move_iterator<_IteratorL>&)'
+ 1748 |     operator<(const move_iterator<_Iterator>& __x,
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/stl_iterator.h:1748:5: note:   template argument deduction/substitution failed:
+C:/msys64/mingw64/include/c++/12.1.0/bits/stl_function.h:408:20: note:   'const Question' is not derived from 'const std::move_iterator<_IteratorL>'
+  408 |       { return __x < __y; }
+      |                ~~~~^~~~~
+18:52:29 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o signup_handler.o "..\\signup_handler.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o database_manager.o "..\\database_manager.cpp" 
+In file included from C:/msys64/mingw64/include/c++/12.1.0/string:48,
+                 from C:/msys64/mingw64/include/c++/12.1.0/bits/locale_classes.h:40,
+                 from C:/msys64/mingw64/include/c++/12.1.0/bits/ios_base.h:41,
+                 from C:/msys64/mingw64/include/c++/12.1.0/ios:42,
+                 from C:/msys64/mingw64/include/c++/12.1.0/ostream:38,
+                 from C:/msys64/mingw64/include/c++/12.1.0/iostream:39,
+                 from ..\question.hpp:11,
+                 from ..\questions_db.hpp:11,
+                 from ..\database_manager.hpp:11,
+                 from ..\database_manager.cpp:8:
+C:/msys64/mingw64/include/c++/12.1.0/bits/stl_function.h: In instantiation of 'constexpr bool std::less<_Tp>::operator()(const _Tp&, const _Tp&) const [with _Tp = Question]':
+C:/msys64/mingw64/include/c++/12.1.0/bits/stl_map.h:509:32:   required from 'std::map<_Key, _Tp, _Compare, _Alloc>::mapped_type& std::map<_Key, _Tp, _Compare, _Alloc>::operator[](const key_type&) [with _Key = Question; _Tp = std::vector<Question>; _Compare = std::less<Question>; _Alloc = std::allocator<std::pair<const Question, std::vector<Question> > >; mapped_type = std::vector<Question>; key_type = Question]'
+..\database_manager.cpp:37:19:   required from here
+C:/msys64/mingw64/include/c++/12.1.0/bits/stl_function.h:408:20: error: no match for 'operator<' (operand types are 'const Question' and 'const Question')
+  408 |       { return __x < __y; }
+      |                ~~~~^~~~~
+In file included from C:/msys64/mingw64/include/c++/12.1.0/string:47:
+C:/msys64/mingw64/include/c++/12.1.0/bits/stl_iterator.h:451:5: note: candidate: 'template<class _Iterator> constexpr bool std::operator<(const reverse_iterator<_Iterator>&, const reverse_iterator<_Iterator>&)'
+  451 |     operator<(const reverse_iterator<_Iterator>& __x,
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/stl_iterator.h:451:5: note:   template argument deduction/substitution failed:
+C:/msys64/mingw64/include/c++/12.1.0/bits/stl_function.h:408:20: note:   'const Question' is not derived from 'const std::reverse_iterator<_Iterator>'
+  408 |       { return __x < __y; }
+      |                ~~~~^~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/stl_iterator.h:496:5: note: candidate: 'template<class _IteratorL, class _IteratorR> constexpr bool std::operator<(const reverse_iterator<_Iterator>&, const reverse_iterator<_IteratorR>&)'
+  496 |     operator<(const reverse_iterator<_IteratorL>& __x,
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/stl_iterator.h:496:5: note:   template argument deduction/substitution failed:
+C:/msys64/mingw64/include/c++/12.1.0/bits/stl_function.h:408:20: note:   'const Question' is not derived from 'const std::reverse_iterator<_Iterator>'
+  408 |       { return __x < __y; }
+      |                ~~~~^~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/stl_iterator.h:1683:5: note: candidate: 'template<class _IteratorL, class _IteratorR> constexpr bool std::operator<(const move_iterator<_IteratorL>&, const move_iterator<_IteratorR>&)'
+ 1683 |     operator<(const move_iterator<_IteratorL>& __x,
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/stl_iterator.h:1683:5: note:   template argument deduction/substitution failed:
+C:/msys64/mingw64/include/c++/12.1.0/bits/stl_function.h:408:20: note:   'const Question' is not derived from 'const std::move_iterator<_IteratorL>'
+  408 |       { return __x < __y; }
+      |                ~~~~^~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/stl_iterator.h:1748:5: note: candidate: 'template<class _Iterator> constexpr bool std::operator<(const move_iterator<_IteratorL>&, const move_iterator<_IteratorL>&)'
+ 1748 |     operator<(const move_iterator<_Iterator>& __x,
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/stl_iterator.h:1748:5: note:   template argument deduction/substitution failed:
+C:/msys64/mingw64/include/c++/12.1.0/bits/stl_function.h:408:20: note:   'const Question' is not derived from 'const std::move_iterator<_IteratorL>'
+  408 |       { return __x < __y; }
+      |                ~~~~^~~~~
+18:55:57 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o login_handler.o "..\\login_handler.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o database_manager.o "..\\database_manager.cpp" 
+In file included from C:/msys64/mingw64/include/c++/12.1.0/string:48,
+                 from C:/msys64/mingw64/include/c++/12.1.0/bits/locale_classes.h:40,
+                 from C:/msys64/mingw64/include/c++/12.1.0/bits/ios_base.h:41,
+                 from C:/msys64/mingw64/include/c++/12.1.0/ios:42,
+                 from C:/msys64/mingw64/include/c++/12.1.0/ostream:38,
+                 from C:/msys64/mingw64/include/c++/12.1.0/iostream:39,
+                 from ..\question.hpp:11,
+                 from ..\questions_db.hpp:11,
+                 from ..\database_manager.hpp:11,
+                 from ..\database_manager.cpp:8:
+C:/msys64/mingw64/include/c++/12.1.0/bits/stl_function.h: In instantiation of 'constexpr bool std::less<_Tp>::operator()(const _Tp&, const _Tp&) const [with _Tp = Question]':
+C:/msys64/mingw64/include/c++/12.1.0/bits/stl_map.h:597:37:   required from 'std::pair<typename std::_Rb_tree<_Key, std::pair<const _Key, _Tp>, std::_Select1st<std::pair<const _Key, _Tp> >, _Compare, typename __gnu_cxx::__alloc_traits<_Allocator>::rebind<std::pair<const _Key, _Tp> >::other>::iterator, bool> std::map<_Key, _Tp, _Compare, _Alloc>::emplace(_Args&& ...) [with _Args = {Question&, std::vector<Question, std::allocator<Question> >}; _Key = Question; _Tp = std::vector<Question>; _Compare = std::less<Question>; _Alloc = std::allocator<std::pair<const Question, std::vector<Question> > >; typename std::_Rb_tree<_Key, std::pair<const _Key, _Tp>, std::_Select1st<std::pair<const _Key, _Tp> >, _Compare, typename __gnu_cxx::__alloc_traits<_Allocator>::rebind<std::pair<const _Key, _Tp> >::other>::iterator = std::_Rb_tree<Question, std::pair<const Question, std::vector<Question> >, std::_Select1st<std::pair<const Question, std::vector<Question> > >, std::less<Question>, std::allocator<std::pair<const Question, std::vector<Question> > > >::iterator; typename __gnu_cxx::__alloc_traits<_Allocator>::rebind<std::pair<const _Key, _Tp> >::other = std::allocator<std::pair<const Question, std::vector<Question> > >; typename __gnu_cxx::__alloc_traits<_Allocator>::rebind<std::pair<const _Key, _Tp> > = __gnu_cxx::__alloc_traits<std::allocator<std::pair<const Question, std::vector<Question> > >, std::pair<const Question, std::vector<Question> > >::rebind<std::pair<const Question, std::vector<Question> > >; typename _Allocator::value_type = std::pair<const Question, std::vector<Question> >]'
+..\database_manager.cpp:37:14:   required from here
+C:/msys64/mingw64/include/c++/12.1.0/bits/stl_function.h:408:20: error: no match for 'operator<' (operand types are 'const Question' and 'const Question')
+  408 |       { return __x < __y; }
+      |                ~~~~^~~~~
+In file included from C:/msys64/mingw64/include/c++/12.1.0/string:47:
+C:/msys64/mingw64/include/c++/12.1.0/bits/stl_iterator.h:451:5: note: candidate: 'template<class _Iterator> constexpr bool std::operator<(const reverse_iterator<_Iterator>&, const reverse_iterator<_Iterator>&)'
+  451 |     operator<(const reverse_iterator<_Iterator>& __x,
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/stl_iterator.h:451:5: note:   template argument deduction/substitution failed:
+C:/msys64/mingw64/include/c++/12.1.0/bits/stl_function.h:408:20: note:   'const Question' is not derived from 'const std::reverse_iterator<_Iterator>'
+  408 |       { return __x < __y; }
+      |                ~~~~^~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/stl_iterator.h:496:5: note: candidate: 'template<class _IteratorL, class _IteratorR> constexpr bool std::operator<(const reverse_iterator<_Iterator>&, const reverse_iterator<_IteratorR>&)'
+  496 |     operator<(const reverse_iterator<_IteratorL>& __x,
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/stl_iterator.h:496:5: note:   template argument deduction/substitution failed:
+C:/msys64/mingw64/include/c++/12.1.0/bits/stl_function.h:408:20: note:   'const Question' is not derived from 'const std::reverse_iterator<_Iterator>'
+  408 |       { return __x < __y; }
+      |                ~~~~^~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/stl_iterator.h:1683:5: note: candidate: 'template<class _IteratorL, class _IteratorR> constexpr bool std::operator<(const move_iterator<_IteratorL>&, const move_iterator<_IteratorR>&)'
+ 1683 |     operator<(const move_iterator<_IteratorL>& __x,
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/stl_iterator.h:1683:5: note:   template argument deduction/substitution failed:
+C:/msys64/mingw64/include/c++/12.1.0/bits/stl_function.h:408:20: note:   'const Question' is not derived from 'const std::move_iterator<_IteratorL>'
+  408 |       { return __x < __y; }
+      |                ~~~~^~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/stl_iterator.h:1748:5: note: candidate: 'template<class _Iterator> constexpr bool std::operator<(const move_iterator<_IteratorL>&, const move_iterator<_IteratorL>&)'
+ 1748 |     operator<(const move_iterator<_Iterator>& __x,
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/stl_iterator.h:1748:5: note:   template argument deduction/substitution failed:
+C:/msys64/mingw64/include/c++/12.1.0/bits/stl_function.h:408:20: note:   'const Question' is not derived from 'const std::move_iterator<_IteratorL>'
+  408 |       { return __x < __y; }
+      |                ~~~~^~~~~
+18:56:47 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o database_manager.o "..\\database_manager.cpp" 
+In file included from C:/msys64/mingw64/include/c++/12.1.0/string:48,
+                 from C:/msys64/mingw64/include/c++/12.1.0/bits/locale_classes.h:40,
+                 from C:/msys64/mingw64/include/c++/12.1.0/bits/ios_base.h:41,
+                 from C:/msys64/mingw64/include/c++/12.1.0/ios:42,
+                 from C:/msys64/mingw64/include/c++/12.1.0/ostream:38,
+                 from C:/msys64/mingw64/include/c++/12.1.0/iostream:39,
+                 from ..\question.hpp:11,
+                 from ..\questions_db.hpp:11,
+                 from ..\database_manager.hpp:11,
+                 from ..\database_manager.cpp:8:
+C:/msys64/mingw64/include/c++/12.1.0/bits/stl_function.h: In instantiation of 'constexpr bool std::less<_Tp>::operator()(const _Tp&, const _Tp&) const [with _Tp = Question]':
+C:/msys64/mingw64/include/c++/12.1.0/bits/stl_map.h:509:32:   required from 'std::map<_Key, _Tp, _Compare, _Alloc>::mapped_type& std::map<_Key, _Tp, _Compare, _Alloc>::operator[](const key_type&) [with _Key = Question; _Tp = std::vector<Question>; _Compare = std::less<Question>; _Alloc = std::allocator<std::pair<const Question, std::vector<Question> > >; mapped_type = std::vector<Question>; key_type = Question]'
+..\database_manager.cpp:37:19:   required from here
+C:/msys64/mingw64/include/c++/12.1.0/bits/stl_function.h:408:20: error: no match for 'operator<' (operand types are 'const Question' and 'const Question')
+  408 |       { return __x < __y; }
+      |                ~~~~^~~~~
+In file included from C:/msys64/mingw64/include/c++/12.1.0/string:47:
+C:/msys64/mingw64/include/c++/12.1.0/bits/stl_iterator.h:451:5: note: candidate: 'template<class _Iterator> constexpr bool std::operator<(const reverse_iterator<_Iterator>&, const reverse_iterator<_Iterator>&)'
+  451 |     operator<(const reverse_iterator<_Iterator>& __x,
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/stl_iterator.h:451:5: note:   template argument deduction/substitution failed:
+C:/msys64/mingw64/include/c++/12.1.0/bits/stl_function.h:408:20: note:   'const Question' is not derived from 'const std::reverse_iterator<_Iterator>'
+  408 |       { return __x < __y; }
+      |                ~~~~^~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/stl_iterator.h:496:5: note: candidate: 'template<class _IteratorL, class _IteratorR> constexpr bool std::operator<(const reverse_iterator<_Iterator>&, const reverse_iterator<_IteratorR>&)'
+  496 |     operator<(const reverse_iterator<_IteratorL>& __x,
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/stl_iterator.h:496:5: note:   template argument deduction/substitution failed:
+C:/msys64/mingw64/include/c++/12.1.0/bits/stl_function.h:408:20: note:   'const Question' is not derived from 'const std::reverse_iterator<_Iterator>'
+  408 |       { return __x < __y; }
+      |                ~~~~^~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/stl_iterator.h:1683:5: note: candidate: 'template<class _IteratorL, class _IteratorR> constexpr bool std::operator<(const move_iterator<_IteratorL>&, const move_iterator<_IteratorR>&)'
+ 1683 |     operator<(const move_iterator<_IteratorL>& __x,
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/stl_iterator.h:1683:5: note:   template argument deduction/substitution failed:
+C:/msys64/mingw64/include/c++/12.1.0/bits/stl_function.h:408:20: note:   'const Question' is not derived from 'const std::move_iterator<_IteratorL>'
+  408 |       { return __x < __y; }
+      |                ~~~~^~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/stl_iterator.h:1748:5: note: candidate: 'template<class _Iterator> constexpr bool std::operator<(const move_iterator<_IteratorL>&, const move_iterator<_IteratorL>&)'
+ 1748 |     operator<(const move_iterator<_Iterator>& __x,
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/stl_iterator.h:1748:5: note:   template argument deduction/substitution failed:
+C:/msys64/mingw64/include/c++/12.1.0/bits/stl_function.h:408:20: note:   'const Question' is not derived from 'const std::move_iterator<_IteratorL>'
+  408 |       { return __x < __y; }
+      |                ~~~~^~~~~
+20:06:02 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o login_handler.o "..\\login_handler.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o database_manager.o "..\\database_manager.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o signup_handler.o "..\\signup_handler.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+15:41:11 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o questions_db.o "..\\questions_db.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o database_manager.o "..\\database_manager.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o signup_handler.o "..\\signup_handler.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o question.o "..\\question.cpp" 
+..\question.cpp: In member function 'void Question::print_children()':
+..\question.cpp:20:25: warning: unused variable 'q' [-Wunused-variable]
+   20 |         for(auto const &q : children){
+      |                         ^
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+..\app.cpp: In member function 'void App::print_questions_received(int)':
+..\app.cpp:54:26: error: passing 'std::tuple_element<1, const std::pair<const int, Question> >::type' {aka 'const Question'} as 'this' argument discards qualifiers [-fpermissive]
+   54 |                 val.print();
+      |                 ~~~~~~~~~^~
+In file included from ..\app.cpp:11:
+..\question.hpp:22:14: note:   in call to 'void Question::print()'
+   22 |         void print();
+      |              ^~~~~
+15:51:57 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o questions_db.o "..\\questions_db.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o question.o "..\\question.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o database_manager.o "..\\database_manager.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o login_handler.o "..\\login_handler.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o signup_handler.o "..\\signup_handler.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+15:55:21 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+15:58:45 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o question.o "..\\question.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file askme-project.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+15:58:49 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+16:35:54 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o question.o "..\\question.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file askme-project.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+16:35:58 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+16:40:51 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o questions_db.o "..\\questions_db.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o login_handler.o "..\\login_handler.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o signup_handler.o "..\\signup_handler.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o question.o "..\\question.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o database_manager.o "..\\database_manager.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+Info: Nothing to build for askme-project
+Info: Nothing to build for askme-project
+Info: Nothing to build for askme-project
+Info: Nothing to build for askme-project
+16:52:46 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o menu.o "..\\menu.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+16:57:59 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o login_handler.o "..\\login_handler.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+17:08:21 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o questions_db.o "..\\questions_db.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+17:14:28 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o questions_db.o "..\\questions_db.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+17:15:32 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o questions_db.o "..\\questions_db.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+Info: Nothing to build for askme-project
+Info: Nothing to build for askme-project
+17:18:31 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o questions_db.o "..\\questions_db.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file askme-project.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+17:18:35 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+17:21:32 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file askme-project.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+17:21:36 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+17:25:42 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o question.o "..\\question.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+17:35:53 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o questions_db.o "..\\questions_db.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+18:05:47 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o questions_db.o "..\\questions_db.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+Info: Nothing to build for askme-project
+Info: Nothing to build for askme-project
+Info: Nothing to build for askme-project
+Info: Nothing to build for askme-project
+18:23:22 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+18:26:17 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o question.o "..\\question.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+18:27:12 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o question.o "..\\question.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+Info: Nothing to build for askme-project
+18:32:46 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o signup_handler.o "..\\signup_handler.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o database_manager.o "..\\database_manager.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o question.o "..\\question.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o login_handler.o "..\\login_handler.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+18:35:50 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file askme-project.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+18:35:54 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+18:38:59 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+18:40:12 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file askme-project.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+18:40:16 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+18:42:12 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file askme-project.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+18:42:16 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+18:46:34 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o question.o "..\\question.cpp" 
+..\question.cpp: In member function 'void Question::print_children() const':
+..\question.cpp:29:25: warning: comparison of integer expressions of different signedness: 'int' and 'std::vector<Question>::size_type' {aka 'long long unsigned int'} [-Wsign-compare]
+   29 |         for(int i = 0; i<children.size(); i++){
+      |                        ~^~~~~~~~~~~~~~~~
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+19:14:59 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o question.o "..\\question.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file askme-project.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+19:15:03 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+20:38:29 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o question.o "..\\question.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+20:40:25 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o question.o "..\\question.cpp" 
+..\question.cpp: In member function 'void Question::print_children() const':
+..\question.cpp:30:24: warning: loop variable 'q' creates a copy from type 'const Question' [-Wrange-loop-construct]
+   30 |         for(auto const q : children){
+      |                        ^
+..\question.cpp:30:24: note: use reference type to prevent copying
+   30 |         for(auto const q : children){
+      |                        ^
+      |                        &
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file askme-project.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+20:40:31 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+20:55:01 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o question.o "..\\question.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file askme-project.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+20:55:05 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+Info: Nothing to build for askme-project
+Info: Nothing to build for askme-project
+20:57:34 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o question.o "..\\question.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+20:59:09 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file askme-project.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+20:59:13 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+Info: Nothing to build for askme-project
+Info: Nothing to build for askme-project
+21:01:27 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o question.o "..\\question.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+21:01:56 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o questions_db.o "..\\questions_db.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+21:17:15 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o signup_handler.o "..\\signup_handler.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o questions_db.o "..\\questions_db.cpp" 
+..\questions_db.cpp: In member function 'std::vector<Question> QuestionsDb::get_questions_to_user(int)':
+..\questions_db.cpp:109:24: error: could not convert 'mp' from 'std::map<int, Question>' to 'std::vector<Question>'
+  109 |                 return mp;
+      |                        ^~
+      |                        |
+      |                        std::map<int, Question>
+..\questions_db.cpp:145:24: warning: loop variable '<structured bindings>' creates a copy from type 'const std::pair<const int, Question>' [-Wrange-loop-construct]
+  145 |         for(auto const [key, value] : mp)
+      |                        ^~~~~~~~~~~~
+..\questions_db.cpp:145:24: note: use reference type to prevent copying
+  145 |         for(auto const [key, value] : mp)
+      |                        ^~~~~~~~~~~~
+      |                        &
+21:17:59 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o questions_db.o "..\\questions_db.cpp" 
+..\questions_db.cpp: In member function 'std::vector<Question> QuestionsDb::get_questions_to_user(int)':
+..\questions_db.cpp:135:33: error: 'mp' was not declared in this scope
+  135 |                                 mp[q.id] = q;
+      |                                 ^~
+..\questions_db.cpp:138:51: error: 'mp' was not declared in this scope
+  138 |                                 Question parent = mp[q.threadId];
+      |                                                   ^~
+..\questions_db.cpp:144:31: error: redeclaration of 'std::vector<Question> v'
+  144 |         std::vector<Question> v;
+      |                               ^
+..\questions_db.cpp:100:31: note: 'std::vector<Question> v' previously declared here
+  100 |         std::vector<Question> v;
+      |                               ^
+..\questions_db.cpp:145:39: error: 'mp' was not declared in this scope
+  145 |         for(auto const [key, value] : mp)
+      |                                       ^~
+21:18:17 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o database_manager.o "..\\database_manager.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o login_handler.o "..\\login_handler.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o questions_db.o "..\\questions_db.cpp" 
+..\questions_db.cpp: In member function 'std::vector<Question> QuestionsDb::get_questions_to_user(int)':
+..\questions_db.cpp:145:31: error: redeclaration of 'std::vector<Question> v'
+  145 |         std::vector<Question> v;
+      |                               ^
+..\questions_db.cpp:101:31: note: 'std::vector<Question> v' previously declared here
+  101 |         std::vector<Question> v;
+      |                               ^
+..\questions_db.cpp:146:24: warning: loop variable '<structured bindings>' creates a copy from type 'const std::pair<const int, Question>' [-Wrange-loop-construct]
+  146 |         for(auto const [key, value] : mp)
+      |                        ^~~~~~~~~~~~
+..\questions_db.cpp:146:24: note: use reference type to prevent copying
+  146 |         for(auto const [key, value] : mp)
+      |                        ^~~~~~~~~~~~
+      |                        &
+21:18:34 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o questions_db.o "..\\questions_db.cpp" 
+..\questions_db.cpp: In member function 'std::vector<Question> QuestionsDb::get_questions_to_user(int)':
+..\questions_db.cpp:145:24: warning: loop variable '<structured bindings>' creates a copy from type 'const std::pair<const int, Question>' [-Wrange-loop-construct]
+  145 |         for(auto const [key, value] : mp)
+      |                        ^~~~~~~~~~~~
+..\questions_db.cpp:145:24: note: use reference type to prevent copying
+  145 |         for(auto const [key, value] : mp)
+      |                        ^~~~~~~~~~~~
+      |                        &
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file askme-project.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+21:18:43 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+21:27:02 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o questions_db.o "..\\questions_db.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o signup_handler.o "..\\signup_handler.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o database_manager.o "..\\database_manager.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o login_handler.o "..\\login_handler.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o question.o "..\\question.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file askme-project.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+21:27:09 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+21:30:49 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o signup_handler.o "..\\signup_handler.cpp" 
+In file included from ..\questions_db.hpp:11,
+                 from ..\database_manager.hpp:11,
+                 from ..\signup_handler.cpp:9:
+..\question.hpp:27:32: error: non-member function 'void print_children(Question&)' cannot have cv-qualifier
+   27 | void print_children(Question&) const;
+      |                                ^~~~~
+21:32:26 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o login_handler.o "..\\login_handler.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o questions_db.o "..\\questions_db.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+..\app.cpp: In member function 'void App::print_questions_received(int)':
+..\app.cpp:64:37: error: 'std::tuple_element<1, const std::pair<const int, Question> >::type' {aka 'const struct Question'} has no member named 'print_children'; did you mean 'print_child'?
+   64 |                                 val.print_children();
+      |                                     ^~~~~~~~~~~~~~
+      |                                     print_child
+21:32:50 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+..\app.cpp: In member function 'void App::print_questions_received(int)':
+..\app.cpp:64:48: error: binding reference of type 'Question&' to 'std::tuple_element<1, const std::pair<const int, Question> >::type' {aka 'const Question'} discards qualifiers
+   64 |                                 print_children(val);
+      |                                                ^~~
+In file included from ..\app.cpp:11:
+..\question.hpp:27:21: note:   initializing argument 1 of 'void print_children(Question&)'
+   27 | void print_children(Question&);
+      |                     ^~~~~~~~~
+21:33:59 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o question.o "..\\question.cpp" 
+..\question.cpp: In function 'void print_children(Question&)':
+..\question.cpp:35:40: error: invalid initialization of non-const reference of type 'Question&' from an rvalue of type 'Question*'
+   35 |                         print_children(&t);
+      |                                        ^~
+..\question.cpp:29:31: note: in passing argument 1 of 'void print_children(Question&)'
+   29 | void print_children(Question &q)
+      |                     ~~~~~~~~~~^
+21:34:21 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o signup_handler.o "..\\signup_handler.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o database_manager.o "..\\database_manager.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o question.o "..\\question.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+06:17:24 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o database_manager.o "..\\database_manager.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o signup_handler.o "..\\signup_handler.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+..\app.cpp: In member function 'void App::print_questions_received(int)':
+..\app.cpp:63:39: warning: comparison of integer expressions of different signedness: 'int' and 'std::vector<Question>::size_type' {aka 'long long unsigned int'} [-Wsign-compare]
+   63 |                         for(int i=1; i<val.size(); i++){
+      |                                      ~^~~~~~~~~~~
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o question.o "..\\question.cpp" 
+..\question.cpp: In member function 'bool Question::has_children() const':
+..\question.cpp:12:16: error: 'children' was not declared in this scope; did you mean 'has_children'?
+   12 |         return children.size();
+      |                ^~~~~~~~
+      |                has_children
+..\question.cpp: In function 'void print_children(Question&)':
+..\question.cpp:31:26: error: 'struct Question' has no member named 'children'; did you mean 'has_children'?
+   31 |         for (auto &t : q.children)
+      |                          ^~~~~~~~
+      |                          has_children
+06:18:01 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o question.o "..\\question.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o questions_db.o "..\\questions_db.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o login_handler.o "..\\login_handler.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+06:27:32 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o question.o "..\\question.cpp" 
+..\question.cpp: In function 'void print_children(std::vector<Question>, std::map<int, std::vector<Question> >&)':
+..\question.cpp:27:23: warning: comparison of integer expressions of different signedness: 'int' and 'std::vector<Question>::size_type' {aka 'long long unsigned int'} [-Wsign-compare]
+   27 |         for(int i=1; i<qv.size(); i++){
+      |                      ~^~~~~~~~~~
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+..\app.cpp: In member function 'void App::print_questions_received(int)':
+..\app.cpp:63:39: warning: comparison of integer expressions of different signedness: 'int' and 'std::vector<Question>::size_type' {aka 'long long unsigned int'} [-Wsign-compare]
+   63 |                         for(int i=1; i<val.size(); i++){
+      |                                      ~^~~~~~~~~~~
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o signup_handler.o "..\\signup_handler.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o questions_db.o "..\\questions_db.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o database_manager.o "..\\database_manager.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o login_handler.o "..\\login_handler.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+Info: Nothing to build for askme-project
+06:41:49 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o questions_db.o "..\\questions_db.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o signup_handler.o "..\\signup_handler.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o login_handler.o "..\\login_handler.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o question.o "..\\question.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o database_manager.o "..\\database_manager.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+Info: Nothing to build for askme-project
+06:43:29 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o question.o "..\\question.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file askme-project.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+06:43:33 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+06:46:43 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o question.o "..\\question.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+Info: Nothing to build for askme-project
+Info: Nothing to build for askme-project
+06:50:53 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o question.o "..\\question.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+06:51:32 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o question.o "..\\question.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+06:59:47 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o login_handler.o "..\\login_handler.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o database_manager.o "..\\database_manager.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o questions_db.o "..\\questions_db.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o question.o "..\\question.cpp" 
+..\question.cpp: In member function 'void Question::print_child(int)':
+..\question.cpp:20:21: error: 'begin' was not declared in this scope; did you mean 'std::begin'?
+   20 |         for(int n : spaces)
+      |                     ^~~~~~
+      |                     std::begin
+In file included from C:/msys64/mingw64/include/c++/12.1.0/string:52,
+                 from C:/msys64/mingw64/include/c++/12.1.0/bits/locale_classes.h:40,
+                 from C:/msys64/mingw64/include/c++/12.1.0/bits/ios_base.h:41,
+                 from C:/msys64/mingw64/include/c++/12.1.0/ios:42,
+                 from C:/msys64/mingw64/include/c++/12.1.0/ostream:38,
+                 from C:/msys64/mingw64/include/c++/12.1.0/iostream:39,
+                 from ..\question.hpp:11,
+                 from ..\question.cpp:8:
+C:/msys64/mingw64/include/c++/12.1.0/bits/range_access.h:114:37: note: 'std::begin' declared here
+  114 |   template<typename _Tp> const _Tp* begin(const valarray<_Tp>&) noexcept;
+      |                                     ^~~~~
+..\question.cpp:20:21: error: 'end' was not declared in this scope; did you mean 'std::end'?
+   20 |         for(int n : spaces)
+      |                     ^~~~~~
+      |                     std::end
+C:/msys64/mingw64/include/c++/12.1.0/bits/range_access.h:116:37: note: 'std::end' declared here
+  116 |   template<typename _Tp> const _Tp* end(const valarray<_Tp>&) noexcept;
+      |                                     ^~~
+..\question.cpp:20:17: warning: unused variable 'n' [-Wunused-variable]
+   20 |         for(int n : spaces)
+      |                 ^
+07:00:52 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o signup_handler.o "..\\signup_handler.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o question.o "..\\question.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+07:04:01 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o question.o "..\\question.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+07:06:03 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o question.o "..\\question.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file askme-project.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+07:06:06 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+07:07:21 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o question.o "..\\question.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file askme-project.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+07:07:24 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+07:07:58 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o question.o "..\\question.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+07:13:20 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o question.o "..\\question.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file askme-project.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+07:13:24 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+07:20:16 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o question.o "..\\question.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+07:21:19 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o question.o "..\\question.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+07:21:57 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o question.o "..\\question.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+07:22:46 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o question.o "..\\question.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project

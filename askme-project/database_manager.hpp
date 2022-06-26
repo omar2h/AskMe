@@ -10,6 +10,9 @@
 
 #include "questions_db.hpp"
 #include "users_db.hpp"
+#include <iostream>
+#include <vector>
+#include <map>
 
 struct DbManager
 {
@@ -18,6 +21,7 @@ struct DbManager
 
 	bool check_user_has_q(const int, const int);
 	bool check_user_exist(User &);
+	std::map<int, std::vector<Question>> get_all_threads(const int uId, std::map<int, std::vector<Question>> &);
 };
 
 #endif /* DATABASE_MANAGER_HPP_ */

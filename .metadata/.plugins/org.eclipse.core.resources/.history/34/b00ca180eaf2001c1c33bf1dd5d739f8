@@ -1,0 +1,27 @@
+/*
+ * database_manager.hpp
+ *
+ *  Created on: Jun 22, 2022
+ *      Author: omarh
+ */
+
+#ifndef DATABASE_MANAGER_HPP_
+#define DATABASE_MANAGER_HPP_
+
+#include "questions_db.hpp"
+#include "users_db.hpp"
+#include <iostream>
+#include <vector>
+#include <map>
+
+struct DbManager
+{
+	UsersDb usersDb;
+	QuestionsDb questionsDb;
+
+	bool check_user_has_q(const int, const int);
+	bool check_user_exist(User &);
+	std::map<int, std::vector<int>> DbManager::get_all_threads(const int uId);
+};
+
+#endif /* DATABASE_MANAGER_HPP_ */

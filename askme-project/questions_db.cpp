@@ -9,6 +9,7 @@
 
 #include <fstream>
 #include <sstream>
+#include <algorithm>
 
 int QuestionsDb::generate_id()
 {
@@ -92,4 +93,52 @@ std::pair<Question, bool> QuestionsDb::get_question(const int id)
 		}
 	}
 	return qPair;
+}
+
+std::map<int, std::vector<Question>> QuestionsDb::get_questions_to_user(const int)
+{
+	std::map<int, std::vector<Question>> mp;
+	Question q;
+
+	std::string path = "questions.txt";
+	std::fstream file_handler(path.c_str());
+
+	if (file_handler.fail())
+	{
+		std::cout << "\n -------- Can't open file -----------\n\n";
+		return mp;
+	}
+
+	std::string line;
+	std::string idStr, thrdStr, toStr, fromStr, ansdStr, text, ans;
+	while (getline(file_handler, line))
+	{
+		std::stringstream iss(line);
+		std::getline(iss, idStr, ',');
+		std::getline(iss, thrdStr, ',');
+		std::getline(iss, fromStr, ',');
+		std::getline(iss, toStr, ',');
+		std::getline(iss, ansdStr, ',');
+		std::getline(iss, text, ',');
+		std::getline(iss, ans, ',');
+
+		if (!toStr.empty() && std::all_of(toStr.begin(), toStr.end(), ::isdigit))
+		{
+			q.id = (stoi(idStr));
+			q.threadId = (stoi(thrdStr));
+			q.fromId = (stoi(fromStr));
+			q.toId = (stoi(toStr));
+			q.answered = (stoi(ansdStr));
+			q.text = text;
+			q.ans = ans;
+			if (q.threadId == -1)
+				mp[q.id].push_back(q);
+			else
+			{
+				mp[q.id].push_back(q);
+				mp[q.threadId].push_back(q);
+			}
+		}
+	}
+	return mp;
 }

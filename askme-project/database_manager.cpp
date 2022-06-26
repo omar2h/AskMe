@@ -27,3 +27,9 @@ bool DbManager::check_user_has_q(const int qId, const int uId)
 		return 0;
 	return 1;
 }
+
+std::map<int, std::vector<Question>> DbManager::get_all_threads(const int uId, std::map<int, std::vector<Question>> &mp)
+{
+	mp = questionsDb.get_questions_to_user(uId);
+	return mp;
+}

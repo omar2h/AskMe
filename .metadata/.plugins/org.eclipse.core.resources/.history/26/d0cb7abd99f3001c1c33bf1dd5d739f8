@@ -1,0 +1,39 @@
+/*
+ * database_manager.cpp
+ *
+ *  Created on: Jun 22, 2022
+ *      Author: omarh
+ */
+
+#include "database_manager.hpp"
+
+bool DbManager::check_user_exist(User &user)
+{
+	std::pair<User, bool> uPair = usersDb.get_user(user.id);
+	if (uPair.second)
+	{
+		user = uPair.first;
+		return 1;
+	}
+	return 0;
+}
+
+bool DbManager::check_user_has_q(const int qId, const int uId)
+{
+	std::pair<Question, bool> qPair = questionsDb.get_question(qId);
+	if (!qPair.second)
+		return 0;
+	if (qPair.first.toId != uId)
+		return 0;
+	return 1;
+}
+
+std::map<int, std::vector<int>> DbManager::get_all_threads(const int uId){
+	std::vector<Question> questions = questionsDb.get_questions_to_user(uId);
+	std::map<int, std::vector<int>> mp;
+
+	for(int i=0; i<questions.size(); i++){
+		if(questions[i].threadId == -1)
+
+	}
+}

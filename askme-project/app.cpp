@@ -45,6 +45,41 @@ std::string App::ask_new_q()
 	return q;
 }
 
+void App::print_questions_received(int uId)
+{
+	DbManager DB;
+	std::map<int, std::vector<Question>> mp;
+	DB.get_all_threads(uId, mp);
+
+	/*for(auto const& [key, val] : mp){
+		std::cout<<key<<" : "<<val.id<<"\n";
+		if(val.has_children())
+			val.print_children();
+	}*/
+	// c++ 17 syntax
+	for (auto &[key, val] : mp)
+	{
+		if (val[0].threadId == -1)
+		{
+			int spaces = 0;
+			val[0].print();
+			for (int i = 1; i < (int)val.size(); i++)
+			{
+				print_children(mp[val[i].id], mp, spaces + 2);
+			}
+
+			/*for(auto const& q : val.children){
+
+				std::cout<<"|\n";
+				std::cout<<"==";
+				std::cout<<"Question: "<<q.text<<'\n';
+				std::cout<<"  Answer: "<<q.ans<<'\n';
+			}*/
+			std::cout << '\n';
+		}
+	}
+}
+
 void App::ask(User user)
 {
 	Question q;
@@ -121,7 +156,8 @@ void App::main_menu(User &user)
 
 		if (choice == 1)
 		{
-			// 1 print questions received
+			// 1: print questions received
+			print_questions_received(user.id);
 		}
 
 		else if (choice == 2)

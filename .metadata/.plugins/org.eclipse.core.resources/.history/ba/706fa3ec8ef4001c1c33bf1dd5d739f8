@@ -1,0 +1,27 @@
+/*
+ * question.cpp
+ *
+ *  Created on: Jun 25, 2022
+ *      Author: omarh
+ */
+
+#include "question.hpp"
+
+bool Question::has_children() const{
+	return !children.empty();
+}
+
+void Question::print() const{
+	std::cout<<"Question: "<<text<<'\n';
+	std::cout<<"Answer: "<<ans<<'\n';
+}
+
+void Question::print_children() const{
+	for(auto const &q : children){
+		print();
+		if(q.has_children())
+			q.print_children();
+	}
+}
+
+

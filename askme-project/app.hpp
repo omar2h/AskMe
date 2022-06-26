@@ -27,7 +27,7 @@ struct App
 	 * @param Logged in user
 	 * @return non
 	 */
-	void main_menu(User&);
+	void main_menu(User &);
 
 	/**
 	 * verify login user input choice at login menu choice between 1-3
@@ -60,6 +60,8 @@ struct App
 	 * @return non
 	 */
 	void ask(User);
+
+	void print_questions_received(int);
 
 	/**
 	 * display list of system users

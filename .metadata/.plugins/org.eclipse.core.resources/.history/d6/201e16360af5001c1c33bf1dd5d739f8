@@ -1,0 +1,31 @@
+/*
+ * question.cpp
+ *
+ *  Created on: Jun 25, 2022
+ *      Author: omarh
+ */
+
+#include "question.hpp"
+
+
+void Question::print() const
+{
+	std::cout << "Question: " << text << '\n';
+	std::cout << "Answer: " << ans << '\n';
+}
+
+void Question::print_child() const
+{
+	std::cout << "|\n";
+	std::cout << "==";
+	std::cout << "Question: " << text << '\n';
+	std::cout << "  Answer: " << ans << '\n';
+}
+
+void print_children(std::deque<Question> dq, std::map<int, std::deque<Question>>& mp)
+{
+	for(int i=1; i<(int)dq.size(); i++){
+		dq[i].print();
+		print_children(mp[dq[i].id], mp);
+	}
+}

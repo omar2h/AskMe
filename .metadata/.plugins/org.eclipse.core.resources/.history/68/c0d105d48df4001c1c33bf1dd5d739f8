@@ -1,0 +1,26 @@
+/*
+ * question.hpp
+ *
+ *  Created on: Jun 22, 2022
+ *      Author: omarh
+ */
+
+#ifndef QUESTION_HPP_
+#define QUESTION_HPP_
+
+#include <iostream>
+#include <vector>
+
+struct Question
+{
+	int id, threadId, fromId, toId;
+	bool answered;
+	std::string text, ans = "";
+	std::vector<Question> children;
+
+	bool has_children() const;
+	void print() const;
+	void print_children();
+};
+
+#endif /* QUESTION_HPP_ */
