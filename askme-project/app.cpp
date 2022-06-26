@@ -103,12 +103,34 @@ void App::ask(User user)
 
 	q.toId = toUser.id;
 	if (!toUser.allowAnonQs)
+	{
+		q.anon = 0;
 		std::cout << "Note: This User doesn't Allow Anonymous Questions\n";
+	}
 	int qId;
 	while (1)
 	{
 		std::cout << "Enter question thread ID or -1 to Ask a New Question: ";
 		std::cin >> qId;
+		if (toUser.allowAnonQs)
+		{
+			while (1)
+			{
+				char c;
+				std::cout << "Keep this Question Anonymous? (y/n): ";
+				std::cin >> c;
+				if (c == 'y')
+				{
+					q.anon = 1;
+					break;
+				}
+				if (c == 'n')
+				{
+					q.anon = 0;
+					break;
+				}
+			}
+		}
 		if (qId == -1)
 		{
 			q.text = ask_new_q(), q.threadId = -1, q.answered = 0;

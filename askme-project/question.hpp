@@ -15,7 +15,7 @@
 struct Question
 {
 	int id, threadId, fromId, toId;
-	bool answered;
+	bool anon, answered;
 	std::string text, ans = "";
 
 	bool has_children() const;

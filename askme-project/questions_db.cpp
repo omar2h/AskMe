@@ -48,7 +48,7 @@ bool QuestionsDb::add_question(Question &q)
 		return 0;
 	}
 
-	fout << q.id << ',' << q.threadId << ',' << q.fromId << ',' << q.toId << ',' << q.answered << ',' << q.text << ',' << q.ans << '\n';
+	fout << q.id << ',' << q.threadId << ',' << q.fromId << ',' << q.toId << ',' << q.anon << ',' << q.answered << ',' << q.text << ',' << q.ans << '\n';
 	return 1;
 }
 
@@ -68,7 +68,7 @@ std::pair<Question, bool> QuestionsDb::get_question(const int id)
 	}
 
 	std::string line;
-	std::string idStr, thrdStr, toStr, fromStr, ansdStr;
+	std::string idStr, thrdStr, toStr, fromStr, anonStr, ansdStr;
 	while (getline(file_handler, line))
 	{
 		std::stringstream iss(line);
@@ -76,6 +76,7 @@ std::pair<Question, bool> QuestionsDb::get_question(const int id)
 		std::getline(iss, thrdStr, ',');
 		std::getline(iss, fromStr, ',');
 		std::getline(iss, toStr, ',');
+		std::getline(iss, anonStr, ',');
 		std::getline(iss, ansdStr, ',');
 		std::getline(iss, q.text, ',');
 		std::getline(iss, q.ans, ',');
@@ -86,6 +87,7 @@ std::pair<Question, bool> QuestionsDb::get_question(const int id)
 			q.threadId = stoi(thrdStr);
 			q.toId = stoi(toStr);
 			q.fromId = stoi(fromStr);
+			q.anon = stoi(anonStr);
 			q.answered = stoi(ansdStr);
 			qPair.first = q;
 			qPair.second = 1;
@@ -95,7 +97,7 @@ std::pair<Question, bool> QuestionsDb::get_question(const int id)
 	return qPair;
 }
 
-std::map<int, std::vector<Question>> QuestionsDb::get_questions_to_user(const int)
+std::map<int, std::vector<Question>> QuestionsDb::get_questions_to_user(const int uId)
 {
 	std::map<int, std::vector<Question>> mp;
 	Question q;
@@ -110,7 +112,7 @@ std::map<int, std::vector<Question>> QuestionsDb::get_questions_to_user(const in
 	}
 
 	std::string line;
-	std::string idStr, thrdStr, toStr, fromStr, ansdStr, text, ans;
+	std::string idStr, thrdStr, toStr, fromStr, anonStr, ansdStr, text, ans;
 	while (getline(file_handler, line))
 	{
 		std::stringstream iss(line);
@@ -118,16 +120,18 @@ std::map<int, std::vector<Question>> QuestionsDb::get_questions_to_user(const in
 		std::getline(iss, thrdStr, ',');
 		std::getline(iss, fromStr, ',');
 		std::getline(iss, toStr, ',');
+		std::getline(iss, anonStr, ',');
 		std::getline(iss, ansdStr, ',');
 		std::getline(iss, text, ',');
 		std::getline(iss, ans, ',');
 
-		if (!toStr.empty() && std::all_of(toStr.begin(), toStr.end(), ::isdigit))
+		if (!toStr.empty() && std::all_of(toStr.begin(), toStr.end(), ::isdigit) && stoi(toStr) == uId)
 		{
 			q.id = (stoi(idStr));
 			q.threadId = (stoi(thrdStr));
 			q.fromId = (stoi(fromStr));
 			q.toId = (stoi(toStr));
+			q.anon = stoi(anonStr);
 			q.answered = (stoi(ansdStr));
 			q.text = text;
 			q.ans = ans;

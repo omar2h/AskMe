@@ -9,8 +9,16 @@
 
 void Question::print() const
 {
-	std::cout << "Question: " << text << '\n';
-	std::cout << "Answer: " << ans << '\n';
+	if (anon)
+	{
+		std::cout << "Question(id:" << id << "): " << text << '\n';
+		std::cout << "Answer: " << ans << '\n';
+	}
+	else
+	{
+		std::cout << "Question(id:" << id << ") from user(id:" << fromId << "): " << text << '\n';
+		std::cout << "Answer: " << ans << '\n';
+	}
 }
 
 void Question::print_child(int spaces)
@@ -20,10 +28,20 @@ void Question::print_child(int spaces)
 		space += " ";
 	if ((int)space.size() > 2)
 		space += "  ";
-	std::cout << space << "|\n";
-	std::cout << space << "==";
-	std::cout << "Question(id:" << id << ") from user(id:" << fromId << "): " << text << '\n';
-	std::cout << space << "  Answer: " << ans << '\n';
+	if (anon)
+	{
+		std::cout << space << "|\n";
+		std::cout << space << "==";
+		std::cout << "Question(id:" << id << "): " << text << '\n';
+		std::cout << space << "  Answer: " << ans << '\n';
+	}
+	else
+	{
+		std::cout << space << "|\n";
+		std::cout << space << "==";
+		std::cout << "Question(id:" << id << ") from user(id:" << fromId << "): " << text << '\n';
+		std::cout << space << "  Answer: " << ans << '\n';
+	}
 }
 
 void print_children(std::vector<Question> qv, std::map<int, std::vector<Question>> &mp, int spaces)
