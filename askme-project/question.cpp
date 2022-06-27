@@ -21,6 +21,20 @@ void Question::print() const
 	}
 }
 
+void Question::print_asked() const
+{
+	if (anon)
+	{
+		std::cout << "Question(id:" << id << ") to user(id:" << toId << "): " << text << "\n";
+		std::cout << "Answer: " << ans << "\n";
+	}
+	else
+	{
+		std::cout << "Question(id:" << id << ") !AQ to user(id:" << toId << "): " << text << "\n";
+		std::cout << "Answer: " << ans << "\n";
+	}
+}
+
 void Question::print_child(int spaces)
 {
 	std::string space = "";

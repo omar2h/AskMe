@@ -146,3 +146,47 @@ std::map<int, std::vector<Question>> QuestionsDb::get_questions_to_user(const in
 	}
 	return mp;
 }
+
+bool QuestionsDb::get_questions_from_user(const int uId, std::vector<Question> &v)
+{
+	Question q;
+
+	std::string path = "questions.txt";
+	std::fstream file_handler(path.c_str());
+
+	if (file_handler.fail())
+	{
+		std::cout << "\n -------- Can't open file -----------\n\n";
+		return 0;
+	}
+
+	std::string line;
+	std::string idStr, thrdStr, toStr, fromStr, anonStr, ansdStr, text, ans;
+	while (getline(file_handler, line))
+	{
+		std::stringstream iss(line);
+		std::getline(iss, idStr, ',');
+		std::getline(iss, thrdStr, ',');
+		std::getline(iss, fromStr, ',');
+		std::getline(iss, toStr, ',');
+		std::getline(iss, anonStr, ',');
+		std::getline(iss, ansdStr, ',');
+		std::getline(iss, text, ',');
+		std::getline(iss, ans, ',');
+
+		if (!toStr.empty() && std::all_of(toStr.begin(), toStr.end(), ::isdigit) && stoi(fromStr) == uId)
+		{
+			q.id = (stoi(idStr));
+			q.threadId = (stoi(thrdStr));
+			q.fromId = (stoi(fromStr));
+			q.toId = (stoi(toStr));
+			q.anon = stoi(anonStr);
+			q.answered = (stoi(ansdStr));
+			q.text = text;
+			q.ans = ans;
+
+			v.push_back(q);
+		}
+	}
+	return 1;
+}

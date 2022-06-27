@@ -80,6 +80,24 @@ void App::print_questions_received(int uId)
 	}
 }
 
+void App::print_questions_asked(int uId)
+{
+	DbManager DB;
+	std::vector<Question> v;
+	DB.questionsDb.get_questions_from_user(uId, v);
+
+	/*for(auto const& [key, val] : mp){
+		std::cout<<key<<" : "<<val.id<<"\n";
+		if(val.has_children())
+			val.print_children();
+	}*/
+	// c++ 17 syntax
+	for (auto &q : v)
+	{
+		q.print_asked();
+	}
+}
+
 void App::ask(User user)
 {
 	Question q;
@@ -184,7 +202,8 @@ void App::main_menu(User &user)
 
 		else if (choice == 2)
 		{
-			// 2 print questions i asked
+			// 2: print questions i asked
+			print_questions_asked(user.id);
 		}
 		else if (choice == 3)
 		{

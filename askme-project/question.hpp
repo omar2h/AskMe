@@ -21,6 +21,7 @@ struct Question
 	bool has_children() const;
 	void print() const;
 	void print_child(int);
+	void print_asked() const;
 };
 
 void print_children(std::vector<Question>, std::map<int, std::vector<Question>> &, int);

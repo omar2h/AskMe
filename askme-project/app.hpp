@@ -63,6 +63,8 @@ struct App
 
 	void print_questions_received(int);
 
+	void print_questions_asked(int);
+
 	/**
 	 * display list of system users
 	 *

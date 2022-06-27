@@ -16,6 +16,7 @@ struct QuestionsDb
 {
 	int generate_id();
 	std::map<int, std::vector<Question>> get_questions_to_user(const int);
+	bool get_questions_from_user(const int, std::vector<Question> &);
 	std::pair<Question, bool> get_question(const int);
 	bool add_question(Question &);
 	void print();

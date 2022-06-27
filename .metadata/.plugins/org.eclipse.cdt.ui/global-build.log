@@ -2461,3 +2461,85 @@ g++ -O0 -g3 -Wall -c -fmessage-length=0 -o signup_handler.o "..\\signup_handler.
 g++ -O0 -g3 -Wall -c -fmessage-length=0 -o users_db.o "..\\users_db.cpp" 
 g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
 Info: Nothing to build for askme-project
+13:01:20 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o database_manager.o "..\\database_manager.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o signup_handler.o "..\\signup_handler.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o questions_db.o "..\\questions_db.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+..\app.cpp: In member function 'void App::main_menu(User&)':
+..\app.cpp:223:52: error: 'struct User' has no member named 'uid'; did you mean 'id'?
+  223 |                         print_questions_asked(user.uid);
+      |                                                    ^~~
+      |                                                    id
+13:01:43 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o login_handler.o "..\\login_handler.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: database_manager.o: in function `DbManager::get_all_threads(int, std::map<int, std::vector<Question, std::allocator<Question> >, std::less<int>, std::allocator<std::pair<int const, std::vector<Question, std::allocator<Question> > > > >&)':
+H:\Career\Courses\C-C++ Data Structures & Algorithms\Dr Mostafa Saad\01-Mastering 4 critical SKILLS using C++ 17\Projects\01-Askme Project\askme-project\Debug/../database_manager.cpp:33: undefined reference to `QuestionsDb::get_questions_from_user(int)'
+collect2.exe: error: ld returned 1 exit status
+13:01:48 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: database_manager.o: in function `DbManager::get_all_threads(int, std::map<int, std::vector<Question, std::allocator<Question> >, std::less<int>, std::allocator<std::pair<int const, std::vector<Question, std::allocator<Question> > > > >&)':
+H:\Career\Courses\C-C++ Data Structures & Algorithms\Dr Mostafa Saad\01-Mastering 4 critical SKILLS using C++ 17\Projects\01-Askme Project\askme-project\Debug/../database_manager.cpp:33: undefined reference to `QuestionsDb::get_questions_from_user(int)'
+collect2.exe: error: ld returned 1 exit status
+13:06:34 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o questions_db.o "..\\questions_db.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+Command canceled
+13:06:55 **** Rebuild of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o users_db.o "..\\users_db.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o questions_db.o "..\\questions_db.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o login_handler.o "..\\login_handler.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o menu.o "..\\menu.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o error.o "..\\error.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o question.o "..\\question.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o signup_handler.o "..\\signup_handler.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o database_manager.o "..\\database_manager.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+17:03:12 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o questions_db.o "..\\questions_db.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o signup_handler.o "..\\signup_handler.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o database_manager.o "..\\database_manager.cpp" 
+..\database_manager.cpp: In member function 'std::map<int, std::vector<Question> > DbManager::get_all_threads(int, std::map<int, std::vector<Question> >&)':
+..\database_manager.cpp:33:49: error: no matching function for call to 'QuestionsDb::get_questions_from_user(const int&)'
+   33 |         mp = questionsDb.get_questions_from_user(uId);
+      |              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~
+In file included from ..\database_manager.hpp:11,
+                 from ..\database_manager.cpp:8:
+..\questions_db.hpp:19:14: note: candidate: 'bool QuestionsDb::get_questions_from_user(int, std::vector<Question>&)'
+   19 |         bool get_questions_from_user(const int, std::vector<Question>&);
+      |              ^~~~~~~~~~~~~~~~~~~~~~~
+..\questions_db.hpp:19:14: note:   candidate expects 2 arguments, 1 provided
+17:03:45 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o database_manager.o "..\\database_manager.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o login_handler.o "..\\login_handler.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+21:25:18 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o database_manager.o "..\\database_manager.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o login_handler.o "..\\login_handler.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o questions_db.o "..\\questions_db.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o question.o "..\\question.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o signup_handler.o "..\\signup_handler.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+21:26:01 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
