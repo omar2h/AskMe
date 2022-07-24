@@ -1,4 +1,4 @@
-1,-1,4,2,0,0,how are ya?,
+1,-1,4,2,0,1,how are ya?,fine thanks
 2,1,4,2,1,0,how old are ya?,
 3,1,4,2,0,0,how is school?,
 4,-1,4,2,1,0,how much is kilo panneh?,

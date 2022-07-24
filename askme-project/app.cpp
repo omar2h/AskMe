@@ -173,6 +173,38 @@ void App::ask(User user)
 	std::cout << "\n\n--------- Question Saved ----------\n\n";
 }
 
+void App::answer(int uId)
+{
+	DbManager DB;
+	Error error;
+	Question q;
+
+	int qId;
+	while (1)
+	{
+		std::cout << "Enter question id to answer or -1 to cancel: ";
+		std::cin >> qId;
+
+		if (qId == -1)
+			return;
+
+		if (!DB.check_user_has_q(qId, uId))
+			error.print(4);
+		else
+			break;
+	}
+	q = DB.questionsDb.get_question(qId).first;
+	q.print();
+	if (q.answered)
+		std::cout << "Question already answered. Answer will be overwritten\n";
+	std::cin.ignore();
+	std::cout << "Enter answer: ";
+	std::getline(std::cin, q.ans);
+	q.answered = 1;
+
+	DB.questionsDb.update_answer(q);
+}
+
 void App::list_users()
 {
 	DbManager DB;
@@ -208,6 +240,7 @@ void App::main_menu(User &user)
 		else if (choice == 3)
 		{
 			// 3 answer questions
+			answer(user.id);
 		}
 		else if (choice == 4)
 		{

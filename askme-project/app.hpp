@@ -61,6 +61,8 @@ struct App
 	 */
 	void ask(User);
 
+	void answer(int);
+
 	void print_questions_received(int);
 
 	void print_questions_asked(int);

@@ -19,7 +19,8 @@ struct QuestionsDb
 	bool get_questions_from_user(const int, std::vector<Question> &);
 	std::pair<Question, bool> get_question(const int);
 	bool add_question(Question &);
-	void print();
+	void update_answer(const Question &);
+	void print(const Question &);
 };
 
 #endif /* QUESTIONS_DB_HPP_ */
