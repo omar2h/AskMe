@@ -285,3 +285,47 @@ void QuestionsDb::update_answer(const Question &q)
 	remove("questions.txt");
 	rename("temp.txt", "questions.txt");
 }
+
+std::vector<Question> QuestionsDb::feed()
+{
+
+	std::vector<Question> qv;
+	Question q;
+	std::string path = "questions.txt";
+	std::fstream file_handler(path.c_str());
+
+	if (file_handler.fail())
+	{
+		std::cout << "\n -------- Can't open file -----------\n\n";
+	}
+
+	std::string line;
+	std::string idStr, thrdStr, toStr, fromStr, anonStr, ansdStr, text, ans;
+	while (getline(file_handler, line))
+	{
+		std::stringstream iss(line);
+		std::getline(iss, idStr, ',');
+		std::getline(iss, thrdStr, ',');
+		std::getline(iss, fromStr, ',');
+		std::getline(iss, toStr, ',');
+		std::getline(iss, anonStr, ',');
+		std::getline(iss, ansdStr, ',');
+		std::getline(iss, text, ',');
+		std::getline(iss, ans, ',');
+
+		if (stoi(ansdStr))
+		{
+			q.id = (stoi(idStr));
+			q.threadId = (stoi(thrdStr));
+			q.fromId = (stoi(fromStr));
+			q.toId = (stoi(toStr));
+			q.anon = stoi(anonStr);
+			q.answered = (stoi(ansdStr));
+			q.text = text;
+			q.ans = ans;
+
+			qv.push_back(q);
+		}
+	}
+	return qv;
+}

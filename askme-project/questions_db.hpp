@@ -22,6 +22,7 @@ struct QuestionsDb
 	void delete_q(const int qId);
 	void update_answer(const Question &);
 	void print(const Question &);
+	std::vector<Question> feed();
 };
 
 #endif /* QUESTIONS_DB_HPP_ */

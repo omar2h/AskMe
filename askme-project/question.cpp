@@ -35,6 +35,23 @@ void Question::print_asked() const
 	}
 }
 
+void Question::print_feed() const
+{
+	if (threadId != -1)
+	{
+		std::cout << "Parent(id: " << threadId << ") ";
+	}
+
+	std::cout << "Question(id:" << id << ") ";
+	if (!anon)
+	{
+		std::cout << "from user(id:" << fromId << ") ";
+	}
+
+	std::cout << "to user(id:" << toId << "): " << text << "\n";
+	std::cout << "Answer: " << ans << "\n";
+}
+
 void Question::print_child(int spaces)
 {
 	std::string space = "";

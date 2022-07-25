@@ -235,6 +235,14 @@ void App::list_users()
 	DB.usersDb.print();
 }
 
+void App::print_feed()
+{
+	std::vector<Question> qv;
+	DbManager DB;
+	qv = DB.questionsDb.feed();
+	for (Question &q : qv)
+		q.print_feed();
+}
 void App::main_menu(User &user)
 {
 	Menu menu;
@@ -284,6 +292,7 @@ void App::main_menu(User &user)
 		else if (choice == 7)
 		{
 			// 7 feed
+			print_feed();
 		}
 		else if (choice == 8)
 		{

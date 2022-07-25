@@ -76,6 +76,8 @@ struct App
 	 * @return non
 	 */
 	void list_users();
+
+	void print_feed();
 };
 
 #endif /* APP_HPP_ */
