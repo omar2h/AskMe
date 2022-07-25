@@ -49,7 +49,7 @@ void App::print_questions_received(int uId)
 {
 	DbManager DB;
 	std::map<int, std::vector<Question>> mp;
-	DB.get_all_threads(uId, mp);
+	DB.get_all_Qs_to_user(uId, mp);
 
 	/*for(auto const& [key, val] : mp){
 		std::cout<<key<<" : "<<val.id<<"\n";
@@ -196,13 +196,37 @@ void App::answer(int uId)
 	q = DB.questionsDb.get_question(qId).first;
 	q.print();
 	if (q.answered)
-		std::cout << "Question already answered. Answer will be overwritten\n";
+		std::cout << "\nQuestion already answered. Answer will be overwritten\n\n";
 	std::cin.ignore();
 	std::cout << "Enter answer: ";
 	std::getline(std::cin, q.ans);
 	q.answered = 1;
 
 	DB.questionsDb.update_answer(q);
+}
+
+void App::delete_question(int uId)
+{
+	DbManager DB;
+	Error error;
+	Question q;
+	std::map<int, std::vector<Question>> mp;
+
+	int qId;
+	while (1)
+	{
+		std::cout << "Enter question id to delete or -1 to cancel: ";
+		std::cin >> qId;
+
+		if (qId == -1)
+			return;
+
+		if (!DB.check_user_from_to_q(qId, uId))
+			error.print(4);
+		else
+			break;
+	}
+	DB.questionsDb.delete_q(qId);
 }
 
 void App::list_users()
@@ -245,6 +269,7 @@ void App::main_menu(User &user)
 		else if (choice == 4)
 		{
 			// 4 delete question
+			delete_question(user.id);
 		}
 		else if (choice == 5)
 		{

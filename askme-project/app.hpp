@@ -63,6 +63,8 @@ struct App
 
 	void answer(int);
 
+	void delete_question(int);
+
 	void print_questions_received(int);
 
 	void print_questions_asked(int);

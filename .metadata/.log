@@ -9233,3 +9233,45 @@ user global configuration and to define the default location to store repositori
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.core.jobs 4 2 2022-07-25 03:08:01.273
+!MESSAGE An internal error occurred during: "Open Declaration".
+!STACK 0
+java.nio.BufferUnderflowException
+	at java.base/java.nio.CharBuffer.get(CharBuffer.java:795)
+	at org.eclipse.cdt.internal.core.pdom.db.Chunk.getChars(Chunk.java:260)
+	at org.eclipse.cdt.internal.core.pdom.db.LongString.getChars(LongString.java:131)
+	at org.eclipse.cdt.internal.core.pdom.db.LongString.getString(LongString.java:252)
+	at org.eclipse.cdt.internal.core.pdom.dom.PDOMFile.getLocation(PDOMFile.java:929)
+	at org.eclipse.cdt.internal.core.index.CIndex$NameKey.<init>(CIndex.java:836)
+	at org.eclipse.cdt.internal.core.index.CIndex.findNames(CIndex.java:194)
+	at org.eclipse.cdt.internal.ui.search.actions.OpenDeclarationsJob.findDefinitions(OpenDeclarationsJob.java:445)
+	at org.eclipse.cdt.internal.ui.search.actions.OpenDeclarationsJob.findNames(OpenDeclarationsJob.java:394)
+	at org.eclipse.cdt.internal.ui.search.actions.OpenDeclarationsJob.findDeclNames(OpenDeclarationsJob.java:367)
+	at org.eclipse.cdt.internal.ui.search.actions.OpenDeclarationsJob.runOnAST(OpenDeclarationsJob.java:301)
+	at org.eclipse.cdt.internal.core.model.ASTCache.runOnAST(ASTCache.java:231)
+	at org.eclipse.cdt.internal.ui.editor.ASTProvider.runOnAST(ASTProvider.java:338)
+	at org.eclipse.cdt.internal.ui.search.actions.OpenDeclarationsJob.performNavigation(OpenDeclarationsJob.java:171)
+	at org.eclipse.cdt.internal.ui.search.actions.OpenDeclarationsJob.run(OpenDeclarationsJob.java:147)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 4 2 2022-07-25 03:08:07.863
+!MESSAGE An internal error occurred during: "Open Declaration".
+!STACK 0
+java.nio.BufferUnderflowException
+	at java.base/java.nio.CharBuffer.get(CharBuffer.java:795)
+	at org.eclipse.cdt.internal.core.pdom.db.Chunk.getChars(Chunk.java:260)
+	at org.eclipse.cdt.internal.core.pdom.db.LongString.getChars(LongString.java:131)
+	at org.eclipse.cdt.internal.core.pdom.db.LongString.getString(LongString.java:252)
+	at org.eclipse.cdt.internal.core.pdom.dom.PDOMFile.getLocation(PDOMFile.java:929)
+	at org.eclipse.cdt.internal.core.index.CIndex$NameKey.<init>(CIndex.java:836)
+	at org.eclipse.cdt.internal.core.index.CIndex.findNames(CIndex.java:194)
+	at org.eclipse.cdt.internal.ui.search.actions.OpenDeclarationsJob.findDefinitions(OpenDeclarationsJob.java:445)
+	at org.eclipse.cdt.internal.ui.search.actions.OpenDeclarationsJob.findNames(OpenDeclarationsJob.java:394)
+	at org.eclipse.cdt.internal.ui.search.actions.OpenDeclarationsJob.findDeclNames(OpenDeclarationsJob.java:367)
+	at org.eclipse.cdt.internal.ui.search.actions.OpenDeclarationsJob.runOnAST(OpenDeclarationsJob.java:301)
+	at org.eclipse.cdt.internal.core.model.ASTCache.runOnAST(ASTCache.java:231)
+	at org.eclipse.cdt.internal.ui.editor.ASTProvider.runOnAST(ASTProvider.java:338)
+	at org.eclipse.cdt.internal.ui.search.actions.OpenDeclarationsJob.performNavigation(OpenDeclarationsJob.java:171)
+	at org.eclipse.cdt.internal.ui.search.actions.OpenDeclarationsJob.run(OpenDeclarationsJob.java:147)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)

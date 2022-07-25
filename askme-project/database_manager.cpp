@@ -28,8 +28,18 @@ bool DbManager::check_user_has_q(const int qId, const int uId)
 	return 1;
 }
 
-std::map<int, std::vector<Question>> DbManager::get_all_threads(const int uId, std::map<int, std::vector<Question>> &mp)
+bool DbManager::check_user_from_to_q(const int qId, const int uId)
 {
-	mp = questionsDb.get_questions_to_user(uId);
+	std::pair<Question, bool> qPair = questionsDb.get_question(qId);
+	if (!qPair.second)
+		return 0;
+	if (qPair.first.toId == uId || qPair.first.fromId == uId)
+		return 1;
+	return 0;
+}
+
+std::map<int, std::vector<Question>> DbManager::get_all_Qs_to_user(const int uId, std::map<int, std::vector<Question>> &mp)
+{
+	mp = questionsDb.get_to_user(uId);
 	return mp;
 }

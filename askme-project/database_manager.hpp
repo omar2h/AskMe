@@ -20,8 +20,9 @@ struct DbManager
 	QuestionsDb questionsDb;
 
 	bool check_user_has_q(const int, const int);
+	bool check_user_from_to_q(const int qId, const int uId);
 	bool check_user_exist(User &);
-	std::map<int, std::vector<Question>> get_all_threads(const int uId, std::map<int, std::vector<Question>> &);
+	std::map<int, std::vector<Question>> get_all_Qs_to_user(const int uId, std::map<int, std::vector<Question>> &);
 };
 
 #endif /* DATABASE_MANAGER_HPP_ */

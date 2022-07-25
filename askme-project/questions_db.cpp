@@ -97,7 +97,7 @@ std::pair<Question, bool> QuestionsDb::get_question(const int id)
 	return qPair;
 }
 
-std::map<int, std::vector<Question>> QuestionsDb::get_questions_to_user(const int uId)
+std::map<int, std::vector<Question>> QuestionsDb::get_to_user(const int uId)
 {
 	std::map<int, std::vector<Question>> mp;
 	Question q;
@@ -191,7 +191,53 @@ bool QuestionsDb::get_questions_from_user(const int uId, std::vector<Question> &
 	return 1;
 }
 
-void QuestionsDb::update_answer(const Question& q){
+void QuestionsDb::delete_q(const int qId)
+{
+
+	std::string path = "questions.txt";
+	std::fstream file_handler1(path.c_str());
+
+	std::ofstream fout("temp.txt", std::ios_base::out);
+
+	if (file_handler1.fail())
+	{
+		std::cout << "\n -------- Can't open file -----------\n\n";
+		return;
+	}
+
+	if (fout.fail())
+	{
+		std::cout << "\n -------- Can't open file -----------\n\n";
+		return;
+	}
+
+	std::string line;
+	std::string idStr, thrdStr, toStr, fromStr, anonStr, ansdStr, text, ans;
+	while (getline(file_handler1, line))
+	{
+		std::stringstream iss(line);
+		std::getline(iss, idStr, ',');
+		std::getline(iss, thrdStr, ',');
+		std::getline(iss, fromStr, ',');
+		std::getline(iss, toStr, ',');
+		std::getline(iss, anonStr, ',');
+		std::getline(iss, ansdStr, ',');
+		std::getline(iss, text, ',');
+		std::getline(iss, ans, ',');
+
+		if (stoi(idStr) == qId || stoi(thrdStr) == qId)
+		{
+			continue;
+		}
+		fout << idStr << "," << thrdStr << "," << fromStr << "," << toStr << "," << anonStr << "," << ansdStr << "," << text << "," << ans << "\n";
+	}
+	file_handler1.close();
+	fout.close();
+	remove("questions.txt");
+	rename("temp.txt", "questions.txt");
+}
+void QuestionsDb::update_answer(const Question &q)
+{
 
 	int id = q.id;
 	std::string path = "questions.txt";
@@ -206,10 +252,10 @@ void QuestionsDb::update_answer(const Question& q){
 	}
 
 	if (fout.fail())
-		{
-			std::cout << "\n -------- Can't open file -----------\n\n";
-			return;
-		}
+	{
+		std::cout << "\n -------- Can't open file -----------\n\n";
+		return;
+	}
 
 	std::string line;
 	std::string idStr, thrdStr, toStr, fromStr, anonStr, ansdStr, text, ans;
@@ -229,8 +275,9 @@ void QuestionsDb::update_answer(const Question& q){
 		{
 			fout << q.id << ',' << q.threadId << ',' << q.fromId << ',' << q.toId << ',' << q.anon << ',' << q.answered << ',' << q.text << ',' << q.ans << '\n';
 		}
-		else{
-			fout<< idStr << "," << thrdStr << "," << fromStr<<","<<toStr<<","<<anonStr<<","<<ansdStr<<","<<text<<","<<ans<<"\n";
+		else
+		{
+			fout << idStr << "," << thrdStr << "," << fromStr << "," << toStr << "," << anonStr << "," << ansdStr << "," << text << "," << ans << "\n";
 		}
 	}
 	file_handler1.close();
