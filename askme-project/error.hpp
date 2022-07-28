@@ -8,16 +8,15 @@
 #ifndef ERROR_HPP_
 #define ERROR_HPP_
 
-struct Error{
+struct Error
+{
 	/**
-	 * displays error
+	 * display error
 	 *
 	 * @param error number
 	 * @return non
 	 */
-	void print(const int);
+	void print(const int) const;
 };
-
-
 
 #endif /* ERROR_HPP_ */

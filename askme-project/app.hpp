@@ -7,12 +7,40 @@
 
 #ifndef APP_HPP_
 #define APP_HPP_
+
+/* ****** includes ******** */
 #include "user.hpp"
 
 #include <iostream>
 
 struct App
 {
+	/* ****** helper functions ******** */
+	/**
+	 * verify login user input choice at login menu choice between 1-3
+	 *
+	 * @param user choice
+	 * @return whether choice is correct or not
+	 */
+	bool verify_login_choice(const int) const;
+
+	/**
+	 * verify main menu user input choice between 1-8
+	 *
+	 * @param user choice
+	 * @return whether choice is correct or not
+	 */
+	bool verify_main_choice(const int) const;
+
+	/**
+	 * prompt user to enter question text
+	 *
+	 * @param non
+	 * @return question text
+	 */
+	std::string get_qText_from_user();
+
+	/* ****************************** */
 	/**
 	 * Main app run function
 	 *
@@ -30,44 +58,44 @@ struct App
 	void main_menu(User &);
 
 	/**
-	 * verify login user input choice at login menu choice between 1-3
-	 *
-	 * @param user choice
-	 * @return whether choice is correct or not
-	 */
-	bool verify_login_choice(int);
-
-	/**
-	 * verify main menu user input choice between 1-8
-	 *
-	 * @param user choice
-	 * @return whether choice is correct or not
-	 */
-	bool verify_main_choice(int);
-
-	/**
-	 * prompt user to enter question text
-	 *
-	 * @param non
-	 * @return question text
-	 */
-	std::string ask_new_q();
-
-	/**
 	 * ask question
 	 *
 	 * @param non
 	 * @return non
 	 */
-	void ask(User);
+	void ask(User &);
 
-	void answer(int);
+	/**
+	 * answer (if there is an answer it would be overwritten)
+	 *
+	 * @param non
+	 * @return non
+	 */
+	void answer(const int);
 
-	void delete_question(int);
+	/**
+	 * delete a question or thread
+	 *
+	 * @param non
+	 * @return non
+	 */
+	void delete_question(const int);
 
-	void print_questions_received(int);
+	/**
+	 * display questions user received
+	 *
+	 * @param non
+	 * @return non
+	 */
+	void print_questions_received(const int);
 
-	void print_questions_asked(int);
+	/**
+	 * display questions asked by user
+	 *
+	 * @param non
+	 * @return non
+	 */
+	void print_questions_asked(const int);
 
 	/**
 	 * display list of system users
@@ -77,6 +105,12 @@ struct App
 	 */
 	void list_users();
 
+	/**
+	 * display feed (Answered questions for all users)
+	 *
+	 * @param non
+	 * @return non
+	 */
 	void print_feed();
 };
 

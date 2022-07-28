@@ -1,0 +1,58 @@
+/*
+ * database_manager.hpp
+ *
+ *  Created on: Jun 22, 2022
+ *      Author: omarh
+ */
+
+#ifndef DATABASE_MANAGER_HPP_
+#define DATABASE_MANAGER_HPP_
+
+/* ****** includes ******** */
+#include "questions_db.hpp"
+#include "users_db.hpp"
+#include <iostream>
+#include <vector>
+#include <map>
+
+struct DbManager
+{
+	/* struct to handle user db */
+	UsersDb usersDb;
+	/* struct to handle questions db */
+	QuestionsDb questionsDb;
+
+	/**
+		 * check whether user received this question or not
+		 *
+		 * @param question id, user id
+		 * @return bool
+		 */
+	bool check_user_has_q(const int, const int);
+
+	/**
+		 * check whether user asked or received this question
+		 *
+		 * @param question id, user id
+		 * @return bool
+		 */
+	bool check_user_from_to_q(const int qId, const int uId);
+
+	/**
+			 * check whether user exists or not using the id
+			 *
+			 * @param User
+			 * @return bool
+			 */
+	bool check_user_exist(User &);
+
+	/**
+			 * get all questions received to user and store in map
+			 *
+			 * @param user id, map
+			 * @return map
+			 */
+	std::map<int, std::vector<Question>> get_all_Qs_to_user(const int uId, std::map<int, std::vector<Question>> &);
+};
+
+#endif /* DATABASE_MANAGER_HPP_ */

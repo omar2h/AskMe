@@ -5,6 +5,7 @@
  *      Author: omarh
  */
 
+/* ****** includes ******** */
 #include "menu.hpp"
 
 int Menu::menu_login()
@@ -34,7 +35,7 @@ int Menu::menu_main()
     return get_choice(menuList);
 }
 
-void Menu::print(const std::string menuList)
+void Menu::print(const std::string menuList) const
 {
     std::cout << menuList;
 }

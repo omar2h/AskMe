@@ -11,6 +11,7 @@
 #include <sstream>
 #include <algorithm>
 
+/* read lines and increment at each line. return increment+1 */
 int QuestionsDb::generate_id()
 {
 	std::string path = "questions.txt";
@@ -31,10 +32,30 @@ int QuestionsDb::generate_id()
 	while (getline(file_handler, line))
 	{
 		std::istringstream iss(line);
-		std::getline(iss, idStr, ',');
-		std::cout << idStr << '\n';
+		std::getline(iss, idStr, DELIMITER);
 	}
 	return stoi(idStr) + 1;
+}
+
+void QuestionsDb::split_question_toVector(std::string line, std::vector<std::string> &v)
+{
+	std::stringstream iss(line);
+	for (int i = 0; i < QUESTION_ITEMS; i++)
+	{
+		std::getline(iss, v[i], DELIMITER);
+	}
+}
+
+void QuestionsDb::update_question_info(std::vector<std::string> &v, Question &q)
+{
+	q.id = (stoi(v[ID]));
+	q.threadId = (stoi(v[THREAD_ID]));
+	q.fromId = (stoi(v[FROM_ID]));
+	q.toId = (stoi(v[TO_ID]));
+	q.anon = stoi(v[ANONQ]);
+	q.answered = (stoi(v[ANSWERED_BOOL]));
+	q.text = v[QTEXT];
+	q.ans = v[ANSWERTEXT];
 }
 
 bool QuestionsDb::add_question(Question &q)
@@ -48,7 +69,7 @@ bool QuestionsDb::add_question(Question &q)
 		return 0;
 	}
 
-	fout << q.id << ',' << q.threadId << ',' << q.fromId << ',' << q.toId << ',' << q.anon << ',' << q.answered << ',' << q.text << ',' << q.ans << '\n';
+	fout << q.id << DELIMITER << q.threadId << DELIMITER << q.fromId << DELIMITER << q.toId << DELIMITER << q.anon << DELIMITER << q.answered << DELIMITER << q.text << DELIMITER << q.ans << '\n';
 	return 1;
 }
 
@@ -68,27 +89,14 @@ std::pair<Question, bool> QuestionsDb::get_question(const int id)
 	}
 
 	std::string line;
-	std::string idStr, thrdStr, toStr, fromStr, anonStr, ansdStr;
 	while (getline(file_handler, line))
 	{
-		std::stringstream iss(line);
-		std::getline(iss, idStr, ',');
-		std::getline(iss, thrdStr, ',');
-		std::getline(iss, fromStr, ',');
-		std::getline(iss, toStr, ',');
-		std::getline(iss, anonStr, ',');
-		std::getline(iss, ansdStr, ',');
-		std::getline(iss, q.text, ',');
-		std::getline(iss, q.ans, ',');
+		std::vector<std::string> v(QUESTION_ITEMS);
+		split_question_toVector(line, v);
 
-		if (stoi(idStr) == id)
+		if (stoi(v[ID]) == id)
 		{
-			q.id = stoi(idStr);
-			q.threadId = stoi(thrdStr);
-			q.toId = stoi(toStr);
-			q.fromId = stoi(fromStr);
-			q.anon = stoi(anonStr);
-			q.answered = stoi(ansdStr);
+			update_question_info(v, q);
 			qPair.first = q;
 			qPair.second = 1;
 			return qPair;
@@ -112,29 +120,14 @@ std::map<int, std::vector<Question>> QuestionsDb::get_to_user(const int uId)
 	}
 
 	std::string line;
-	std::string idStr, thrdStr, toStr, fromStr, anonStr, ansdStr, text, ans;
 	while (getline(file_handler, line))
 	{
-		std::stringstream iss(line);
-		std::getline(iss, idStr, ',');
-		std::getline(iss, thrdStr, ',');
-		std::getline(iss, fromStr, ',');
-		std::getline(iss, toStr, ',');
-		std::getline(iss, anonStr, ',');
-		std::getline(iss, ansdStr, ',');
-		std::getline(iss, text, ',');
-		std::getline(iss, ans, ',');
+		std::vector<std::string> v(8);
+		split_question_toVector(line, v);
 
-		if (!toStr.empty() && std::all_of(toStr.begin(), toStr.end(), ::isdigit) && stoi(toStr) == uId)
+		if (!v[TO_ID].empty() && std::all_of(v[TO_ID].begin(), v[TO_ID].end(), ::isdigit) && stoi(v[TO_ID]) == uId)
 		{
-			q.id = (stoi(idStr));
-			q.threadId = (stoi(thrdStr));
-			q.fromId = (stoi(fromStr));
-			q.toId = (stoi(toStr));
-			q.anon = stoi(anonStr);
-			q.answered = (stoi(ansdStr));
-			q.text = text;
-			q.ans = ans;
+			update_question_info(v, q);
 			if (q.threadId == -1)
 				mp[q.id].push_back(q);
 			else
@@ -147,7 +140,7 @@ std::map<int, std::vector<Question>> QuestionsDb::get_to_user(const int uId)
 	return mp;
 }
 
-bool QuestionsDb::get_questions_from_user(const int uId, std::vector<Question> &v)
+bool QuestionsDb::get_questions_from_user(const int uId, std::vector<Question> &qv)
 {
 	Question q;
 
@@ -164,28 +157,14 @@ bool QuestionsDb::get_questions_from_user(const int uId, std::vector<Question> &
 	std::string idStr, thrdStr, toStr, fromStr, anonStr, ansdStr, text, ans;
 	while (getline(file_handler, line))
 	{
-		std::stringstream iss(line);
-		std::getline(iss, idStr, ',');
-		std::getline(iss, thrdStr, ',');
-		std::getline(iss, fromStr, ',');
-		std::getline(iss, toStr, ',');
-		std::getline(iss, anonStr, ',');
-		std::getline(iss, ansdStr, ',');
-		std::getline(iss, text, ',');
-		std::getline(iss, ans, ',');
+		std::vector<std::string> v(8);
+		split_question_toVector(line, v);
 
-		if (!toStr.empty() && std::all_of(toStr.begin(), toStr.end(), ::isdigit) && stoi(fromStr) == uId)
+		if (!v[FROM_ID].empty() && std::all_of(v[FROM_ID].begin(), v[FROM_ID].end(), ::isdigit) && stoi(v[FROM_ID]) == uId)
 		{
-			q.id = (stoi(idStr));
-			q.threadId = (stoi(thrdStr));
-			q.fromId = (stoi(fromStr));
-			q.toId = (stoi(toStr));
-			q.anon = stoi(anonStr);
-			q.answered = (stoi(ansdStr));
-			q.text = text;
-			q.ans = ans;
+			update_question_info(v, q);
 
-			v.push_back(q);
+			qv.push_back(q);
 		}
 	}
 	return 1;
@@ -212,24 +191,16 @@ void QuestionsDb::delete_q(const int qId)
 	}
 
 	std::string line;
-	std::string idStr, thrdStr, toStr, fromStr, anonStr, ansdStr, text, ans;
 	while (getline(file_handler1, line))
 	{
-		std::stringstream iss(line);
-		std::getline(iss, idStr, ',');
-		std::getline(iss, thrdStr, ',');
-		std::getline(iss, fromStr, ',');
-		std::getline(iss, toStr, ',');
-		std::getline(iss, anonStr, ',');
-		std::getline(iss, ansdStr, ',');
-		std::getline(iss, text, ',');
-		std::getline(iss, ans, ',');
+		std::vector<std::string> v(QUESTION_ITEMS);
+		split_question_toVector(line, v);
 
-		if (stoi(idStr) == qId || stoi(thrdStr) == qId)
+		if (stoi(v[ID]) == qId || stoi(v[THREAD_ID]) == qId)
 		{
 			continue;
 		}
-		fout << idStr << "," << thrdStr << "," << fromStr << "," << toStr << "," << anonStr << "," << ansdStr << "," << text << "," << ans << "\n";
+		fout << v[ID] << DELIMITER << v[THREAD_ID] << DELIMITER << v[FROM_ID] << DELIMITER << v[TO_ID] << DELIMITER << v[ANONQ] << DELIMITER << v[ANSWERED_BOOL] << DELIMITER << v[QTEXT] << DELIMITER << v[ANSWERTEXT] << "\n";
 	}
 	file_handler1.close();
 	fout.close();
@@ -261,23 +232,16 @@ void QuestionsDb::update_answer(const Question &q)
 	std::string idStr, thrdStr, toStr, fromStr, anonStr, ansdStr, text, ans;
 	while (getline(file_handler1, line))
 	{
-		std::stringstream iss(line);
-		std::getline(iss, idStr, ',');
-		std::getline(iss, thrdStr, ',');
-		std::getline(iss, fromStr, ',');
-		std::getline(iss, toStr, ',');
-		std::getline(iss, anonStr, ',');
-		std::getline(iss, ansdStr, ',');
-		std::getline(iss, text, ',');
-		std::getline(iss, ans, ',');
+		std::vector<std::string> v(QUESTION_ITEMS);
+		split_question_toVector(line, v);
 
 		if (stoi(idStr) == id)
 		{
-			fout << q.id << ',' << q.threadId << ',' << q.fromId << ',' << q.toId << ',' << q.anon << ',' << q.answered << ',' << q.text << ',' << q.ans << '\n';
+			fout << q.id << DELIMITER << q.threadId << DELIMITER << q.fromId << DELIMITER << q.toId << DELIMITER << q.anon << DELIMITER << q.answered << DELIMITER << q.text << DELIMITER << q.ans << '\n';
 		}
 		else
 		{
-			fout << idStr << "," << thrdStr << "," << fromStr << "," << toStr << "," << anonStr << "," << ansdStr << "," << text << "," << ans << "\n";
+			fout << v[ID] << "," << v[THREAD_ID] << "," << v[FROM_ID] << "," << v[TO_ID] << "," << v[ANONQ] << "," << v[ANSWERED_BOOL] << "," << v[QTEXT] << "," << v[ANSWERTEXT] << "\n";
 		}
 	}
 	file_handler1.close();
@@ -288,7 +252,6 @@ void QuestionsDb::update_answer(const Question &q)
 
 std::vector<Question> QuestionsDb::feed()
 {
-
 	std::vector<Question> qv;
 	Question q;
 	std::string path = "questions.txt";
@@ -300,30 +263,15 @@ std::vector<Question> QuestionsDb::feed()
 	}
 
 	std::string line;
-	std::string idStr, thrdStr, toStr, fromStr, anonStr, ansdStr, text, ans;
+
 	while (getline(file_handler, line))
 	{
-		std::stringstream iss(line);
-		std::getline(iss, idStr, ',');
-		std::getline(iss, thrdStr, ',');
-		std::getline(iss, fromStr, ',');
-		std::getline(iss, toStr, ',');
-		std::getline(iss, anonStr, ',');
-		std::getline(iss, ansdStr, ',');
-		std::getline(iss, text, ',');
-		std::getline(iss, ans, ',');
+		std::vector<std::string> v(QUESTION_ITEMS);
+		split_question_toVector(line, v);
 
-		if (stoi(ansdStr))
+		if (stoi(v[ANSWERED_BOOL]))
 		{
-			q.id = (stoi(idStr));
-			q.threadId = (stoi(thrdStr));
-			q.fromId = (stoi(fromStr));
-			q.toId = (stoi(toStr));
-			q.anon = stoi(anonStr);
-			q.answered = (stoi(ansdStr));
-			q.text = text;
-			q.ans = ans;
-
+			update_question_info(v, q);
 			qv.push_back(q);
 		}
 	}

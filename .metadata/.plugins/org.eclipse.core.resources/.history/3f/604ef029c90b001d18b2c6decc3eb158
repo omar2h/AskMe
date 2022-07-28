@@ -1,0 +1,115 @@
+/*
+ * app.hpp
+ *
+ *  Created on: Jun 20, 2022
+ *      Author: omarh
+ */
+
+#ifndef APP_HPP_
+#define APP_HPP_
+
+/* ****** includes ******** */
+#include "user.hpp"
+
+#include <iostream>
+
+struct App
+{
+	/**
+	 * Main app run function
+	 *
+	 * @param non
+	 * @return non
+	 */
+	void run();
+
+	/**
+	 * run main menu
+	 *
+	 * @param Logged in user
+	 * @return non
+	 */
+	void main_menu(User &);
+
+	/**
+	 * verify login user input choice at login menu choice between 1-3
+	 *
+	 * @param user choice
+	 * @return whether choice is correct or not
+	 */
+	bool verify_login_choice(int);
+
+	/**
+	 * verify main menu user input choice between 1-8
+	 *
+	 * @param user choice
+	 * @return whether choice is correct or not
+	 */
+	bool verify_main_choice(int);
+
+	/**
+	 * prompt user to enter question text
+	 *
+	 * @param non
+	 * @return question text
+	 */
+	std::string ask_new_q();
+
+	/**
+	 * ask question
+	 *
+	 * @param non
+	 * @return non
+	 */
+	void ask(User);
+
+	/**
+			 * answer (if there is an answer it would be overwritten)
+			 *
+			 * @param non
+			 * @return non
+			 */
+	void answer(int);
+
+	/**
+			 * delete a question or thread
+			 *
+			 * @param non
+			 * @return non
+			 */
+	void delete_question(int);
+
+	/**
+			 * display questions user received
+			 *
+			 * @param non
+			 * @return non
+			 */
+	void print_questions_received(int);
+
+	/**
+		 * display questions asked by user
+		 *
+		 * @param non
+		 * @return non
+		 */
+	void print_questions_asked(int);
+
+	/**
+	 * display list of system users
+	 *
+	 * @param non
+	 * @return non
+	 */
+	void list_users();
+
+	/**
+		 * display feed (Answered questions for all users)
+		 *
+		 * @param non
+		 * @return non
+		 */
+	void print_feed();
+};
+
+#endif /* APP_HPP_ */

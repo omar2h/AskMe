@@ -2684,3 +2684,136 @@ g++ -O0 -g3 -Wall -c -fmessage-length=0 -o login_handler.o "..\\login_handler.cp
 g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
 g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
 Info: Nothing to build for askme-project
+10:05:37 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o signup_handler.o "..\\signup_handler.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o questions_db.o "..\\questions_db.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o question.o "..\\question.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o database_manager.o "..\\database_manager.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o login_handler.o "..\\login_handler.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+10:23:11 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o question.o "..\\question.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o questions_db.o "..\\questions_db.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o signup_handler.o "..\\signup_handler.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o login_handler.o "..\\login_handler.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o database_manager.o "..\\database_manager.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o error.o "..\\error.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o menu.o "..\\menu.cpp" 
+..\menu.cpp:11:5: error: no declaration matches 'int Menu::menu_login()'
+   11 | int Menu::menu_login()
+      |     ^~~~
+In file included from ..\menu.cpp:9:
+..\menu.hpp:38:13: note: candidate is: 'int Menu::menu_login() const'
+   38 |         int menu_login() const;
+      |             ^~~~~~~~~~
+..\menu.hpp:14:8: note: 'struct Menu' defined here
+   14 | struct Menu
+      |        ^~~~
+..\menu.cpp:38:6: error: no declaration matches 'void Menu::print(std::string)'
+   38 | void Menu::print(const std::string menuList)
+      |      ^~~~
+..\menu.hpp:22:14: note: candidate is: 'void Menu::print(std::string) const'
+   22 |         void print(const std::string) const;
+      |              ^~~~~
+..\menu.hpp:14:8: note: 'struct Menu' defined here
+   14 | struct Menu
+      |        ^~~~
+10:24:31 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o menu.o "..\\menu.cpp" 
+..\menu.cpp: In member function 'int Menu::menu_login() const':
+..\menu.cpp:19:22: error: passing 'const Menu' as 'this' argument discards qualifiers [-fpermissive]
+   19 |     return get_choice(menuList);
+      |            ~~~~~~~~~~^~~~~~~~~~
+In file included from ..\menu.cpp:9:
+..\menu.hpp:30:13: note:   in call to 'int Menu::get_choice(std::string)'
+   30 |         int get_choice(const std::string);
+      |             ^~~~~~~~~~
+10:24:54 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o menu.o "..\\menu.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+10:26:07 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+10:46:02 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o database_manager.o "..\\database_manager.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o question.o "..\\question.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o error.o "..\\error.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o login_handler.o "..\\login_handler.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o signup_handler.o "..\\signup_handler.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o questions_db.o "..\\questions_db.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+10:50:10 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o question.o "..\\question.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+16:12:47 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o signup_handler.o "..\\signup_handler.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o question.o "..\\question.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o login_handler.o "..\\login_handler.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o questions_db.o "..\\questions_db.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o database_manager.o "..\\database_manager.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file askme-project.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+16:13:09 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: questions_db.o: in function `QuestionsDb::feed()':
+H:\Career\Courses\C-C++ Data Structures & Algorithms\Dr Mostafa Saad\01-Mastering 4 critical SKILLS using C++ 17\Projects\01-Askme Project\askme-project\Debug/../questions_db.cpp:325: undefined reference to `QuestionsDb::split_question_toVector(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&)'
+C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: H:\Career\Courses\C-C++ Data Structures & Algorithms\Dr Mostafa Saad\01-Mastering 4 critical SKILLS using C++ 17\Projects\01-Askme Project\askme-project\Debug/../questions_db.cpp:329: undefined reference to `QuestionsDb::update_question_info(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, Question&)'
+collect2.exe: error: ld returned 1 exit status
+16:13:50 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o questions_db.o "..\\questions_db.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+16:25:20 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o questions_db.o "..\\questions_db.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+Info: Nothing to build for askme-project
+Info: Nothing to build for askme-project
+16:31:01 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o questions_db.o "..\\questions_db.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+17:15:37 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o questions_db.o "..\\questions_db.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file askme-project.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+17:15:40 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
+17:25:12 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o database_manager.o "..\\database_manager.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o login_handler.o "..\\login_handler.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o questions_db.o "..\\questions_db.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o signup_handler.o "..\\signup_handler.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project

@@ -4,7 +4,7 @@
  *  Created on: Jun 20, 2022
  *      Author: omarh
  */
-
+/* ****** includes ******** */
 #include "app.hpp"
 #include "menu.hpp"
 #include "user.hpp"
@@ -20,229 +20,88 @@
 #include <fstream>
 #include <sstream>
 
-bool App::verify_login_choice(int choice)
+/* ****** helper functions ******** */
+
+/* if choice not between 1 and 3 (inclusive) (login - signup - exit) return false */
+bool App::verify_login_choice(const int choice) const
 {
 	if (choice < 1 && choice > 3)
 	{
-		return 0;
+		return false;
 	}
-	return 1;
+	return true;
 }
 
-bool App::verify_main_choice(int choice)
+/* if choice not between 1 and 8 (inclusive) return false */
+bool App::verify_main_choice(const int choice) const
 {
 	if (choice < 1 && choice > 8)
-		return 0;
-	return 1;
+		return false;
+	return true;
 }
 
-std::string App::ask_new_q()
+std::string App::get_qText_from_user()
 {
-	std::string q;
+	std::string qText;
 	std::cin.ignore();
 	std::cout << "Enter Your Question: ";
-	std::getline(std::cin, q);
-	return q;
+	std::getline(std::cin, qText);
+	return qText;
 }
 
-void App::print_questions_received(int uId)
-{
-	DbManager DB;
-	std::map<int, std::vector<Question>> mp;
-	DB.get_all_Qs_to_user(uId, mp);
+/* *********************************************** */
 
-	/*for(auto const& [key, val] : mp){
-		std::cout<<key<<" : "<<val.id<<"\n";
-		if(val.has_children())
-			val.print_children();
-	}*/
-	// c++ 17 syntax
-	for (auto &[key, val] : mp)
+/* 1- get login choice from user */
+/* 2- if logged in proceed to the main menu */
+void App::run()
+{
+	int choice;
+	User user;
+	Menu menu;
+	Login_handler login_handler;
+	Signup_handler signup_handler;
+	std::pair<User, bool> userLoginPair;
+	Error error;
+
+	while (1)
 	{
-		if (val[0].threadId == -1)
+		while (1)
 		{
-			int spaces = 0;
-			val[0].print();
-			for (int i = 1; i < (int)val.size(); i++)
+			/* get login choice */
+			choice = menu.menu_login();
+
+			if (!verify_login_choice(choice))
 			{
-				print_children(mp[val[i].id], mp, spaces + 2);
+				/* Invalid choice */
+				error.print(1);
+				continue;
 			}
 
-			/*for(auto const& q : val.children){
-
-				std::cout<<"|\n";
-				std::cout<<"==";
-				std::cout<<"Question: "<<q.text<<'\n';
-				std::cout<<"  Answer: "<<q.ans<<'\n';
-			}*/
-			std::cout << '\n';
-		}
-	}
-}
-
-void App::print_questions_asked(int uId)
-{
-	DbManager DB;
-	std::vector<Question> v;
-	DB.questionsDb.get_questions_from_user(uId, v);
-
-	/*for(auto const& [key, val] : mp){
-		std::cout<<key<<" : "<<val.id<<"\n";
-		if(val.has_children())
-			val.print_children();
-	}*/
-	// c++ 17 syntax
-	for (auto &q : v)
-	{
-		q.print_asked();
-	}
-}
-
-void App::ask(User user)
-{
-	Question q;
-	User toUser;
-	q.fromId = user.id;
-	Error error;
-	DbManager DB;
-	int uId;
-	while (1)
-	{
-		std::cout << "Enter User ID You Want to Ask or -1 to cancel:  ";
-		std::cin >> uId;
-		if (uId == -1)
-			return;
-
-		toUser.id = uId;
-		if (DB.check_user_exist(toUser))
-			break;
-		error.print(3);
-	}
-
-	q.toId = toUser.id;
-	if (!toUser.allowAnonQs)
-	{
-		q.anon = 0;
-		std::cout << "Note: This User doesn't Allow Anonymous Questions\n";
-	}
-	int qId;
-	while (1)
-	{
-		std::cout << "Enter question thread ID or -1 to Ask a New Question: ";
-		std::cin >> qId;
-		if (toUser.allowAnonQs)
-		{
-			while (1)
+			if (choice == 1)
 			{
-				char c;
-				std::cout << "Keep this Question Anonymous? (y/n): ";
-				std::cin >> c;
-				if (c == 'y')
+				if (login_handler.login(user))
 				{
-					q.anon = 1;
+					std::cout << "\n-------------- Logged In Successfully -------------\n\n";
+
+					main_menu(user);
 					break;
 				}
-				if (c == 'n')
-				{
-					q.anon = 0;
-					break;
-				}
+				else
+					/* Wrong UserName/Password */
+					error.print(2);
 			}
-		}
-		if (qId == -1)
-		{
-			q.text = ask_new_q(), q.threadId = -1, q.answered = 0;
-			break;
-		}
-		else
-		{
-			if (DB.check_user_has_q(qId, uId))
+
+			else if (choice == 2)
 			{
-				q.threadId = qId, q.answered = 0;
-				q.text = ask_new_q();
-				break;
+				if (signup_handler.signup())
+					std::cout << "\n-------------- Signed Up Successfully -------------\n\n";
 			}
-			else
-			{
-				error.print(4);
-			}
+			else if (choice == 3)
+				exit(0);
 		}
 	}
-
-	DB.questionsDb.add_question(q);
-	std::cout << "\n\n--------- Question Saved ----------\n\n";
 }
 
-void App::answer(int uId)
-{
-	DbManager DB;
-	Error error;
-	Question q;
-
-	int qId;
-	while (1)
-	{
-		std::cout << "Enter question id to answer or -1 to cancel: ";
-		std::cin >> qId;
-
-		if (qId == -1)
-			return;
-
-		if (!DB.check_user_has_q(qId, uId))
-			error.print(4);
-		else
-			break;
-	}
-	q = DB.questionsDb.get_question(qId).first;
-	q.print();
-	if (q.answered)
-		std::cout << "\nQuestion already answered. Answer will be overwritten\n\n";
-	std::cin.ignore();
-	std::cout << "Enter answer: ";
-	std::getline(std::cin, q.ans);
-	q.answered = 1;
-
-	DB.questionsDb.update_answer(q);
-}
-
-void App::delete_question(int uId)
-{
-	DbManager DB;
-	Error error;
-	Question q;
-	std::map<int, std::vector<Question>> mp;
-
-	int qId;
-	while (1)
-	{
-		std::cout << "Enter question id to delete or -1 to cancel: ";
-		std::cin >> qId;
-
-		if (qId == -1)
-			return;
-
-		if (!DB.check_user_from_to_q(qId, uId))
-			error.print(4);
-		else
-			break;
-	}
-	DB.questionsDb.delete_q(qId);
-}
-
-void App::list_users()
-{
-	DbManager DB;
-	DB.usersDb.print();
-}
-
-void App::print_feed()
-{
-	std::vector<Question> qv;
-	DbManager DB;
-	qv = DB.questionsDb.feed();
-	for (Question &q : qv)
-		q.print_feed();
-}
 void App::main_menu(User &user)
 {
 	Menu menu;
@@ -302,47 +161,221 @@ void App::main_menu(User &user)
 	}
 }
 
-void App::run()
+void App::print_questions_received(const int uId)
 {
-	int choice;
-	User user;
-	Menu menu;
-	Login_handler login_handler;
-	Signup_handler signup_handler;
-	std::pair<User, bool> userLoginPair;
-	Error error;
+	DbManager DB;
+	/* map variable to store questions where the id is the key and vector of questions beginning with the questions followed by its children if any */
+	std::map<int, std::vector<Question>> mp;
+	/* Fill the map with all question the user received */
+	DB.get_all_Qs_to_user(uId, mp);
 
-	while (1)
+	// c++ 17 syntax
+	for (auto &[key, val] : mp)
 	{
-		while (1)
+		/* if is a parent question then print the children */
+		if (val[0].threadId == -1)
 		{
-			choice = menu.menu_login();
-
-			if (!verify_login_choice(choice))
+			int spaces = 0;
+			val[0].print();
+			for (int i = 1; i < (int)val.size(); i++)
 			{
-				error.print(1);
-				continue;
+				/* at each child question increase space by 2 to distinguish from parent question */
+				print_children(mp[val[i].id], mp, spaces + 2);
 			}
 
-			if (choice == 1)
-			{
-				if (login_handler.login(user))
-				{
-					std::cout << "\n-------------- Logged In Successfully -------------\n\n";
-					main_menu(user);
-					break;
-				}
-				else
-					error.print(2);
-			}
-
-			else if (choice == 2)
-			{
-				if (signup_handler.signup())
-					std::cout << "\n-------------- Signed Up Successfully -------------\n\n";
-			}
-			else if (choice == 3)
-				exit(0);
+			std::cout << '\n';
 		}
 	}
+}
+
+void App::print_questions_asked(const int uId)
+{
+	DbManager DB;
+	/* vector variable to store questions user asked */
+	std::vector<Question> qv;
+	/* fill vector with questions asked only */
+	DB.questionsDb.get_questions_from_user(uId, qv);
+
+	// c++ 17 syntax
+	for (auto &q : qv)
+	{
+		/* print question in an asked format */
+		q.print_asked();
+	}
+}
+
+/* 1- user enter if of the other user to ask (toUser) */
+/* 2- check toUser exist in database */
+/* 3- check if toUser allow anon questions. if allow ask user to choose question to be anon or not */
+/* 4- enter question id if new enter -1 or id of existing q */
+void App::ask(User &user)
+{
+	/* variable to store new question asked by user */
+	Question q;
+	/* variable to store the user being asked */
+	User toUser;
+	/* update question fromId to the current user's id */
+	q.fromId = user.id;
+	Error error;
+	DbManager DB;
+	int toUserId;
+
+	/* Enter toUser id */
+	while (1)
+	{
+		std::cout << "Enter User ID You Want to Ask or -1 to cancel:  ";
+		std::cin >> toUserId;
+		if (toUserId == -1)
+			return;
+
+		toUser.id = toUserId;
+		/* check whether user exists then. user is sent by reference so it is updated */
+		/* sending user as a parameter not just the id to check later if it allows anon questions or not*/
+		if (DB.check_user_exist(toUser))
+			break;
+		/* print error User ID doesn't seem to exist */
+		error.print(3);
+	}
+	q.toId = toUser.id;
+
+	/* check the user being asked if it allows anon questions and print a disclaimer if it does not*/
+	if (!toUser.allowAnonQs)
+	{
+		q.anon = 0;
+		std::cout << "Note: This User doesn't Allow Anonymous Questions\n";
+	}
+	int qId;
+
+	/* enter question id */
+	while (1)
+	{
+		std::cout << "Enter question thread ID or -1 to Ask a New Question: ";
+		std::cin >> qId;
+		/* only if user allow anon questions you can ask anon questions*/
+		if (toUser.allowAnonQs)
+		{
+			while (1)
+			{
+				char c;
+				std::cout << "Keep this Question Anonymous? (y/n): ";
+				std::cin >> c;
+				if (c == 'y')
+				{
+					q.anon = 1;
+					break;
+				}
+				if (c == 'n')
+				{
+					q.anon = 0;
+					break;
+				}
+			}
+		}
+		if (qId == -1)
+		{
+			q.text = get_qText_from_user(), q.threadId = -1, q.answered = 0;
+			break;
+		}
+		else
+		{
+			/* if it is not parent question then check whether the user being asked has the parent thread or not*/
+			if (DB.check_user_has_q(qId, toUserId))
+			{
+				q.threadId = qId, q.answered = 0;
+				q.text = get_qText_from_user();
+				break;
+			}
+			else
+			{
+				/* error: Question ID doesn't seem to exist for this user */
+				error.print(4);
+			}
+		}
+	}
+
+	DB.questionsDb.add_question(q);
+	std::cout << "\n\n--------- Question Saved ----------\n\n";
+}
+
+/* 1- user enter question to answer */
+/* 2- enter answer */
+void App::answer(const int uId)
+{
+	DbManager DB;
+	Error error;
+	Question q;
+	int qId;
+
+	/* user enter question to answer */
+	while (1)
+	{
+		std::cout << "Enter question id to answer or -1 to cancel: ";
+		std::cin >> qId;
+
+		if (qId == -1)
+			return;
+
+		/* check whether user received this question or not. can only answer if it is received */
+		if (!DB.check_user_has_q(qId, uId))
+			/* error: Question ID doesn't seem to exist for this user */
+			error.print(4);
+		else
+			break;
+	}
+	q = DB.questionsDb.get_question(qId).first;
+
+	q.print();
+	if (q.answered)
+		std::cout << "\n--- Warning: Question already answered. Answer will be overwritten ---\n\n";
+	std::cin.ignore();
+
+	/* enter answer */
+	std::cout << "Enter answer: ";
+	std::getline(std::cin, q.ans);
+	q.answered = 1;
+
+	DB.questionsDb.update_answer(q);
+}
+
+/* 1- enter question id */
+void App::delete_question(const int uId)
+{
+	DbManager DB;
+	Error error;
+	Question q;
+	int qId;
+
+	/* enter question id */
+	while (1)
+	{
+		std::cout << "Enter question id to delete or -1 to cancel: ";
+		std::cin >> qId;
+
+		if (qId == -1)
+			return;
+
+		/* user can only delete question asked or received by user */
+		if (!DB.check_user_from_to_q(qId, uId))
+			/* error: Question ID doesn't seem to exist for this user */
+			error.print(4);
+		else
+			break;
+	}
+	DB.questionsDb.delete_q(qId);
+}
+
+void App::list_users()
+{
+	DbManager DB;
+	DB.usersDb.print();
+}
+
+void App::print_feed()
+{
+	/* vector to store answered questions */
+	std::vector<Question> qv;
+	DbManager DB;
+	qv = DB.questionsDb.feed();
+	for (Question &q : qv)
+		q.print_feed();
 }

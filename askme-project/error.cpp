@@ -9,7 +9,7 @@
 
 #include <iostream>
 
-void Error::print(const int c)
+void Error::print(const int c) const
 {
 	if (c == 1)
 		std::cout << "\n---------- Invalid choice -----------\n\n";

@@ -8,6 +8,7 @@
 #ifndef MENU_HPP_
 #define MENU_HPP_
 
+/* ****** includes ******** */
 #include <iostream>
 
 struct Menu
@@ -18,7 +19,7 @@ struct Menu
 	 * @param menu string to display
 	 * @return non
 	 */
-	void print(const std::string);
+	void print(const std::string) const;
 
 	/**
 	 * prompts user to enter choice
