@@ -22,9 +22,8 @@
 
 /* ****** helper functions ******** */
 
-bool App::verify_choice(const int choice, const int low, const int high)
-{
-	if (choice < low && choice > 3)
+bool App::verify_choice(const int choice, const int low, const int high){
+	if(choice < low && choice > 3)
 		return false;
 	return true;
 }
@@ -324,7 +323,7 @@ void App::answer(const int uId)
 	q.answered = 1;
 
 	DB.questionsDb.update_answer(q);
-	std::cout << "\n\n---- Answer Saved ----\n\n";
+	std::cout << "\n\n---- Answer Saved ----\n";
 }
 
 /* 1- enter question id */
@@ -352,7 +351,6 @@ void App::delete_question(const int uId)
 			break;
 	}
 	DB.questionsDb.delete_q(qId);
-	std::cout << "\n\n ----- Question Deleted -----\n\n";
 }
 
 void App::list_users()

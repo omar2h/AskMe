@@ -16,12 +16,15 @@
 struct App
 {
 	/**
-	 * verify choice between low and high inclusive
-	 *
-	 * @param user choice
-	 * @return whether choice is correct or not
-	 */
+		 * verify choice between low and high inclusive
+		 *
+		 * @param user choice
+		 * @return whether choice is correct or not
+		 */
 	bool verify_choice(const int choice, const int low, const int high);
+
+	/* ****** helper functions ******** */
+
 
 	/**
 	 * prompt user to enter question text

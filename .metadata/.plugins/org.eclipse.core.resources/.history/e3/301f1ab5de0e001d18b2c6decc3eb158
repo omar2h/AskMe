@@ -15,13 +15,24 @@
 
 struct App
 {
+	bool verify_choice(const int choice, const int low, const int high);
+
+	/* ****** helper functions ******** */
 	/**
-	 * verify choice between low and high inclusive
+	 * verify login user input choice at login menu choice between 1-3
 	 *
 	 * @param user choice
 	 * @return whether choice is correct or not
 	 */
-	bool verify_choice(const int choice, const int low, const int high);
+	bool verify_login_choice(const int) const;
+
+	/**
+	 * verify main menu user input choice between 1-8
+	 *
+	 * @param user choice
+	 * @return whether choice is correct or not
+	 */
+	bool verify_main_choice(const int) const;
 
 	/**
 	 * prompt user to enter question text
