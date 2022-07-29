@@ -9,8 +9,10 @@
 #define USER_HPP_
 
 #include <string>
+
 struct User
 {
+    /* id, username, password, allow anon questions bool */
     int id;
     std::string username, password;
     bool allowAnonQs;

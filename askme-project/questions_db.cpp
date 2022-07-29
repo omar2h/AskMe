@@ -6,47 +6,13 @@
  */
 
 #include "questions_db.hpp"
+#include "database_manager.hpp"
 
 #include <fstream>
 #include <sstream>
 #include <algorithm>
 
-/* read lines and increment at each line. return increment+1 */
-int QuestionsDb::generate_id()
-{
-	std::string path = "questions.txt";
-	std::fstream file_handler(path.c_str());
-
-	if (file_handler.fail())
-	{
-		std::cout << "\n -------- Can't open file -----------\n\n";
-		return 0;
-	}
-
-	std::string line;
-	std::string idStr;
-
-	if (file_handler.peek() == std::ifstream::traits_type::eof())
-		return 1;
-
-	while (getline(file_handler, line))
-	{
-		std::istringstream iss(line);
-		std::getline(iss, idStr, DELIMITER);
-	}
-	return stoi(idStr) + 1;
-}
-
-void QuestionsDb::split_question_toVector(std::string line, std::vector<std::string> &v)
-{
-	std::stringstream iss(line);
-	for (int i = 0; i < QUESTION_ITEMS; i++)
-	{
-		std::getline(iss, v[i], DELIMITER);
-	}
-}
-
-void QuestionsDb::update_question_info(std::vector<std::string> &v, Question &q)
+void QuestionsDb::update_question_info(const std::vector<std::string> &v, Question &q)
 {
 	q.id = (stoi(v[ID]));
 	q.threadId = (stoi(v[THREAD_ID]));
@@ -60,16 +26,13 @@ void QuestionsDb::update_question_info(std::vector<std::string> &v, Question &q)
 
 bool QuestionsDb::add_question(Question &q)
 {
-	q.id = generate_id();
-	std::ofstream fout("questions.txt", std::ios_base::app);
+	DbManager dbManager;
+	std::vector<std::string> lines;
 
-	if (fout.fail())
-	{
-		std::cout << "Can't open file\n";
-		return 0;
-	}
-
-	fout << q.id << DELIMITER << q.threadId << DELIMITER << q.fromId << DELIMITER << q.toId << DELIMITER << q.anon << DELIMITER << q.answered << DELIMITER << q.text << DELIMITER << q.ans << '\n';
+	q.id = dbManager.generate_id(QUESTIONSTXT_PATH);
+	std::string line = std::to_string(q.id) + DELIMITER + std::to_string(q.threadId) + DELIMITER + std::to_string(q.fromId) + DELIMITER + std::to_string(q.toId) + DELIMITER + std::to_string(q.anon) + DELIMITER + std::to_string(q.answered) + DELIMITER + q.text + DELIMITER + q.ans + '\n';
+	lines.push_back(line);
+	dbManager.write_file_lines(QUESTIONSTXT_PATH, lines, true);
 	return 1;
 }
 
@@ -77,23 +40,15 @@ std::pair<Question, bool> QuestionsDb::get_question(const int id)
 {
 	Question q;
 	std::pair<Question, bool> qPair;
+	DbManager dbManager;
+	std::vector<std::string> lines;
 	qPair.second = 0;
 
-	std::string path = "questions.txt";
-	std::fstream file_handler(path.c_str());
-
-	if (file_handler.fail())
+	dbManager.read_file_lines(QUESTIONSTXT_PATH, lines);
+	for (auto &line : lines)
 	{
-		std::cout << "\n -------- Can't open file -----------\n\n";
-		return qPair;
-	}
-
-	std::string line;
-	while (getline(file_handler, line))
-	{
-		std::vector<std::string> v(QUESTION_ITEMS);
-		split_question_toVector(line, v);
-
+		std::vector<std::string> v;
+		dbManager.split_line_toVector(line, v, DELIMITER);
 		if (stoi(v[ID]) == id)
 		{
 			update_question_info(v, q);
@@ -107,23 +62,16 @@ std::pair<Question, bool> QuestionsDb::get_question(const int id)
 
 std::map<int, std::vector<Question>> QuestionsDb::get_to_user(const int uId)
 {
+	DbManager dbManager;
 	std::map<int, std::vector<Question>> mp;
 	Question q;
+	std::vector<std::string> lines;
+	dbManager.read_file_lines(QUESTIONSTXT_PATH, lines);
 
-	std::string path = "questions.txt";
-	std::fstream file_handler(path.c_str());
-
-	if (file_handler.fail())
+	for (auto &line : lines)
 	{
-		std::cout << "\n -------- Can't open file -----------\n\n";
-		return mp;
-	}
-
-	std::string line;
-	while (getline(file_handler, line))
-	{
-		std::vector<std::string> v(8);
-		split_question_toVector(line, v);
+		std::vector<std::string> v;
+		dbManager.split_line_toVector(line, v, DELIMITER);
 
 		if (!v[TO_ID].empty() && std::all_of(v[TO_ID].begin(), v[TO_ID].end(), ::isdigit) && stoi(v[TO_ID]) == uId)
 		{
@@ -142,28 +90,18 @@ std::map<int, std::vector<Question>> QuestionsDb::get_to_user(const int uId)
 
 bool QuestionsDb::get_questions_from_user(const int uId, std::vector<Question> &qv)
 {
+	DbManager dbManager;
 	Question q;
+	std::vector<std::string> lines;
+	dbManager.read_file_lines(QUESTIONSTXT_PATH, lines);
 
-	std::string path = "questions.txt";
-	std::fstream file_handler(path.c_str());
-
-	if (file_handler.fail())
+	for (auto &line : lines)
 	{
-		std::cout << "\n -------- Can't open file -----------\n\n";
-		return 0;
-	}
-
-	std::string line;
-	std::string idStr, thrdStr, toStr, fromStr, anonStr, ansdStr, text, ans;
-	while (getline(file_handler, line))
-	{
-		std::vector<std::string> v(8);
-		split_question_toVector(line, v);
-
+		std::vector<std::string> v;
+		dbManager.split_line_toVector(line, v, DELIMITER);
 		if (!v[FROM_ID].empty() && std::all_of(v[FROM_ID].begin(), v[FROM_ID].end(), ::isdigit) && stoi(v[FROM_ID]) == uId)
 		{
 			update_question_info(v, q);
-
 			qv.push_back(q);
 		}
 	}
@@ -172,103 +110,76 @@ bool QuestionsDb::get_questions_from_user(const int uId, std::vector<Question> &
 
 void QuestionsDb::delete_q(const int qId)
 {
+	DbManager dbManager;
+	std::vector<std::string> readLines, writeLines;
+	dbManager.read_file_lines(QUESTIONSTXT_PATH, readLines);
 
-	std::string path = "questions.txt";
-	std::fstream file_handler1(path.c_str());
-
-	std::ofstream fout("temp.txt", std::ios_base::out);
-
-	if (file_handler1.fail())
+	for (auto const &line : readLines)
 	{
-		std::cout << "\n -------- Can't open file -----------\n\n";
-		return;
-	}
-
-	if (fout.fail())
-	{
-		std::cout << "\n -------- Can't open file -----------\n\n";
-		return;
-	}
-
-	std::string line;
-	while (getline(file_handler1, line))
-	{
-		std::vector<std::string> v(QUESTION_ITEMS);
-		split_question_toVector(line, v);
-
+		std::vector<std::string> v;
+		dbManager.split_line_toVector(line, v, DELIMITER);
 		if (stoi(v[ID]) == qId || stoi(v[THREAD_ID]) == qId)
 		{
 			continue;
 		}
-		fout << v[ID] << DELIMITER << v[THREAD_ID] << DELIMITER << v[FROM_ID] << DELIMITER << v[TO_ID] << DELIMITER << v[ANONQ] << DELIMITER << v[ANSWERED_BOOL] << DELIMITER << v[QTEXT] << DELIMITER << v[ANSWERTEXT] << "\n";
+		std::string writeLine = "";
+		for (int i = 0; i < (int)v.size(); i++)
+		{
+			if (i)
+				writeLine += DELIMITER;
+			writeLine += v[i];
+		}
+		writeLines.push_back(writeLine);
 	}
-	file_handler1.close();
-	fout.close();
-	remove("questions.txt");
-	rename("temp.txt", "questions.txt");
+	dbManager.write_file_lines(TEMPTXT_PATH, writeLines, false);
+	remove(QUESTIONSTXT_PATH);
+	rename(TEMPTXT_PATH, QUESTIONSTXT_PATH);
 }
+
 void QuestionsDb::update_answer(const Question &q)
 {
-
+	DbManager dbManager;
 	int id = q.id;
-	std::string path = "questions.txt";
-	std::fstream file_handler1(path.c_str());
+	std::vector<std::string> readLines, writeLines;
+	dbManager.read_file_lines(QUESTIONSTXT_PATH, readLines);
 
-	std::ofstream fout("temp.txt", std::ios_base::out);
-
-	if (file_handler1.fail())
+	for (auto const &line : readLines)
 	{
-		std::cout << "\n -------- Can't open file -----------\n\n";
-		return;
-	}
-
-	if (fout.fail())
-	{
-		std::cout << "\n -------- Can't open file -----------\n\n";
-		return;
-	}
-
-	std::string line;
-	std::string idStr, thrdStr, toStr, fromStr, anonStr, ansdStr, text, ans;
-	while (getline(file_handler1, line))
-	{
-		std::vector<std::string> v(QUESTION_ITEMS);
-		split_question_toVector(line, v);
-
-		if (stoi(idStr) == id)
+		std::vector<std::string> v;
+		dbManager.split_line_toVector(line, v, DELIMITER);
+		std::string writeLine = "";
+		if (stoi(v[ID]) == id)
 		{
-			fout << q.id << DELIMITER << q.threadId << DELIMITER << q.fromId << DELIMITER << q.toId << DELIMITER << q.anon << DELIMITER << q.answered << DELIMITER << q.text << DELIMITER << q.ans << '\n';
+			writeLine += std::to_string(q.id) + DELIMITER + std::to_string(q.threadId) + DELIMITER + std::to_string(q.fromId) + DELIMITER + std::to_string(q.toId) + DELIMITER + std::to_string(q.anon) + DELIMITER + std::to_string(q.answered) + DELIMITER + q.text + DELIMITER + q.ans + '\n';
 		}
 		else
 		{
-			fout << v[ID] << "," << v[THREAD_ID] << "," << v[FROM_ID] << "," << v[TO_ID] << "," << v[ANONQ] << "," << v[ANSWERED_BOOL] << "," << v[QTEXT] << "," << v[ANSWERTEXT] << "\n";
+			for (int i = 0; i < (int)v.size(); i++)
+			{
+				if (i)
+					writeLine += DELIMITER;
+				writeLine += v[i];
+			}
 		}
+		writeLines.push_back(writeLine);
 	}
-	file_handler1.close();
-	fout.close();
-	remove("questions.txt");
-	rename("temp.txt", "questions.txt");
+	dbManager.write_file_lines(TEMPTXT_PATH, writeLines, false);
+	remove(QUESTIONSTXT_PATH);
+	rename(TEMPTXT_PATH, QUESTIONSTXT_PATH);
 }
 
 std::vector<Question> QuestionsDb::feed()
 {
-	std::vector<Question> qv;
+	DbManager dbManager;
 	Question q;
-	std::string path = "questions.txt";
-	std::fstream file_handler(path.c_str());
+	std::vector<Question> qv;
+	std::vector<std::string> lines;
+	dbManager.read_file_lines(QUESTIONSTXT_PATH, lines);
 
-	if (file_handler.fail())
+	for (auto &line : lines)
 	{
-		std::cout << "\n -------- Can't open file -----------\n\n";
-	}
-
-	std::string line;
-
-	while (getline(file_handler, line))
-	{
-		std::vector<std::string> v(QUESTION_ITEMS);
-		split_question_toVector(line, v);
-
+		std::vector<std::string> v;
+		dbManager.split_line_toVector(line, v, DELIMITER);
 		if (stoi(v[ANSWERED_BOOL]))
 		{
 			update_question_info(v, q);

@@ -11,7 +11,7 @@
 struct Signup_handler
 {
 	/**
-	 * prompts user to enter his/her credentials
+	 * prompts user to enter credentials
 	 *
 	 * @param non
 	 * @return successful sign up or not

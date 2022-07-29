@@ -15,12 +15,42 @@
 #include <vector>
 #include <map>
 
+#define DELIMITER ","
 struct DbManager
 {
 	/* struct to handle user db */
 	UsersDb usersDb;
 	/* struct to handle questions db */
 	QuestionsDb questionsDb;
+
+	/**
+	 * read file line by line and save in vector
+	 *
+	 * @param string path, vector
+	 * @return void
+	 */
+	void read_file_lines(std::string path, std::vector<std::string> &lines);
+	/**
+	 * write lines in file from vector
+	 *
+	 * @param string path, vector lines, bool append
+	 * @return bool
+	 */
+	bool write_file_lines(std::string path, std::vector<std::string> &lines, bool append);
+	/**
+	 * split at delimiter and push to vector
+	 *
+	 * @param string line, vector string, string delimiter
+	 * @return void
+	 */
+	void split_line_toVector(std::string line, std::vector<std::string> &v, const std::string del);
+	/**
+	 * generate new id
+	 *
+	 * @param string path
+	 * @return int
+	 */
+	int generate_id(const std::string);
 
 	/**
 	 * check whether user received this question or not

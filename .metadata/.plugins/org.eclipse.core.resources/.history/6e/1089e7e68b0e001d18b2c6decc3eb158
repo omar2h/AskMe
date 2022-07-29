@@ -1,0 +1,108 @@
+/*
+ * questions_db.hpp
+ *
+ *  Created on: Jun 22, 2022
+ *      Author: omarh
+ */
+
+#ifndef QUESTIONS_DB_HPP_
+#define QUESTIONS_DB_HPP_
+
+#include "question.hpp"
+#include <vector>
+#include <map>
+
+#define QUESTION_ITEMS 8
+#define ID 0
+#define THREAD_ID 1
+#define FROM_ID 2
+#define TO_ID 3
+#define ANONQ 4
+#define ANSWERED_BOOL 5
+#define QTEXT 6
+#define ANSWERTEXT 7
+
+#define DELIMITER ','
+
+struct QuestionsDb
+{
+	/**
+	 * generate id
+	 *
+	 * @param non
+	 * @return int
+	 */
+	int generate_id();
+	/**
+	 * read question from DB and split at delimiter and save in vector
+	 *
+	 * @param line, vector
+	 * @return non
+	 */
+	void split_question_toVector(std::string line, std::vector<std::string> &v);
+	/**
+	 * update question info
+	 *
+	 * @param vector of strings of question info, question
+	 * @return void
+	 */
+	void update_question_info(const std::vector<std::string> &v, Question &q);
+	/**
+	 * get user(to) received question with id
+	 *
+	 * @param question id
+	 * @return map of id, vector of questions
+	 */
+	std::map<int, std::vector<Question>> get_to_user(const int);
+	/**
+	 * get questions asked by user via question id
+	 *
+	 * @param question id, vector of questions
+	 * @return bool
+	 */
+	bool get_questions_from_user(const int, std::vector<Question> &);
+	/**
+	 * get question via question id
+	 *
+	 * @param question id
+	 * @return pair question, bool
+	 */
+	std::pair<Question, bool> get_question(const int);
+	/**
+	 * add question to database
+	 *
+	 * @param question
+	 * @return bool
+	 */
+	bool add_question(const Question &);
+	/**
+	 * delete question
+	 *
+	 * @param question id
+	 * @return void
+	 */
+	void delete_q(const int qId);
+	/**
+	 * update answer
+	 *
+	 * @param Question
+	 * @return void
+	 */
+	void update_answer(const Question &);
+	/**
+	 * print question
+	 *
+	 * @param Question
+	 * @return void
+	 */
+	void print(const Question &);
+	/**
+	 * get feed questions
+	 *
+	 * @param non
+	 * @return vector of questions
+	 */
+	std::vector<Question> feed();
+};
+
+#endif /* QUESTIONS_DB_HPP_ */

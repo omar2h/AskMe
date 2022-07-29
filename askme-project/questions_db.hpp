@@ -22,31 +22,18 @@
 #define QTEXT 6
 #define ANSWERTEXT 7
 
-#define DELIMITER ','
+#define QUESTIONSTXT_PATH "questions.txt"
+#define TEMPTXT_PATH "temp.txt"
 
 struct QuestionsDb
 {
-	/**
-	 * generate id
-	 *
-	 * @param non
-	 * @return int
-	 */
-	int generate_id();
-	/**
-	 * read question from DB and split at delimiter and save in vector
-	 *
-	 * @param line, vector
-	 * @return non
-	 */
-	void split_question_toVector(std::string line, std::vector<std::string> &v);
 	/**
 	 * update question info
 	 *
 	 * @param vector of strings of question info, question
 	 * @return void
 	 */
-	void update_question_info(std::vector<std::string> &v, Question &q);
+	void update_question_info(const std::vector<std::string> &v, Question &q);
 	/**
 	 * get user(to) received question with id
 	 *

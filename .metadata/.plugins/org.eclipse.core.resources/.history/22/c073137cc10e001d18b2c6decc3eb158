@@ -1,0 +1,190 @@
+/*
+ * question_db.cpp
+ *
+ *  Created on: Jun 23, 2022
+ *      Author: omarh
+ */
+
+#include "questions_db.hpp"
+#include "database_manager.hpp"
+
+#include <fstream>
+#include <sstream>
+#include <algorithm>
+
+void QuestionsDb::update_question_info(const std::vector<std::string> &v, Question &q)
+{
+	q.id = (stoi(v[ID]));
+	q.threadId = (stoi(v[THREAD_ID]));
+	q.fromId = (stoi(v[FROM_ID]));
+	q.toId = (stoi(v[TO_ID]));
+	q.anon = stoi(v[ANONQ]);
+	q.answered = (stoi(v[ANSWERED_BOOL]));
+	q.text = v[QTEXT];
+	q.ans = v[ANSWERTEXT];
+}
+
+bool QuestionsDb::add_question(Question &q)
+{
+	DbManager dbManager;
+	std::vector<std::string> lines;
+
+	q.id = dbManager.generate_id(QUESTIONSTXT_PATH);
+	std::string line = std::to_string(q.id) + DELIMITER + std::to_string(q.threadId) + DELIMITER + std::to_string(q.fromId) + DELIMITER + std::to_string(q.toId) + DELIMITER + std::to_string(q.anon) + DELIMITER + std::to_string(q.answered) + DELIMITER + q.text + DELIMITER + q.ans + '\n';
+	lines.push_back(line);
+	dbManager.write_file_lines(QUESTIONSTXT_PATH, lines);
+	return 1;
+}
+
+std::pair<Question, bool> QuestionsDb::get_question(const int id)
+{
+	Question q;
+	std::pair<Question, bool> qPair;
+	DbManager dbManager;
+	std::vector<std::string> lines;
+	qPair.second = 0;
+
+	dbManager.read_file_lines(QUESTIONSTXT_PATH, lines);
+	for (auto &line : lines)
+	{
+		std::vector<std::string> v;
+		dbManager.split_line_toVector(line, v, DELIMITER);
+		if (stoi(v[ID]) == id)
+		{
+			update_question_info(v, q);
+			qPair.first = q;
+			qPair.second = 1;
+			return qPair;
+		}
+	}
+	return qPair;
+}
+
+std::map<int, std::vector<Question>> QuestionsDb::get_to_user(const int uId)
+{
+	DbManager dbManager;
+	std::map<int, std::vector<Question>> mp;
+	Question q;
+	std::vector<std::string> lines;
+	dbManager.read_file_lines(QUESTIONSTXT_PATH, lines);
+
+	for (auto &line : lines)
+	{
+		std::vector<std::string> v;
+		dbManager.split_line_toVector(line, v, DELIMITER);
+
+		if (!v[TO_ID].empty() && std::all_of(v[TO_ID].begin(), v[TO_ID].end(), ::isdigit) && stoi(v[TO_ID]) == uId)
+		{
+			update_question_info(v, q);
+			if (q.threadId == -1)
+				mp[q.id].push_back(q);
+			else
+			{
+				mp[q.id].push_back(q);
+				mp[q.threadId].push_back(q);
+			}
+		}
+	}
+	return mp;
+}
+
+bool QuestionsDb::get_questions_from_user(const int uId, std::vector<Question> &qv)
+{
+	DbManager dbManager;
+	Question q;
+	std::vector<std::string> lines;
+	dbManager.read_file_lines(QUESTIONSTXT_PATH, lines);
+
+	for (auto &line : lines)
+	{
+		std::vector<std::string> v;
+		dbManager.split_line_toVector(line, v, DELIMITER);
+		if (!v[FROM_ID].empty() && std::all_of(v[FROM_ID].begin(), v[FROM_ID].end(), ::isdigit) && stoi(v[FROM_ID]) == uId)
+		{
+			update_question_info(v, q);
+			qv.push_back(q);
+		}
+	}
+	return 1;
+}
+
+void QuestionsDb::delete_q(const int qId)
+{
+	DbManager dbManager;
+	std::vector<std::string> readLines, writeLines;
+	dbManager.read_file_lines(QUESTIONSTXT_PATH, readLines);
+
+	for (auto const &line : readLines)
+	{
+		std::vector<std::string> v;
+		dbManager.split_line_toVector(line, v, DELIMITER);
+		if (stoi(v[ID]) == qId || stoi(v[THREAD_ID]) == qId)
+		{
+			continue;
+		}
+		std::string line = "";
+		for (int i = 0; i < (int)v.size(); i++)
+		{
+			if (i)
+				line += DELIMITER;
+			line += v[i];
+		}
+		writeLines.push_back(line);
+	}
+	dbManager.write_file_lines(TEMPTXT_PATH, writeLines, false);
+	remove(QUESTIONSTXT_PATH);
+	rename(TEMPTXT_PATH, QUESTIONSTXT_PATH);
+}
+
+void QuestionsDb::update_answer(const Question &q)
+{
+	DbManager dbManager;
+	int id = q.id;
+	std::vector<std::string> readLines, writeLines;
+	dbManager.read_file_lines(QUESTIONSTXT_PATH, readLines);
+
+	for (auto const &line : readLines)
+	{
+		std::vector<std::string> v;
+		dbManager.split_line_toVector(line, v, DELIMITER);
+		std::string line = "";
+		if (stoi(v[ID]) == id)
+		{
+			line += std::to_string(q.id) + DELIMITER + std::to_string(q.threadId) << DELIMITER << std::to_string(q.fromId) << DELIMITER << std::to_string(q.toId) << DELIMITER << std::to_string(q.anon) << DELIMITER << std::to_string(q.answered) << DELIMITER << q.text << DELIMITER << q.ans << '\n';
+		}
+		else
+		{
+			for (int i = 0; i < (int)v.size(); i++)
+			{
+				if (i)
+					line += DELIMITER;
+				line += v[i];
+			}
+		}
+		writeLines.push_back(line);
+	}
+	dbManager.write_file_lines(TEMPTXT_PATH, writeLines, false);
+	remove(QUESTIONSTXT_PATH);
+	rename(TEMPTXT_PATH, QUESTIONSTXT_PATH);
+}
+
+std::vector<Question> QuestionsDb::feed()
+{
+	DbManager dbManager;
+	Question q;
+	std::vector<Question> qv;
+	std::vector<std::string> lines;
+	dbManager.read_file_lines(QUESTIONSTXT_PATH, lines);
+
+	for (auto &line : lines)
+	{
+		std::vector<std::string> v;
+		dbManager.split_line_toVector(line, v, DELIMITER);
+		if (stoi(v[ANSWERED_BOOL]))
+		{
+			update_question_info(v, q);
+			qv.push_back(q);
+		}
+	}
+	return qv;
+}

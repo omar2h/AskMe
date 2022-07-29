@@ -6,65 +6,28 @@
  */
 
 #include "users_db.hpp"
-
-#include <iostream>
-#include <fstream>
-#include <sstream>
-
-int UsersDb::generate_id()
-{
-	std::string path = "users.txt";
-	std::fstream file_handler(path.c_str());
-
-	if (file_handler.fail())
-	{
-		std::cout << "\n -------- Can't open file -----------\n\n";
-		return 0;
-	}
-
-	std::string line;
-	std::string idStr;
-	int count = 1;
-	if (file_handler.peek() == std::ifstream::traits_type::eof())
-		return count;
-
-	while (getline(file_handler, line))
-	{
-		std::istringstream iss(line);
-		std::getline(iss, idStr, ',');
-	}
-	return stoi(idStr) + 1;
-}
+#include "database_manager.hpp"
 
 std::pair<User, bool> UsersDb::get_user(const int id)
 {
 	User user;
+	DbManager dbManager;
 	std::pair<User, bool> userPair;
 	userPair.second = 0;
 
-	std::string path = "users.txt";
-	std::fstream file_handler(path.c_str());
+	const std::string path = USERSTXT_PATH;
+	std::vector<std::string> lines;
+	dbManager.read_file_lines(path, lines);
 
-	if (file_handler.fail())
+	for (auto &line : lines)
 	{
-		std::cout << "\n -------- Can't open file -----------\n\n";
-		return userPair;
-	}
+		std::vector<std::string> v;
+		dbManager.split_line_toVector(line, v, DELIMITER);
 
-	std::string line;
-	std::string idStr, allowAnonQsStr;
-	while (getline(file_handler, line))
-	{
-		std::stringstream iss(line);
-		std::getline(iss, idStr, ',');
-		std::getline(iss, user.username, ',');
-		std::getline(iss, user.password, ',');
-		std::getline(iss, allowAnonQsStr, ',');
-
-		if (stoi(idStr) == id)
+		if (stoi(v[ID]) == id)
 		{
-			user.id = stoi(idStr);
-			user.allowAnonQs = stoi(allowAnonQsStr);
+			user.id = stoi(v[ID]);
+			user.allowAnonQs = stoi(v[ALLOW_ANON_Q]);
 			userPair.first = user;
 			userPair.second = 1;
 			return userPair;
@@ -75,35 +38,23 @@ std::pair<User, bool> UsersDb::get_user(const int id)
 
 std::pair<User, bool> UsersDb::get_user_login(std::string username, std::string password)
 {
-	std::string tusername, tpassword;
-
+	DbManager dbManager;
 	std::pair<User, bool> userExistPair;
+
 	userExistPair.second = 0;
-	std::string path = "users.txt";
-	std::fstream file_handler(path.c_str());
+	const std::string path = USERSTXT_PATH;
+	std::vector<std::string> lines;
+	dbManager.read_file_lines(path, lines);
 
-	if (file_handler.fail())
+	for (auto &line : lines)
 	{
-		std::cout << "\n -------- Can't open file -----------\n\n";
-		return userExistPair;
-	}
+		std::vector<std::string> v;
+		dbManager.split_line_toVector(line, v, DELIMITER);
 
-	std::string line;
-
-	while (std::getline(file_handler, line))
-	{
-		std::string idStr, allowAnonQsStr;
-		std::istringstream iss(line);
-
-		std::getline(iss, idStr, ',');
-		std::getline(iss, tusername, ',');
-		std::getline(iss, tpassword, ',');
-		std::getline(iss, allowAnonQsStr, ',');
-
-		if (username == tusername && password == tpassword)
+		if (username == v[USERNAME] && password == v[PASSWORD])
 		{
-			userExistPair.first.id = stoi(idStr);
-			userExistPair.first.allowAnonQs = stoi(allowAnonQsStr);
+			userExistPair.first.id = stoi(v[ID]);
+			userExistPair.first.allowAnonQs = stoi(v[ALLOW_ANON_Q]);
 			userExistPair.second = 1;
 			return userExistPair;
 		}
@@ -113,43 +64,26 @@ std::pair<User, bool> UsersDb::get_user_login(std::string username, std::string 
 
 bool UsersDb::add_user(User &user)
 {
-	user.id = generate_id();
-	std::ofstream fout("users.txt", std::ios_base::app);
-
-	if (fout.fail())
-	{
-		std::cout << "Can't open file\n";
-		return 0;
-	}
-
-	fout << user.id << ',' << user.username << ',' << user.password << ',' << user.allowAnonQs << '\n';
-	return 1;
+	DbManager dbManager;
+	user.id = dbManager.generate_id(USERSTXT_PATH);
+	std::vector<std::string> lines;
+	std::string line = std::to_string(user.id) + DELIMITER + user.username + DELIMITER + user.password + DELIMITER + std::to_string(user.allowAnonQs) + '\n';
+	lines.push_back(line);
+	return dbManager.write_file_lines(USERSTXT_PATH, lines, true);
 }
 
 void UsersDb::print()
 {
+	DbManager dbManager;
+	const std::string path = "users.txt";
+	std::vector<std::string> lines;
+	dbManager.read_file_lines(path, lines);
 
-	std::string path = "users.txt";
-	std::fstream file_handler(path.c_str());
-
-	if (file_handler.fail())
+	for (auto &line : lines)
 	{
-		std::cout << "\n -------- Can't open file -----------\n\n";
-		return;
+		std::vector<std::string> v;
+		dbManager.split_line_toVector(line, v, DELIMITER);
+		std::cout << "ID: " << v[ID] << "\tUserName: " << v[USERNAME] << '\n';
 	}
-
-	std::string line;
-	std::string idStr, allowAnonQsStr, username, password;
-
-	while (getline(file_handler, line))
-	{
-		std::stringstream iss(line);
-		std::getline(iss, idStr, ',');
-		std::getline(iss, username, ',');
-		std::getline(iss, password, ',');
-		std::getline(iss, allowAnonQsStr, ',');
-		std::cout << "ID: " << idStr << "\tUserName: " << username << '\n';
-	}
-
 	std::cout << '\n';
 }

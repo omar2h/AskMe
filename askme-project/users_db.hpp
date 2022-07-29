@@ -9,16 +9,18 @@
 #define USERS_DB_HPP_
 
 #include "user.hpp"
+#include <vector>
+
+#define ID 0
+#define USERNAME 1
+#define PASSWORD 2
+#define ALLOW_ANON_Q 3
+#define USER_ITEMS 4
+
+#define USERSTXT_PATH "users.txt"
 
 struct UsersDb
 {
-	/**
-	 * generate id for new user
-	 *
-	 * @param non
-	 * @return new id
-	 */
-	int generate_id();
 
 	/**
 	 * get user from db

@@ -2817,3 +2817,950 @@ g++ -O0 -g3 -Wall -c -fmessage-length=0 -o questions_db.o "..\\questions_db.cpp"
 g++ -O0 -g3 -Wall -c -fmessage-length=0 -o signup_handler.o "..\\signup_handler.cpp" 
 g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
 Info: Nothing to build for askme-project
+17:42:09 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o signup_handler.o "..\\signup_handler.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o login_handler.o "..\\login_handler.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o database_manager.o "..\\database_manager.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o question.o "..\\question.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o questions_db.o "..\\questions_db.cpp" 
+..\questions_db.cpp: In member function 'bool QuestionsDb::add_question(const Question&)':
+..\questions_db.cpp:63:14: error: assignment of member 'Question::id' in read-only object
+   63 |         q.id = generate_id();
+      |         ~~~~~^~~~~~~~~~~~~~~
+17:42:38 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o login_handler.o "..\\login_handler.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o questions_db.o "..\\questions_db.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o signup_handler.o "..\\signup_handler.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o database_manager.o "..\\database_manager.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+21:47:41 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+In file included from ..\database_manager.hpp:13,
+                 from ..\app.cpp:14:
+..\users_db.hpp:21: warning: "DELIMITER" redefined
+   21 | #define DELIMITER ","
+      | 
+In file included from ..\database_manager.hpp:12:
+..\questions_db.hpp:25: note: this is the location of the previous definition
+   25 | #define DELIMITER ','
+      | 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o signup_handler.o "..\\signup_handler.cpp" 
+In file included from ..\database_manager.hpp:13,
+                 from ..\signup_handler.cpp:9:
+..\users_db.hpp:21: warning: "DELIMITER" redefined
+   21 | #define DELIMITER ","
+      | 
+In file included from ..\database_manager.hpp:12:
+..\questions_db.hpp:25: note: this is the location of the previous definition
+   25 | #define DELIMITER ','
+      | 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o database_manager.o "..\\database_manager.cpp" 
+In file included from ..\database_manager.hpp:13,
+                 from ..\database_manager.cpp:9:
+..\users_db.hpp:21: warning: "DELIMITER" redefined
+   21 | #define DELIMITER ","
+      | 
+In file included from ..\database_manager.hpp:12:
+..\questions_db.hpp:25: note: this is the location of the previous definition
+   25 | #define DELIMITER ','
+      | 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o login_handler.o "..\\login_handler.cpp" 
+In file included from ..\database_manager.hpp:13,
+                 from ..\login_handler.cpp:10:
+..\users_db.hpp:21: warning: "DELIMITER" redefined
+   21 | #define DELIMITER ","
+      | 
+In file included from ..\database_manager.hpp:12:
+..\questions_db.hpp:25: note: this is the location of the previous definition
+   25 | #define DELIMITER ','
+      | 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o users_db.o "..\\users_db.cpp" 
+..\users_db.cpp:53:6: error: default argument given for parameter 3 of 'bool UsersDb::write_file_lines(std::string, std::vector<std::__cxx11::basic_string<char> >&, bool)' [-fpermissive]
+   53 | bool UsersDb::write_file_lines(std::string path, std::vector<std::string>& lines, bool append = true) {
+      |      ^~~~~~~
+In file included from ..\users_db.cpp:8:
+..\users_db.hpp:34:14: note: previous specification in 'bool UsersDb::write_file_lines(std::string, std::vector<std::__cxx11::basic_string<char> >&, bool)' here
+   34 |         bool write_file_lines(std::string path, std::vector<std::string>& lines, bool append = true);
+      |              ^~~~~~~~~~~~~~~~
+21:50:24 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o signup_handler.o "..\\signup_handler.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o login_handler.o "..\\login_handler.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o database_manager.o "..\\database_manager.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o users_db.o "..\\users_db.cpp" 
+..\users_db.cpp: In member function 'int UsersDb::generate_id()':
+..\users_db.cpp:23:60: error: 'DELIMITER' was not declared in this scope
+   23 |                 split_user_toVector(lines[linesSize-1], v, DELIMITER);
+      |                                                            ^~~~~~~~~
+..\users_db.cpp: In member function 'std::pair<User, bool> UsersDb::get_user(int)':
+..\users_db.cpp:97:46: error: 'DELIMITER' was not declared in this scope
+   97 |                 split_user_toVector(line, v, DELIMITER);
+      |                                              ^~~~~~~~~
+..\users_db.cpp: In member function 'std::pair<User, bool> UsersDb::get_user_login(std::string, std::string)':
+..\users_db.cpp:122:46: error: 'DELIMITER' was not declared in this scope
+  122 |                 split_user_toVector(line, v, DELIMITER);
+      |                                              ^~~~~~~~~
+..\users_db.cpp: In member function 'bool UsersDb::add_user(User&)':
+..\users_db.cpp:140:54: error: 'DELIMITER' was not declared in this scope
+  140 |         std:: string line= std::to_string(user.id) + DELIMITER + user.username + DELIMITER + user.password + DELIMITER + std::to_string(user.allowAnonQs) + '\n';
+      |                                                      ^~~~~~~~~
+..\users_db.cpp: In member function 'void UsersDb::print()':
+..\users_db.cpp:156:46: error: 'DELIMITER' was not declared in this scope
+  156 |                 split_user_toVector(line, v, DELIMITER);
+      |                                              ^~~~~~~~~
+21:54:08 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+In file included from ..\app.cpp:14:
+..\database_manager.hpp:18: warning: "DELIMITER" redefined
+   18 | #define DELIMITER ","
+      | 
+In file included from ..\database_manager.hpp:12:
+..\questions_db.hpp:25: note: this is the location of the previous definition
+   25 | #define DELIMITER ','
+      | 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o database_manager.o "..\\database_manager.cpp" 
+In file included from ..\database_manager.cpp:9:
+..\database_manager.hpp:18: warning: "DELIMITER" redefined
+   18 | #define DELIMITER ","
+      | 
+In file included from ..\database_manager.hpp:12:
+..\questions_db.hpp:25: note: this is the location of the previous definition
+   25 | #define DELIMITER ','
+      | 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o questions_db.o "..\\questions_db.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o users_db.o "..\\users_db.cpp" 
+In file included from ..\users_db.cpp:9:
+..\database_manager.hpp:18: warning: "DELIMITER" redefined
+   18 | #define DELIMITER ","
+      | 
+In file included from ..\database_manager.hpp:12:
+..\questions_db.hpp:25: note: this is the location of the previous definition
+   25 | #define DELIMITER ','
+      | 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o login_handler.o "..\\login_handler.cpp" 
+In file included from ..\login_handler.cpp:10:
+..\database_manager.hpp:18: warning: "DELIMITER" redefined
+   18 | #define DELIMITER ","
+      | 
+In file included from ..\database_manager.hpp:12:
+..\questions_db.hpp:25: note: this is the location of the previous definition
+   25 | #define DELIMITER ','
+      | 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o signup_handler.o "..\\signup_handler.cpp" 
+In file included from ..\signup_handler.cpp:9:
+..\database_manager.hpp:18: warning: "DELIMITER" redefined
+   18 | #define DELIMITER ","
+      | 
+In file included from ..\database_manager.hpp:12:
+..\questions_db.hpp:25: note: this is the location of the previous definition
+   25 | #define DELIMITER ','
+      | 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+21:54:47 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o login_handler.o "..\\login_handler.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o signup_handler.o "..\\signup_handler.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o users_db.o "..\\users_db.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o questions_db.o "..\\questions_db.cpp" 
+..\questions_db.cpp: In member function 'int QuestionsDb::generate_id()':
+..\questions_db.cpp:35:42: error: 'DELIMITER' was not declared in this scope
+   35 |                 std::getline(iss, idStr, DELIMITER);
+      |                                          ^~~~~~~~~
+..\questions_db.cpp: In member function 'void QuestionsDb::split_question_toVector(std::string, std::vector<std::__cxx11::basic_string<char> >&)':
+..\questions_db.cpp:45:41: error: 'DELIMITER' was not declared in this scope
+   45 |                 std::getline(iss, v[i], DELIMITER);
+      |                                         ^~~~~~~~~
+..\questions_db.cpp: In member function 'bool QuestionsDb::add_question(Question&)':
+..\questions_db.cpp:72:25: error: 'DELIMITER' was not declared in this scope
+   72 |         fout << q.id << DELIMITER << q.threadId << DELIMITER << q.fromId << DELIMITER << q.toId << DELIMITER << q.anon << DELIMITER << q.answered << DELIMITER << q.text << DELIMITER << q.ans << '\n';
+      |                         ^~~~~~~~~
+..\questions_db.cpp: In member function 'void QuestionsDb::delete_q(int)':
+..\questions_db.cpp:203:34: error: 'DELIMITER' was not declared in this scope
+  203 |                 fout << v[ID] << DELIMITER << v[THREAD_ID] << DELIMITER << v[FROM_ID] << DELIMITER << v[TO_ID] << DELIMITER << v[ANONQ] << DELIMITER << v[ANSWERED_BOOL] << DELIMITER << v[QTEXT] << DELIMITER << v[ANSWERTEXT] << "\n";
+      |                                  ^~~~~~~~~
+..\questions_db.cpp: In member function 'void QuestionsDb::update_answer(const Question&)':
+..\questions_db.cpp:240:41: error: 'DELIMITER' was not declared in this scope
+  240 |                         fout << q.id << DELIMITER << q.threadId << DELIMITER << q.fromId << DELIMITER << q.toId << DELIMITER << q.anon << DELIMITER << q.answered << DELIMITER << q.text << DELIMITER << q.ans << '\n';
+      |                                         ^~~~~~~~~
+21:55:46 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o database_manager.o "..\\database_manager.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o questions_db.o "..\\questions_db.cpp" 
+..\questions_db.cpp: In member function 'int QuestionsDb::generate_id()':
+..\questions_db.cpp:36:29: error: no matching function for call to 'getline(std::istringstream&, std::string&, const char [2])'
+   36 |                 std::getline(iss, idStr, DELIMITER);
+      |                 ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/12.1.0/string:54,
+                 from C:/msys64/mingw64/include/c++/12.1.0/bits/locale_classes.h:40,
+                 from C:/msys64/mingw64/include/c++/12.1.0/bits/ios_base.h:41,
+                 from C:/msys64/mingw64/include/c++/12.1.0/ios:42,
+                 from C:/msys64/mingw64/include/c++/12.1.0/ostream:38,
+                 from C:/msys64/mingw64/include/c++/12.1.0/iostream:39,
+                 from ..\question.hpp:12,
+                 from ..\questions_db.hpp:11,
+                 from ..\questions_db.cpp:8:
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.tcc:1012:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> std::basic_istream<_CharT, _Traits>& std::getline(basic_istream<_CharT, _Traits>&, __cxx11::basic_string<_CharT, _Traits, _Allocator>&, _CharT)'
+ 1012 |     getline(basic_istream<_CharT, _Traits>& __in,
+      |     ^~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.tcc:1012:5: note:   template argument deduction/substitution failed:
+..\questions_db.cpp:36:29: note:   deduced conflicting types for parameter '_CharT' ('char' and 'const char*')
+   36 |                 std::getline(iss, idStr, DELIMITER);
+      |                 ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/12.1.0/string:53:
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.h:3923:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> std::basic_istream<_CharT, _Traits>& std::getline(basic_istream<_CharT, _Traits>&, __cxx11::basic_string<_CharT, _Traits, _Allocator>&)'
+ 3923 |     getline(basic_istream<_CharT, _Traits>& __is,
+      |     ^~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.h:3923:5: note:   template argument deduction/substitution failed:
+..\questions_db.cpp:36:29: note:   candidate expects 2 arguments, 3 provided
+   36 |                 std::getline(iss, idStr, DELIMITER);
+      |                 ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.h:3931:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> std::basic_istream<_CharT, _Traits>& std::getline(basic_istream<_CharT, _Traits>&&, __cxx11::basic_string<_CharT, _Traits, _Allocator>&, _CharT)'
+ 3931 |     getline(basic_istream<_CharT, _Traits>&& __is,
+      |     ^~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.h:3931:5: note:   template argument deduction/substitution failed:
+..\questions_db.cpp:36:29: note:   deduced conflicting types for parameter '_CharT' ('char' and 'const char*')
+   36 |                 std::getline(iss, idStr, DELIMITER);
+      |                 ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.h:3938:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> std::basic_istream<_CharT, _Traits>& std::getline(basic_istream<_CharT, _Traits>&&, __cxx11::basic_string<_CharT, _Traits, _Allocator>&)'
+ 3938 |     getline(basic_istream<_CharT, _Traits>&& __is,
+      |     ^~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.h:3938:5: note:   template argument deduction/substitution failed:
+..\questions_db.cpp:36:29: note:   candidate expects 2 arguments, 3 provided
+   36 |                 std::getline(iss, idStr, DELIMITER);
+      |                 ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~
+..\questions_db.cpp: In member function 'void QuestionsDb::split_question_toVector(std::string, std::vector<std::__cxx11::basic_string<char> >&)':
+..\questions_db.cpp:46:29: error: no matching function for call to 'getline(std::stringstream&, __gnu_cxx::__alloc_traits<std::allocator<std::__cxx11::basic_string<char> >, std::__cxx11::basic_string<char> >::value_type&, const char [2])'
+   46 |                 std::getline(iss, v[i], DELIMITER);
+      |                 ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.tcc:1012:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> std::basic_istream<_CharT, _Traits>& std::getline(basic_istream<_CharT, _Traits>&, __cxx11::basic_string<_CharT, _Traits, _Allocator>&, _CharT)'
+ 1012 |     getline(basic_istream<_CharT, _Traits>& __in,
+      |     ^~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.tcc:1012:5: note:   template argument deduction/substitution failed:
+..\questions_db.cpp:46:29: note:   deduced conflicting types for parameter '_CharT' ('char' and 'const char*')
+   46 |                 std::getline(iss, v[i], DELIMITER);
+      |                 ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.h:3923:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> std::basic_istream<_CharT, _Traits>& std::getline(basic_istream<_CharT, _Traits>&, __cxx11::basic_string<_CharT, _Traits, _Allocator>&)'
+ 3923 |     getline(basic_istream<_CharT, _Traits>& __is,
+      |     ^~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.h:3923:5: note:   template argument deduction/substitution failed:
+..\questions_db.cpp:46:29: note:   candidate expects 2 arguments, 3 provided
+   46 |                 std::getline(iss, v[i], DELIMITER);
+      |                 ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.h:3931:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> std::basic_istream<_CharT, _Traits>& std::getline(basic_istream<_CharT, _Traits>&&, __cxx11::basic_string<_CharT, _Traits, _Allocator>&, _CharT)'
+ 3931 |     getline(basic_istream<_CharT, _Traits>&& __is,
+      |     ^~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.h:3931:5: note:   template argument deduction/substitution failed:
+..\questions_db.cpp:46:29: note:   deduced conflicting types for parameter '_CharT' ('char' and 'const char*')
+   46 |                 std::getline(iss, v[i], DELIMITER);
+      |                 ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.h:3938:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> std::basic_istream<_CharT, _Traits>& std::getline(basic_istream<_CharT, _Traits>&&, __cxx11::basic_string<_CharT, _Traits, _Allocator>&)'
+ 3938 |     getline(basic_istream<_CharT, _Traits>&& __is,
+      |     ^~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.h:3938:5: note:   template argument deduction/substitution failed:
+..\questions_db.cpp:46:29: note:   candidate expects 2 arguments, 3 provided
+   46 |                 std::getline(iss, v[i], DELIMITER);
+      |                 ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~
+00:03:23 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o users_db.o "..\\users_db.cpp" 
+..\users_db.cpp: In member function 'bool UsersDb::add_user(User&)':
+..\users_db.cpp:72:42: error: no matching function for call to 'DbManager::write_file_lines(const char [10], std::vector<std::__cxx11::basic_string<char> >&)'
+   72 |         return dbManager.write_file_lines(USERSTXT_PATH, lines);
+      |                ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~
+In file included from ..\users_db.cpp:9:
+..\database_manager.hpp:27:14: note: candidate: 'bool DbManager::write_file_lines(std::string, std::vector<std::__cxx11::basic_string<char> >&, bool)'
+   27 |         bool write_file_lines(std::string path, std::vector<std::string>& lines, bool append);
+      |              ^~~~~~~~~~~~~~~~
+..\database_manager.hpp:27:14: note:   candidate expects 3 arguments, 2 provided
+00:04:18 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o users_db.o "..\\users_db.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o database_manager.o "..\\database_manager.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o questions_db.o "..\\questions_db.cpp" 
+..\questions_db.cpp: In member function 'bool QuestionsDb::add_question(Question&)':
+..\questions_db.cpp:33:90: error: no match for 'operator<<' (operand types are 'std::__cxx11::basic_string<char>' and 'const char [2]')
+   33 |         std::string line = std::to_string(q.id) + DELIMITER + std::to_string(q.threadId) << DELIMITER << std::to_string(q.fromId) << DELIMITER << std::to_string(q.toId) << DELIMITER << std::to_string(q.anon) << DELIMITER << std::to_string(q.answered) << DELIMITER << q.text << DELIMITER << q.ans << '\n';
+      |                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^~
+      |                                                             |
+      |                                                             std::__cxx11::basic_string<char>
+In file included from C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.h:48,
+                 from C:/msys64/mingw64/include/c++/12.1.0/string:53,
+                 from C:/msys64/mingw64/include/c++/12.1.0/bits/locale_classes.h:40,
+                 from C:/msys64/mingw64/include/c++/12.1.0/bits/ios_base.h:41,
+                 from C:/msys64/mingw64/include/c++/12.1.0/ios:42,
+                 from C:/msys64/mingw64/include/c++/12.1.0/ostream:38,
+                 from C:/msys64/mingw64/include/c++/12.1.0/iostream:39,
+                 from ..\question.hpp:12,
+                 from ..\questions_db.hpp:11,
+                 from ..\questions_db.cpp:8:
+C:/msys64/mingw64/include/c++/12.1.0/string_view:672:5: note: candidate: 'template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, basic_string_view<_CharT, _Traits>)'
+  672 |     operator<<(basic_ostream<_CharT, _Traits>& __os,
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/string_view:672:5: note:   template argument deduction/substitution failed:
+In file included from ..\questions_db.cpp:9:
+..\database_manager.hpp:18:19: note:   'std::__cxx11::basic_string<char>' is not derived from 'std::basic_ostream<_CharT, _Traits>'
+   18 | #define DELIMITER ","
+      |                   ^~~
+..\questions_db.cpp:33:93: note: in expansion of macro 'DELIMITER'
+   33 |         std::string line = std::to_string(q.id) + DELIMITER + std::to_string(q.threadId) << DELIMITER << std::to_string(q.fromId) << DELIMITER << std::to_string(q.toId) << DELIMITER << std::to_string(q.anon) << DELIMITER << std::to_string(q.answered) << DELIMITER << q.text << DELIMITER << q.ans << '\n';
+      |                                                                                             ^~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.h:3883:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, const __cxx11::basic_string<_CharT, _Traits, _Allocator>&)'
+ 3883 |     operator<<(basic_ostream<_CharT, _Traits>& __os,
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.h:3883:5: note:   template argument deduction/substitution failed:
+..\database_manager.hpp:18:19: note:   'std::__cxx11::basic_string<char>' is not derived from 'std::basic_ostream<_CharT, _Traits>'
+   18 | #define DELIMITER ","
+      |                   ^~~
+..\questions_db.cpp:33:93: note: in expansion of macro 'DELIMITER'
+   33 |         std::string line = std::to_string(q.id) + DELIMITER + std::to_string(q.threadId) << DELIMITER << std::to_string(q.fromId) << DELIMITER << std::to_string(q.toId) << DELIMITER << std::to_string(q.anon) << DELIMITER << std::to_string(q.answered) << DELIMITER << q.text << DELIMITER << q.ans << '\n';
+      |                                                                                             ^~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/12.1.0/bits/ios_base.h:46:
+C:/msys64/mingw64/include/c++/12.1.0/system_error:279:5: note: candidate: 'template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, const error_code&)'
+  279 |     operator<<(basic_ostream<_CharT, _Traits>& __os, const error_code& __e)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/system_error:279:5: note:   template argument deduction/substitution failed:
+..\database_manager.hpp:18:19: note:   'std::__cxx11::basic_string<char>' is not derived from 'std::basic_ostream<_CharT, _Traits>'
+   18 | #define DELIMITER ","
+      |                   ^~~
+..\questions_db.cpp:33:93: note: in expansion of macro 'DELIMITER'
+   33 |         std::string line = std::to_string(q.id) + DELIMITER + std::to_string(q.threadId) << DELIMITER << std::to_string(q.fromId) << DELIMITER << std::to_string(q.toId) << DELIMITER << std::to_string(q.anon) << DELIMITER << std::to_string(q.answered) << DELIMITER << q.text << DELIMITER << q.ans << '\n';
+      |                                                                                             ^~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:507:5: note: candidate: 'template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, _CharT)'
+  507 |     operator<<(basic_ostream<_CharT, _Traits>& __out, _CharT __c)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:507:5: note:   template argument deduction/substitution failed:
+..\database_manager.hpp:18:19: note:   'std::__cxx11::basic_string<char>' is not derived from 'std::basic_ostream<_CharT, _Traits>'
+   18 | #define DELIMITER ","
+      |                   ^~~
+..\questions_db.cpp:33:93: note: in expansion of macro 'DELIMITER'
+   33 |         std::string line = std::to_string(q.id) + DELIMITER + std::to_string(q.threadId) << DELIMITER << std::to_string(q.fromId) << DELIMITER << std::to_string(q.toId) << DELIMITER << std::to_string(q.anon) << DELIMITER << std::to_string(q.answered) << DELIMITER << q.text << DELIMITER << q.ans << '\n';
+      |                                                                                             ^~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:517:5: note: candidate: 'template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, char)'
+  517 |     operator<<(basic_ostream<_CharT, _Traits>& __out, char __c)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:517:5: note:   template argument deduction/substitution failed:
+..\database_manager.hpp:18:19: note:   'std::__cxx11::basic_string<char>' is not derived from 'std::basic_ostream<_CharT, _Traits>'
+   18 | #define DELIMITER ","
+      |                   ^~~
+..\questions_db.cpp:33:93: note: in expansion of macro 'DELIMITER'
+   33 |         std::string line = std::to_string(q.id) + DELIMITER + std::to_string(q.threadId) << DELIMITER << std::to_string(q.fromId) << DELIMITER << std::to_string(q.toId) << DELIMITER << std::to_string(q.anon) << DELIMITER << std::to_string(q.answered) << DELIMITER << q.text << DELIMITER << q.ans << '\n';
+      |                                                                                             ^~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:523:5: note: candidate: 'template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, char)'
+  523 |     operator<<(basic_ostream<char, _Traits>& __out, char __c)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:523:5: note:   template argument deduction/substitution failed:
+..\database_manager.hpp:18:19: note:   'std::__cxx11::basic_string<char>' is not derived from 'std::basic_ostream<char, _Traits>'
+   18 | #define DELIMITER ","
+      |                   ^~~
+..\questions_db.cpp:33:93: note: in expansion of macro 'DELIMITER'
+   33 |         std::string line = std::to_string(q.id) + DELIMITER + std::to_string(q.threadId) << DELIMITER << std::to_string(q.fromId) << DELIMITER << std::to_string(q.toId) << DELIMITER << std::to_string(q.anon) << DELIMITER << std::to_string(q.answered) << DELIMITER << q.text << DELIMITER << q.ans << '\n';
+      |                                                                                             ^~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:534:5: note: candidate: 'template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, signed char)'
+  534 |     operator<<(basic_ostream<char, _Traits>& __out, signed char __c)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:534:5: note:   template argument deduction/substitution failed:
+..\database_manager.hpp:18:19: note:   'std::__cxx11::basic_string<char>' is not derived from 'std::basic_ostream<char, _Traits>'
+   18 | #define DELIMITER ","
+      |                   ^~~
+..\questions_db.cpp:33:93: note: in expansion of macro 'DELIMITER'
+   33 |         std::string line = std::to_string(q.id) + DELIMITER + std::to_string(q.threadId) << DELIMITER << std::to_string(q.fromId) << DELIMITER << std::to_string(q.toId) << DELIMITER << std::to_string(q.anon) << DELIMITER << std::to_string(q.answered) << DELIMITER << q.text << DELIMITER << q.ans << '\n';
+      |                                                                                             ^~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:539:5: note: candidate: 'template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, unsigned char)'
+  539 |     operator<<(basic_ostream<char, _Traits>& __out, unsigned char __c)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:539:5: note:   template argument deduction/substitution failed:
+..\database_manager.hpp:18:19: note:   'std::__cxx11::basic_string<char>' is not derived from 'std::basic_ostream<char, _Traits>'
+   18 | #define DELIMITER ","
+      |                   ^~~
+..\questions_db.cpp:33:93: note: in expansion of macro 'DELIMITER'
+   33 |         std::string line = std::to_string(q.id) + DELIMITER + std::to_string(q.threadId) << DELIMITER << std::to_string(q.fromId) << DELIMITER << std::to_string(q.toId) << DELIMITER << std::to_string(q.anon) << DELIMITER << std::to_string(q.answered) << DELIMITER << q.text << DELIMITER << q.ans << '\n';
+      |                                                                                             ^~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:598:5: note: candidate: 'template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, const _CharT*)'
+  598 |     operator<<(basic_ostream<_CharT, _Traits>& __out, const _CharT* __s)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:598:5: note:   template argument deduction/substitution failed:
+..\database_manager.hpp:18:19: note:   'std::__cxx11::basic_string<char>' is not derived from 'std::basic_ostream<_CharT, _Traits>'
+   18 | #define DELIMITER ","
+      |                   ^~~
+..\questions_db.cpp:33:93: note: in expansion of macro 'DELIMITER'
+   33 |         std::string line = std::to_string(q.id) + DELIMITER + std::to_string(q.threadId) << DELIMITER << std::to_string(q.fromId) << DELIMITER << std::to_string(q.toId) << DELIMITER << std::to_string(q.anon) << DELIMITER << std::to_string(q.answered) << DELIMITER << q.text << DELIMITER << q.ans << '\n';
+      |                                                                                             ^~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/12.1.0/ostream:833:
+C:/msys64/mingw64/include/c++/12.1.0/bits/ostream.tcc:302:5: note: candidate: 'template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, const char*)'
+  302 |     operator<<(basic_ostream<_CharT, _Traits>& __out, const char* __s)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/ostream.tcc:302:5: note:   template argument deduction/substitution failed:
+..\database_manager.hpp:18:19: note:   'std::__cxx11::basic_string<char>' is not derived from 'std::basic_ostream<_CharT, _Traits>'
+   18 | #define DELIMITER ","
+      |                   ^~~
+..\questions_db.cpp:33:93: note: in expansion of macro 'DELIMITER'
+   33 |         std::string line = std::to_string(q.id) + DELIMITER + std::to_string(q.threadId) << DELIMITER << std::to_string(q.fromId) << DELIMITER << std::to_string(q.toId) << DELIMITER << std::to_string(q.anon) << DELIMITER << std::to_string(q.answered) << DELIMITER << q.text << DELIMITER << q.ans << '\n';
+      |                                                                                             ^~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:615:5: note: candidate: 'template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, const char*)'
+  615 |     operator<<(basic_ostream<char, _Traits>& __out, const char* __s)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:615:5: note:   template argument deduction/substitution failed:
+..\database_manager.hpp:18:19: note:   'std::__cxx11::basic_string<char>' is not derived from 'std::basic_ostream<char, _Traits>'
+   18 | #define DELIMITER ","
+      |                   ^~~
+..\questions_db.cpp:33:93: note: in expansion of macro 'DELIMITER'
+   33 |         std::string line = std::to_string(q.id) + DELIMITER + std::to_string(q.threadId) << DELIMITER << std::to_string(q.fromId) << DELIMITER << std::to_string(q.toId) << DELIMITER << std::to_string(q.anon) << DELIMITER << std::to_string(q.answered) << DELIMITER << q.text << DELIMITER << q.ans << '\n';
+      |                                                                                             ^~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:628:5: note: candidate: 'template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, const signed char*)'
+  628 |     operator<<(basic_ostream<char, _Traits>& __out, const signed char* __s)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:628:5: note:   template argument deduction/substitution failed:
+..\database_manager.hpp:18:19: note:   'std::__cxx11::basic_string<char>' is not derived from 'std::basic_ostream<char, _Traits>'
+   18 | #define DELIMITER ","
+      |                   ^~~
+..\questions_db.cpp:33:93: note: in expansion of macro 'DELIMITER'
+   33 |         std::string line = std::to_string(q.id) + DELIMITER + std::to_string(q.threadId) << DELIMITER << std::to_string(q.fromId) << DELIMITER << std::to_string(q.toId) << DELIMITER << std::to_string(q.anon) << DELIMITER << std::to_string(q.answered) << DELIMITER << q.text << DELIMITER << q.ans << '\n';
+      |                                                                                             ^~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:633:5: note: candidate: 'template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, const unsigned char*)'
+  633 |     operator<<(basic_ostream<char, _Traits>& __out, const unsigned char* __s)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:633:5: note:   template argument deduction/substitution failed:
+..\database_manager.hpp:18:19: note:   'std::__cxx11::basic_string<char>' is not derived from 'std::basic_ostream<char, _Traits>'
+   18 | #define DELIMITER ","
+      |                   ^~~
+..\questions_db.cpp:33:93: note: in expansion of macro 'DELIMITER'
+   33 |         std::string line = std::to_string(q.id) + DELIMITER + std::to_string(q.threadId) << DELIMITER << std::to_string(q.fromId) << DELIMITER << std::to_string(q.toId) << DELIMITER << std::to_string(q.anon) << DELIMITER << std::to_string(q.answered) << DELIMITER << q.text << DELIMITER << q.ans << '\n';
+      |                                                                                             ^~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:754:5: note: candidate: 'template<class _Ostream, class _Tp> _Ostream&& std::operator<<(_Ostream&&, const _Tp&)'
+  754 |     operator<<(_Ostream&& __os, const _Tp& __x)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:754:5: note:   template argument deduction/substitution failed:
+C:/msys64/mingw64/include/c++/12.1.0/ostream: In substitution of 'template<class _Ostream, class _Tp> _Ostream&& std::operator<<(_Ostream&&, const _Tp&) [with _Ostream = std::__cxx11::basic_string<char>; _Tp = char [2]]':
+..\questions_db.cpp:33:86:   required from here
+C:/msys64/mingw64/include/c++/12.1.0/ostream:754:5: error: no type named 'type' in 'struct std::enable_if<false, void>'
+..\questions_db.cpp:35:35: error: no matching function for call to 'DbManager::write_file_lines(const char [14], std::vector<std::__cxx11::basic_string<char> >&)'
+   35 |         dbManager.write_file_lines(QUESTIONSTXT_PATH, lines);
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+..\database_manager.hpp:27:14: note: candidate: 'bool DbManager::write_file_lines(std::string, std::vector<std::__cxx11::basic_string<char> >&, bool)'
+   27 |         bool write_file_lines(std::string path, std::vector<std::string>& lines, bool append);
+      |              ^~~~~~~~~~~~~~~~
+..\database_manager.hpp:27:14: note:   candidate expects 3 arguments, 2 provided
+..\questions_db.cpp: In member function 'void QuestionsDb::delete_q(int)':
+..\questions_db.cpp:125:29: error: redeclaration of 'std::string line'
+  125 |                 std::string line = "";
+      |                             ^~~~
+..\questions_db.cpp:117:26: note: 'const std::__cxx11::basic_string<char>& line' previously declared here
+  117 |         for (auto const &line : readLines)
+      |                          ^~~~
+..\questions_db.cpp: In member function 'void QuestionsDb::update_answer(const Question&)':
+..\questions_db.cpp:150:29: error: redeclaration of 'std::string line'
+  150 |                 std::string line = "";
+      |                             ^~~~
+..\questions_db.cpp:146:26: note: 'const std::__cxx11::basic_string<char>& line' previously declared here
+  146 |         for (auto const &line : readLines)
+      |                          ^~~~
+..\questions_db.cpp:153:95: error: no match for 'operator<<' (operand types are 'std::__cxx11::basic_string<char>' and 'const char [2]')
+  153 |                         line += std::to_string(q.id) + DELIMITER + std::to_string(q.threadId) << DELIMITER << std::to_string(q.fromId) << DELIMITER << std::to_string(q.toId) << DELIMITER << std::to_string(q.anon) << DELIMITER << std::to_string(q.answered) << DELIMITER << q.text << DELIMITER << q.ans << '\n';
+      |                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^~
+      |                                                                  |
+      |                                                                  std::__cxx11::basic_string<char>
+C:/msys64/mingw64/include/c++/12.1.0/string_view:672:5: note: candidate: 'template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, basic_string_view<_CharT, _Traits>)'
+  672 |     operator<<(basic_ostream<_CharT, _Traits>& __os,
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/string_view:672:5: note:   template argument deduction/substitution failed:
+..\database_manager.hpp:18:19: note:   'std::__cxx11::basic_string<char>' is not derived from 'std::basic_ostream<_CharT, _Traits>'
+   18 | #define DELIMITER ","
+      |                   ^~~
+..\questions_db.cpp:153:98: note: in expansion of macro 'DELIMITER'
+  153 |                         line += std::to_string(q.id) + DELIMITER + std::to_string(q.threadId) << DELIMITER << std::to_string(q.fromId) << DELIMITER << std::to_string(q.toId) << DELIMITER << std::to_string(q.anon) << DELIMITER << std::to_string(q.answered) << DELIMITER << q.text << DELIMITER << q.ans << '\n';
+      |                                                                                                  ^~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.h:3883:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, const __cxx11::basic_string<_CharT, _Traits, _Allocator>&)'
+ 3883 |     operator<<(basic_ostream<_CharT, _Traits>& __os,
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.h:3883:5: note:   template argument deduction/substitution failed:
+..\database_manager.hpp:18:19: note:   'std::__cxx11::basic_string<char>' is not derived from 'std::basic_ostream<_CharT, _Traits>'
+   18 | #define DELIMITER ","
+      |                   ^~~
+..\questions_db.cpp:153:98: note: in expansion of macro 'DELIMITER'
+  153 |                         line += std::to_string(q.id) + DELIMITER + std::to_string(q.threadId) << DELIMITER << std::to_string(q.fromId) << DELIMITER << std::to_string(q.toId) << DELIMITER << std::to_string(q.anon) << DELIMITER << std::to_string(q.answered) << DELIMITER << q.text << DELIMITER << q.ans << '\n';
+      |                                                                                                  ^~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/system_error:279:5: note: candidate: 'template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, const error_code&)'
+  279 |     operator<<(basic_ostream<_CharT, _Traits>& __os, const error_code& __e)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/system_error:279:5: note:   template argument deduction/substitution failed:
+..\database_manager.hpp:18:19: note:   'std::__cxx11::basic_string<char>' is not derived from 'std::basic_ostream<_CharT, _Traits>'
+   18 | #define DELIMITER ","
+      |                   ^~~
+..\questions_db.cpp:153:98: note: in expansion of macro 'DELIMITER'
+  153 |                         line += std::to_string(q.id) + DELIMITER + std::to_string(q.threadId) << DELIMITER << std::to_string(q.fromId) << DELIMITER << std::to_string(q.toId) << DELIMITER << std::to_string(q.anon) << DELIMITER << std::to_string(q.answered) << DELIMITER << q.text << DELIMITER << q.ans << '\n';
+      |                                                                                                  ^~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:507:5: note: candidate: 'template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, _CharT)'
+  507 |     operator<<(basic_ostream<_CharT, _Traits>& __out, _CharT __c)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:507:5: note:   template argument deduction/substitution failed:
+..\database_manager.hpp:18:19: note:   'std::__cxx11::basic_string<char>' is not derived from 'std::basic_ostream<_CharT, _Traits>'
+   18 | #define DELIMITER ","
+      |                   ^~~
+..\questions_db.cpp:153:98: note: in expansion of macro 'DELIMITER'
+  153 |                         line += std::to_string(q.id) + DELIMITER + std::to_string(q.threadId) << DELIMITER << std::to_string(q.fromId) << DELIMITER << std::to_string(q.toId) << DELIMITER << std::to_string(q.anon) << DELIMITER << std::to_string(q.answered) << DELIMITER << q.text << DELIMITER << q.ans << '\n';
+      |                                                                                                  ^~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:517:5: note: candidate: 'template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, char)'
+  517 |     operator<<(basic_ostream<_CharT, _Traits>& __out, char __c)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:517:5: note:   template argument deduction/substitution failed:
+..\database_manager.hpp:18:19: note:   'std::__cxx11::basic_string<char>' is not derived from 'std::basic_ostream<_CharT, _Traits>'
+   18 | #define DELIMITER ","
+      |                   ^~~
+..\questions_db.cpp:153:98: note: in expansion of macro 'DELIMITER'
+  153 |                         line += std::to_string(q.id) + DELIMITER + std::to_string(q.threadId) << DELIMITER << std::to_string(q.fromId) << DELIMITER << std::to_string(q.toId) << DELIMITER << std::to_string(q.anon) << DELIMITER << std::to_string(q.answered) << DELIMITER << q.text << DELIMITER << q.ans << '\n';
+      |                                                                                                  ^~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:523:5: note: candidate: 'template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, char)'
+  523 |     operator<<(basic_ostream<char, _Traits>& __out, char __c)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:523:5: note:   template argument deduction/substitution failed:
+..\database_manager.hpp:18:19: note:   'std::__cxx11::basic_string<char>' is not derived from 'std::basic_ostream<char, _Traits>'
+   18 | #define DELIMITER ","
+      |                   ^~~
+..\questions_db.cpp:153:98: note: in expansion of macro 'DELIMITER'
+  153 |                         line += std::to_string(q.id) + DELIMITER + std::to_string(q.threadId) << DELIMITER << std::to_string(q.fromId) << DELIMITER << std::to_string(q.toId) << DELIMITER << std::to_string(q.anon) << DELIMITER << std::to_string(q.answered) << DELIMITER << q.text << DELIMITER << q.ans << '\n';
+      |                                                                                                  ^~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:534:5: note: candidate: 'template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, signed char)'
+  534 |     operator<<(basic_ostream<char, _Traits>& __out, signed char __c)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:534:5: note:   template argument deduction/substitution failed:
+..\database_manager.hpp:18:19: note:   'std::__cxx11::basic_string<char>' is not derived from 'std::basic_ostream<char, _Traits>'
+   18 | #define DELIMITER ","
+      |                   ^~~
+..\questions_db.cpp:153:98: note: in expansion of macro 'DELIMITER'
+  153 |                         line += std::to_string(q.id) + DELIMITER + std::to_string(q.threadId) << DELIMITER << std::to_string(q.fromId) << DELIMITER << std::to_string(q.toId) << DELIMITER << std::to_string(q.anon) << DELIMITER << std::to_string(q.answered) << DELIMITER << q.text << DELIMITER << q.ans << '\n';
+      |                                                                                                  ^~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:539:5: note: candidate: 'template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, unsigned char)'
+  539 |     operator<<(basic_ostream<char, _Traits>& __out, unsigned char __c)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:539:5: note:   template argument deduction/substitution failed:
+..\database_manager.hpp:18:19: note:   'std::__cxx11::basic_string<char>' is not derived from 'std::basic_ostream<char, _Traits>'
+   18 | #define DELIMITER ","
+      |                   ^~~
+..\questions_db.cpp:153:98: note: in expansion of macro 'DELIMITER'
+  153 |                         line += std::to_string(q.id) + DELIMITER + std::to_string(q.threadId) << DELIMITER << std::to_string(q.fromId) << DELIMITER << std::to_string(q.toId) << DELIMITER << std::to_string(q.anon) << DELIMITER << std::to_string(q.answered) << DELIMITER << q.text << DELIMITER << q.ans << '\n';
+      |                                                                                                  ^~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:598:5: note: candidate: 'template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, const _CharT*)'
+  598 |     operator<<(basic_ostream<_CharT, _Traits>& __out, const _CharT* __s)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:598:5: note:   template argument deduction/substitution failed:
+..\database_manager.hpp:18:19: note:   'std::__cxx11::basic_string<char>' is not derived from 'std::basic_ostream<_CharT, _Traits>'
+   18 | #define DELIMITER ","
+      |                   ^~~
+..\questions_db.cpp:153:98: note: in expansion of macro 'DELIMITER'
+  153 |                         line += std::to_string(q.id) + DELIMITER + std::to_string(q.threadId) << DELIMITER << std::to_string(q.fromId) << DELIMITER << std::to_string(q.toId) << DELIMITER << std::to_string(q.anon) << DELIMITER << std::to_string(q.answered) << DELIMITER << q.text << DELIMITER << q.ans << '\n';
+      |                                                                                                  ^~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/ostream.tcc:302:5: note: candidate: 'template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, const char*)'
+  302 |     operator<<(basic_ostream<_CharT, _Traits>& __out, const char* __s)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/ostream.tcc:302:5: note:   template argument deduction/substitution failed:
+..\database_manager.hpp:18:19: note:   'std::__cxx11::basic_string<char>' is not derived from 'std::basic_ostream<_CharT, _Traits>'
+   18 | #define DELIMITER ","
+      |                   ^~~
+..\questions_db.cpp:153:98: note: in expansion of macro 'DELIMITER'
+  153 |                         line += std::to_string(q.id) + DELIMITER + std::to_string(q.threadId) << DELIMITER << std::to_string(q.fromId) << DELIMITER << std::to_string(q.toId) << DELIMITER << std::to_string(q.anon) << DELIMITER << std::to_string(q.answered) << DELIMITER << q.text << DELIMITER << q.ans << '\n';
+      |                                                                                                  ^~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:615:5: note: candidate: 'template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, const char*)'
+  615 |     operator<<(basic_ostream<char, _Traits>& __out, const char* __s)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:615:5: note:   template argument deduction/substitution failed:
+..\database_manager.hpp:18:19: note:   'std::__cxx11::basic_string<char>' is not derived from 'std::basic_ostream<char, _Traits>'
+   18 | #define DELIMITER ","
+      |                   ^~~
+..\questions_db.cpp:153:98: note: in expansion of macro 'DELIMITER'
+  153 |                         line += std::to_string(q.id) + DELIMITER + std::to_string(q.threadId) << DELIMITER << std::to_string(q.fromId) << DELIMITER << std::to_string(q.toId) << DELIMITER << std::to_string(q.anon) << DELIMITER << std::to_string(q.answered) << DELIMITER << q.text << DELIMITER << q.ans << '\n';
+      |                                                                                                  ^~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:628:5: note: candidate: 'template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, const signed char*)'
+  628 |     operator<<(basic_ostream<char, _Traits>& __out, const signed char* __s)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:628:5: note:   template argument deduction/substitution failed:
+..\database_manager.hpp:18:19: note:   'std::__cxx11::basic_string<char>' is not derived from 'std::basic_ostream<char, _Traits>'
+   18 | #define DELIMITER ","
+      |                   ^~~
+..\questions_db.cpp:153:98: note: in expansion of macro 'DELIMITER'
+  153 |                         line += std::to_string(q.id) + DELIMITER + std::to_string(q.threadId) << DELIMITER << std::to_string(q.fromId) << DELIMITER << std::to_string(q.toId) << DELIMITER << std::to_string(q.anon) << DELIMITER << std::to_string(q.answered) << DELIMITER << q.text << DELIMITER << q.ans << '\n';
+      |                                                                                                  ^~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:633:5: note: candidate: 'template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, const unsigned char*)'
+  633 |     operator<<(basic_ostream<char, _Traits>& __out, const unsigned char* __s)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:633:5: note:   template argument deduction/substitution failed:
+..\database_manager.hpp:18:19: note:   'std::__cxx11::basic_string<char>' is not derived from 'std::basic_ostream<char, _Traits>'
+   18 | #define DELIMITER ","
+      |                   ^~~
+..\questions_db.cpp:153:98: note: in expansion of macro 'DELIMITER'
+  153 |                         line += std::to_string(q.id) + DELIMITER + std::to_string(q.threadId) << DELIMITER << std::to_string(q.fromId) << DELIMITER << std::to_string(q.toId) << DELIMITER << std::to_string(q.anon) << DELIMITER << std::to_string(q.answered) << DELIMITER << q.text << DELIMITER << q.ans << '\n';
+      |                                                                                                  ^~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:754:5: note: candidate: 'template<class _Ostream, class _Tp> _Ostream&& std::operator<<(_Ostream&&, const _Tp&)'
+  754 |     operator<<(_Ostream&& __os, const _Tp& __x)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:754:5: note:   template argument deduction/substitution failed:
+C:/msys64/mingw64/include/c++/12.1.0/ostream: In substitution of 'template<class _Ostream, class _Tp> _Ostream&& std::operator<<(_Ostream&&, const _Tp&) [with _Ostream = std::__cxx11::basic_string<char>; _Tp = char [2]]':
+..\questions_db.cpp:153:77:   required from here
+C:/msys64/mingw64/include/c++/12.1.0/ostream:754:5: error: no type named 'type' in 'struct std::enable_if<false, void>'
+00:05:52 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o signup_handler.o "..\\signup_handler.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o login_handler.o "..\\login_handler.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o questions_db.o "..\\questions_db.cpp" 
+..\questions_db.cpp: In member function 'bool QuestionsDb::add_question(Question&)':
+..\questions_db.cpp:35:35: error: no matching function for call to 'DbManager::write_file_lines(const char [14], std::vector<std::__cxx11::basic_string<char> >&)'
+   35 |         dbManager.write_file_lines(QUESTIONSTXT_PATH, lines);
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from ..\questions_db.cpp:9:
+..\database_manager.hpp:27:14: note: candidate: 'bool DbManager::write_file_lines(std::string, std::vector<std::__cxx11::basic_string<char> >&, bool)'
+   27 |         bool write_file_lines(std::string path, std::vector<std::string>& lines, bool append);
+      |              ^~~~~~~~~~~~~~~~
+..\database_manager.hpp:27:14: note:   candidate expects 3 arguments, 2 provided
+..\questions_db.cpp: In member function 'void QuestionsDb::delete_q(int)':
+..\questions_db.cpp:125:29: error: redeclaration of 'std::string line'
+  125 |                 std::string line = "";
+      |                             ^~~~
+..\questions_db.cpp:117:26: note: 'const std::__cxx11::basic_string<char>& line' previously declared here
+  117 |         for (auto const &line : readLines)
+      |                          ^~~~
+..\questions_db.cpp: In member function 'void QuestionsDb::update_answer(const Question&)':
+..\questions_db.cpp:150:29: error: redeclaration of 'std::string line'
+  150 |                 std::string line = "";
+      |                             ^~~~
+..\questions_db.cpp:146:26: note: 'const std::__cxx11::basic_string<char>& line' previously declared here
+  146 |         for (auto const &line : readLines)
+      |                          ^~~~
+..\questions_db.cpp:153:95: error: no match for 'operator<<' (operand types are 'std::__cxx11::basic_string<char>' and 'const char [2]')
+  153 |                         line += std::to_string(q.id) + DELIMITER + std::to_string(q.threadId) << DELIMITER << std::to_string(q.fromId) << DELIMITER << std::to_string(q.toId) << DELIMITER << std::to_string(q.anon) << DELIMITER << std::to_string(q.answered) << DELIMITER << q.text << DELIMITER << q.ans << '\n';
+      |                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^~
+      |                                                                  |
+      |                                                                  std::__cxx11::basic_string<char>
+In file included from C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.h:48,
+                 from C:/msys64/mingw64/include/c++/12.1.0/string:53,
+                 from C:/msys64/mingw64/include/c++/12.1.0/bits/locale_classes.h:40,
+                 from C:/msys64/mingw64/include/c++/12.1.0/bits/ios_base.h:41,
+                 from C:/msys64/mingw64/include/c++/12.1.0/ios:42,
+                 from C:/msys64/mingw64/include/c++/12.1.0/ostream:38,
+                 from C:/msys64/mingw64/include/c++/12.1.0/iostream:39,
+                 from ..\question.hpp:12,
+                 from ..\questions_db.hpp:11,
+                 from ..\questions_db.cpp:8:
+C:/msys64/mingw64/include/c++/12.1.0/string_view:672:5: note: candidate: 'template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, basic_string_view<_CharT, _Traits>)'
+  672 |     operator<<(basic_ostream<_CharT, _Traits>& __os,
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/string_view:672:5: note:   template argument deduction/substitution failed:
+..\database_manager.hpp:18:19: note:   'std::__cxx11::basic_string<char>' is not derived from 'std::basic_ostream<_CharT, _Traits>'
+   18 | #define DELIMITER ","
+      |                   ^~~
+..\questions_db.cpp:153:98: note: in expansion of macro 'DELIMITER'
+  153 |                         line += std::to_string(q.id) + DELIMITER + std::to_string(q.threadId) << DELIMITER << std::to_string(q.fromId) << DELIMITER << std::to_string(q.toId) << DELIMITER << std::to_string(q.anon) << DELIMITER << std::to_string(q.answered) << DELIMITER << q.text << DELIMITER << q.ans << '\n';
+      |                                                                                                  ^~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.h:3883:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, const __cxx11::basic_string<_CharT, _Traits, _Allocator>&)'
+ 3883 |     operator<<(basic_ostream<_CharT, _Traits>& __os,
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.h:3883:5: note:   template argument deduction/substitution failed:
+..\database_manager.hpp:18:19: note:   'std::__cxx11::basic_string<char>' is not derived from 'std::basic_ostream<_CharT, _Traits>'
+   18 | #define DELIMITER ","
+      |                   ^~~
+..\questions_db.cpp:153:98: note: in expansion of macro 'DELIMITER'
+  153 |                         line += std::to_string(q.id) + DELIMITER + std::to_string(q.threadId) << DELIMITER << std::to_string(q.fromId) << DELIMITER << std::to_string(q.toId) << DELIMITER << std::to_string(q.anon) << DELIMITER << std::to_string(q.answered) << DELIMITER << q.text << DELIMITER << q.ans << '\n';
+      |                                                                                                  ^~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/12.1.0/bits/ios_base.h:46:
+C:/msys64/mingw64/include/c++/12.1.0/system_error:279:5: note: candidate: 'template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, const error_code&)'
+  279 |     operator<<(basic_ostream<_CharT, _Traits>& __os, const error_code& __e)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/system_error:279:5: note:   template argument deduction/substitution failed:
+..\database_manager.hpp:18:19: note:   'std::__cxx11::basic_string<char>' is not derived from 'std::basic_ostream<_CharT, _Traits>'
+   18 | #define DELIMITER ","
+      |                   ^~~
+..\questions_db.cpp:153:98: note: in expansion of macro 'DELIMITER'
+  153 |                         line += std::to_string(q.id) + DELIMITER + std::to_string(q.threadId) << DELIMITER << std::to_string(q.fromId) << DELIMITER << std::to_string(q.toId) << DELIMITER << std::to_string(q.anon) << DELIMITER << std::to_string(q.answered) << DELIMITER << q.text << DELIMITER << q.ans << '\n';
+      |                                                                                                  ^~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:507:5: note: candidate: 'template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, _CharT)'
+  507 |     operator<<(basic_ostream<_CharT, _Traits>& __out, _CharT __c)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:507:5: note:   template argument deduction/substitution failed:
+..\database_manager.hpp:18:19: note:   'std::__cxx11::basic_string<char>' is not derived from 'std::basic_ostream<_CharT, _Traits>'
+   18 | #define DELIMITER ","
+      |                   ^~~
+..\questions_db.cpp:153:98: note: in expansion of macro 'DELIMITER'
+  153 |                         line += std::to_string(q.id) + DELIMITER + std::to_string(q.threadId) << DELIMITER << std::to_string(q.fromId) << DELIMITER << std::to_string(q.toId) << DELIMITER << std::to_string(q.anon) << DELIMITER << std::to_string(q.answered) << DELIMITER << q.text << DELIMITER << q.ans << '\n';
+      |                                                                                                  ^~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:517:5: note: candidate: 'template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, char)'
+  517 |     operator<<(basic_ostream<_CharT, _Traits>& __out, char __c)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:517:5: note:   template argument deduction/substitution failed:
+..\database_manager.hpp:18:19: note:   'std::__cxx11::basic_string<char>' is not derived from 'std::basic_ostream<_CharT, _Traits>'
+   18 | #define DELIMITER ","
+      |                   ^~~
+..\questions_db.cpp:153:98: note: in expansion of macro 'DELIMITER'
+  153 |                         line += std::to_string(q.id) + DELIMITER + std::to_string(q.threadId) << DELIMITER << std::to_string(q.fromId) << DELIMITER << std::to_string(q.toId) << DELIMITER << std::to_string(q.anon) << DELIMITER << std::to_string(q.answered) << DELIMITER << q.text << DELIMITER << q.ans << '\n';
+      |                                                                                                  ^~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:523:5: note: candidate: 'template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, char)'
+  523 |     operator<<(basic_ostream<char, _Traits>& __out, char __c)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:523:5: note:   template argument deduction/substitution failed:
+..\database_manager.hpp:18:19: note:   'std::__cxx11::basic_string<char>' is not derived from 'std::basic_ostream<char, _Traits>'
+   18 | #define DELIMITER ","
+      |                   ^~~
+..\questions_db.cpp:153:98: note: in expansion of macro 'DELIMITER'
+  153 |                         line += std::to_string(q.id) + DELIMITER + std::to_string(q.threadId) << DELIMITER << std::to_string(q.fromId) << DELIMITER << std::to_string(q.toId) << DELIMITER << std::to_string(q.anon) << DELIMITER << std::to_string(q.answered) << DELIMITER << q.text << DELIMITER << q.ans << '\n';
+      |                                                                                                  ^~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:534:5: note: candidate: 'template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, signed char)'
+  534 |     operator<<(basic_ostream<char, _Traits>& __out, signed char __c)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:534:5: note:   template argument deduction/substitution failed:
+..\database_manager.hpp:18:19: note:   'std::__cxx11::basic_string<char>' is not derived from 'std::basic_ostream<char, _Traits>'
+   18 | #define DELIMITER ","
+      |                   ^~~
+..\questions_db.cpp:153:98: note: in expansion of macro 'DELIMITER'
+  153 |                         line += std::to_string(q.id) + DELIMITER + std::to_string(q.threadId) << DELIMITER << std::to_string(q.fromId) << DELIMITER << std::to_string(q.toId) << DELIMITER << std::to_string(q.anon) << DELIMITER << std::to_string(q.answered) << DELIMITER << q.text << DELIMITER << q.ans << '\n';
+      |                                                                                                  ^~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:539:5: note: candidate: 'template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, unsigned char)'
+  539 |     operator<<(basic_ostream<char, _Traits>& __out, unsigned char __c)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:539:5: note:   template argument deduction/substitution failed:
+..\database_manager.hpp:18:19: note:   'std::__cxx11::basic_string<char>' is not derived from 'std::basic_ostream<char, _Traits>'
+   18 | #define DELIMITER ","
+      |                   ^~~
+..\questions_db.cpp:153:98: note: in expansion of macro 'DELIMITER'
+  153 |                         line += std::to_string(q.id) + DELIMITER + std::to_string(q.threadId) << DELIMITER << std::to_string(q.fromId) << DELIMITER << std::to_string(q.toId) << DELIMITER << std::to_string(q.anon) << DELIMITER << std::to_string(q.answered) << DELIMITER << q.text << DELIMITER << q.ans << '\n';
+      |                                                                                                  ^~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:598:5: note: candidate: 'template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, const _CharT*)'
+  598 |     operator<<(basic_ostream<_CharT, _Traits>& __out, const _CharT* __s)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:598:5: note:   template argument deduction/substitution failed:
+..\database_manager.hpp:18:19: note:   'std::__cxx11::basic_string<char>' is not derived from 'std::basic_ostream<_CharT, _Traits>'
+   18 | #define DELIMITER ","
+      |                   ^~~
+..\questions_db.cpp:153:98: note: in expansion of macro 'DELIMITER'
+  153 |                         line += std::to_string(q.id) + DELIMITER + std::to_string(q.threadId) << DELIMITER << std::to_string(q.fromId) << DELIMITER << std::to_string(q.toId) << DELIMITER << std::to_string(q.anon) << DELIMITER << std::to_string(q.answered) << DELIMITER << q.text << DELIMITER << q.ans << '\n';
+      |                                                                                                  ^~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/12.1.0/ostream:833:
+C:/msys64/mingw64/include/c++/12.1.0/bits/ostream.tcc:302:5: note: candidate: 'template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, const char*)'
+  302 |     operator<<(basic_ostream<_CharT, _Traits>& __out, const char* __s)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/ostream.tcc:302:5: note:   template argument deduction/substitution failed:
+..\database_manager.hpp:18:19: note:   'std::__cxx11::basic_string<char>' is not derived from 'std::basic_ostream<_CharT, _Traits>'
+   18 | #define DELIMITER ","
+      |                   ^~~
+..\questions_db.cpp:153:98: note: in expansion of macro 'DELIMITER'
+  153 |                         line += std::to_string(q.id) + DELIMITER + std::to_string(q.threadId) << DELIMITER << std::to_string(q.fromId) << DELIMITER << std::to_string(q.toId) << DELIMITER << std::to_string(q.anon) << DELIMITER << std::to_string(q.answered) << DELIMITER << q.text << DELIMITER << q.ans << '\n';
+      |                                                                                                  ^~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:615:5: note: candidate: 'template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, const char*)'
+  615 |     operator<<(basic_ostream<char, _Traits>& __out, const char* __s)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:615:5: note:   template argument deduction/substitution failed:
+..\database_manager.hpp:18:19: note:   'std::__cxx11::basic_string<char>' is not derived from 'std::basic_ostream<char, _Traits>'
+   18 | #define DELIMITER ","
+      |                   ^~~
+..\questions_db.cpp:153:98: note: in expansion of macro 'DELIMITER'
+  153 |                         line += std::to_string(q.id) + DELIMITER + std::to_string(q.threadId) << DELIMITER << std::to_string(q.fromId) << DELIMITER << std::to_string(q.toId) << DELIMITER << std::to_string(q.anon) << DELIMITER << std::to_string(q.answered) << DELIMITER << q.text << DELIMITER << q.ans << '\n';
+      |                                                                                                  ^~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:628:5: note: candidate: 'template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, const signed char*)'
+  628 |     operator<<(basic_ostream<char, _Traits>& __out, const signed char* __s)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:628:5: note:   template argument deduction/substitution failed:
+..\database_manager.hpp:18:19: note:   'std::__cxx11::basic_string<char>' is not derived from 'std::basic_ostream<char, _Traits>'
+   18 | #define DELIMITER ","
+      |                   ^~~
+..\questions_db.cpp:153:98: note: in expansion of macro 'DELIMITER'
+  153 |                         line += std::to_string(q.id) + DELIMITER + std::to_string(q.threadId) << DELIMITER << std::to_string(q.fromId) << DELIMITER << std::to_string(q.toId) << DELIMITER << std::to_string(q.anon) << DELIMITER << std::to_string(q.answered) << DELIMITER << q.text << DELIMITER << q.ans << '\n';
+      |                                                                                                  ^~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:633:5: note: candidate: 'template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, const unsigned char*)'
+  633 |     operator<<(basic_ostream<char, _Traits>& __out, const unsigned char* __s)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:633:5: note:   template argument deduction/substitution failed:
+..\database_manager.hpp:18:19: note:   'std::__cxx11::basic_string<char>' is not derived from 'std::basic_ostream<char, _Traits>'
+   18 | #define DELIMITER ","
+      |                   ^~~
+..\questions_db.cpp:153:98: note: in expansion of macro 'DELIMITER'
+  153 |                         line += std::to_string(q.id) + DELIMITER + std::to_string(q.threadId) << DELIMITER << std::to_string(q.fromId) << DELIMITER << std::to_string(q.toId) << DELIMITER << std::to_string(q.anon) << DELIMITER << std::to_string(q.answered) << DELIMITER << q.text << DELIMITER << q.ans << '\n';
+      |                                                                                                  ^~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:754:5: note: candidate: 'template<class _Ostream, class _Tp> _Ostream&& std::operator<<(_Ostream&&, const _Tp&)'
+  754 |     operator<<(_Ostream&& __os, const _Tp& __x)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:754:5: note:   template argument deduction/substitution failed:
+C:/msys64/mingw64/include/c++/12.1.0/ostream: In substitution of 'template<class _Ostream, class _Tp> _Ostream&& std::operator<<(_Ostream&&, const _Tp&) [with _Ostream = std::__cxx11::basic_string<char>; _Tp = char [2]]':
+..\questions_db.cpp:153:77:   required from here
+C:/msys64/mingw64/include/c++/12.1.0/ostream:754:5: error: no type named 'type' in 'struct std::enable_if<false, void>'
+01:46:19 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o questions_db.o "..\\questions_db.cpp" 
+..\questions_db.cpp: In member function 'void QuestionsDb::delete_q(int)':
+..\questions_db.cpp:125:29: error: redeclaration of 'std::string line'
+  125 |                 std::string line = "";
+      |                             ^~~~
+..\questions_db.cpp:117:26: note: 'const std::__cxx11::basic_string<char>& line' previously declared here
+  117 |         for (auto const &line : readLines)
+      |                          ^~~~
+..\questions_db.cpp: In member function 'void QuestionsDb::update_answer(const Question&)':
+..\questions_db.cpp:150:29: error: redeclaration of 'std::string line'
+  150 |                 std::string line = "";
+      |                             ^~~~
+..\questions_db.cpp:146:26: note: 'const std::__cxx11::basic_string<char>& line' previously declared here
+  146 |         for (auto const &line : readLines)
+      |                          ^~~~
+..\questions_db.cpp:153:95: error: no match for 'operator<<' (operand types are 'std::__cxx11::basic_string<char>' and 'const char [2]')
+  153 |                         line += std::to_string(q.id) + DELIMITER + std::to_string(q.threadId) << DELIMITER << std::to_string(q.fromId) << DELIMITER << std::to_string(q.toId) << DELIMITER << std::to_string(q.anon) << DELIMITER << std::to_string(q.answered) << DELIMITER << q.text << DELIMITER << q.ans << '\n';
+      |                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^~
+      |                                                                  |
+      |                                                                  std::__cxx11::basic_string<char>
+In file included from C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.h:48,
+                 from C:/msys64/mingw64/include/c++/12.1.0/string:53,
+                 from C:/msys64/mingw64/include/c++/12.1.0/bits/locale_classes.h:40,
+                 from C:/msys64/mingw64/include/c++/12.1.0/bits/ios_base.h:41,
+                 from C:/msys64/mingw64/include/c++/12.1.0/ios:42,
+                 from C:/msys64/mingw64/include/c++/12.1.0/ostream:38,
+                 from C:/msys64/mingw64/include/c++/12.1.0/iostream:39,
+                 from ..\question.hpp:12,
+                 from ..\questions_db.hpp:11,
+                 from ..\questions_db.cpp:8:
+C:/msys64/mingw64/include/c++/12.1.0/string_view:672:5: note: candidate: 'template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, basic_string_view<_CharT, _Traits>)'
+  672 |     operator<<(basic_ostream<_CharT, _Traits>& __os,
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/string_view:672:5: note:   template argument deduction/substitution failed:
+In file included from ..\questions_db.cpp:9:
+..\database_manager.hpp:18:19: note:   'std::__cxx11::basic_string<char>' is not derived from 'std::basic_ostream<_CharT, _Traits>'
+   18 | #define DELIMITER ","
+      |                   ^~~
+..\questions_db.cpp:153:98: note: in expansion of macro 'DELIMITER'
+  153 |                         line += std::to_string(q.id) + DELIMITER + std::to_string(q.threadId) << DELIMITER << std::to_string(q.fromId) << DELIMITER << std::to_string(q.toId) << DELIMITER << std::to_string(q.anon) << DELIMITER << std::to_string(q.answered) << DELIMITER << q.text << DELIMITER << q.ans << '\n';
+      |                                                                                                  ^~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.h:3883:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, const __cxx11::basic_string<_CharT, _Traits, _Allocator>&)'
+ 3883 |     operator<<(basic_ostream<_CharT, _Traits>& __os,
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/basic_string.h:3883:5: note:   template argument deduction/substitution failed:
+..\database_manager.hpp:18:19: note:   'std::__cxx11::basic_string<char>' is not derived from 'std::basic_ostream<_CharT, _Traits>'
+   18 | #define DELIMITER ","
+      |                   ^~~
+..\questions_db.cpp:153:98: note: in expansion of macro 'DELIMITER'
+  153 |                         line += std::to_string(q.id) + DELIMITER + std::to_string(q.threadId) << DELIMITER << std::to_string(q.fromId) << DELIMITER << std::to_string(q.toId) << DELIMITER << std::to_string(q.anon) << DELIMITER << std::to_string(q.answered) << DELIMITER << q.text << DELIMITER << q.ans << '\n';
+      |                                                                                                  ^~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/12.1.0/bits/ios_base.h:46:
+C:/msys64/mingw64/include/c++/12.1.0/system_error:279:5: note: candidate: 'template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, const error_code&)'
+  279 |     operator<<(basic_ostream<_CharT, _Traits>& __os, const error_code& __e)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/system_error:279:5: note:   template argument deduction/substitution failed:
+..\database_manager.hpp:18:19: note:   'std::__cxx11::basic_string<char>' is not derived from 'std::basic_ostream<_CharT, _Traits>'
+   18 | #define DELIMITER ","
+      |                   ^~~
+..\questions_db.cpp:153:98: note: in expansion of macro 'DELIMITER'
+  153 |                         line += std::to_string(q.id) + DELIMITER + std::to_string(q.threadId) << DELIMITER << std::to_string(q.fromId) << DELIMITER << std::to_string(q.toId) << DELIMITER << std::to_string(q.anon) << DELIMITER << std::to_string(q.answered) << DELIMITER << q.text << DELIMITER << q.ans << '\n';
+      |                                                                                                  ^~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:507:5: note: candidate: 'template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, _CharT)'
+  507 |     operator<<(basic_ostream<_CharT, _Traits>& __out, _CharT __c)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:507:5: note:   template argument deduction/substitution failed:
+..\database_manager.hpp:18:19: note:   'std::__cxx11::basic_string<char>' is not derived from 'std::basic_ostream<_CharT, _Traits>'
+   18 | #define DELIMITER ","
+      |                   ^~~
+..\questions_db.cpp:153:98: note: in expansion of macro 'DELIMITER'
+  153 |                         line += std::to_string(q.id) + DELIMITER + std::to_string(q.threadId) << DELIMITER << std::to_string(q.fromId) << DELIMITER << std::to_string(q.toId) << DELIMITER << std::to_string(q.anon) << DELIMITER << std::to_string(q.answered) << DELIMITER << q.text << DELIMITER << q.ans << '\n';
+      |                                                                                                  ^~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:517:5: note: candidate: 'template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, char)'
+  517 |     operator<<(basic_ostream<_CharT, _Traits>& __out, char __c)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:517:5: note:   template argument deduction/substitution failed:
+..\database_manager.hpp:18:19: note:   'std::__cxx11::basic_string<char>' is not derived from 'std::basic_ostream<_CharT, _Traits>'
+   18 | #define DELIMITER ","
+      |                   ^~~
+..\questions_db.cpp:153:98: note: in expansion of macro 'DELIMITER'
+  153 |                         line += std::to_string(q.id) + DELIMITER + std::to_string(q.threadId) << DELIMITER << std::to_string(q.fromId) << DELIMITER << std::to_string(q.toId) << DELIMITER << std::to_string(q.anon) << DELIMITER << std::to_string(q.answered) << DELIMITER << q.text << DELIMITER << q.ans << '\n';
+      |                                                                                                  ^~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:523:5: note: candidate: 'template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, char)'
+  523 |     operator<<(basic_ostream<char, _Traits>& __out, char __c)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:523:5: note:   template argument deduction/substitution failed:
+..\database_manager.hpp:18:19: note:   'std::__cxx11::basic_string<char>' is not derived from 'std::basic_ostream<char, _Traits>'
+   18 | #define DELIMITER ","
+      |                   ^~~
+..\questions_db.cpp:153:98: note: in expansion of macro 'DELIMITER'
+  153 |                         line += std::to_string(q.id) + DELIMITER + std::to_string(q.threadId) << DELIMITER << std::to_string(q.fromId) << DELIMITER << std::to_string(q.toId) << DELIMITER << std::to_string(q.anon) << DELIMITER << std::to_string(q.answered) << DELIMITER << q.text << DELIMITER << q.ans << '\n';
+      |                                                                                                  ^~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:534:5: note: candidate: 'template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, signed char)'
+  534 |     operator<<(basic_ostream<char, _Traits>& __out, signed char __c)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:534:5: note:   template argument deduction/substitution failed:
+..\database_manager.hpp:18:19: note:   'std::__cxx11::basic_string<char>' is not derived from 'std::basic_ostream<char, _Traits>'
+   18 | #define DELIMITER ","
+      |                   ^~~
+..\questions_db.cpp:153:98: note: in expansion of macro 'DELIMITER'
+  153 |                         line += std::to_string(q.id) + DELIMITER + std::to_string(q.threadId) << DELIMITER << std::to_string(q.fromId) << DELIMITER << std::to_string(q.toId) << DELIMITER << std::to_string(q.anon) << DELIMITER << std::to_string(q.answered) << DELIMITER << q.text << DELIMITER << q.ans << '\n';
+      |                                                                                                  ^~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:539:5: note: candidate: 'template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, unsigned char)'
+  539 |     operator<<(basic_ostream<char, _Traits>& __out, unsigned char __c)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:539:5: note:   template argument deduction/substitution failed:
+..\database_manager.hpp:18:19: note:   'std::__cxx11::basic_string<char>' is not derived from 'std::basic_ostream<char, _Traits>'
+   18 | #define DELIMITER ","
+      |                   ^~~
+..\questions_db.cpp:153:98: note: in expansion of macro 'DELIMITER'
+  153 |                         line += std::to_string(q.id) + DELIMITER + std::to_string(q.threadId) << DELIMITER << std::to_string(q.fromId) << DELIMITER << std::to_string(q.toId) << DELIMITER << std::to_string(q.anon) << DELIMITER << std::to_string(q.answered) << DELIMITER << q.text << DELIMITER << q.ans << '\n';
+      |                                                                                                  ^~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:598:5: note: candidate: 'template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, const _CharT*)'
+  598 |     operator<<(basic_ostream<_CharT, _Traits>& __out, const _CharT* __s)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:598:5: note:   template argument deduction/substitution failed:
+..\database_manager.hpp:18:19: note:   'std::__cxx11::basic_string<char>' is not derived from 'std::basic_ostream<_CharT, _Traits>'
+   18 | #define DELIMITER ","
+      |                   ^~~
+..\questions_db.cpp:153:98: note: in expansion of macro 'DELIMITER'
+  153 |                         line += std::to_string(q.id) + DELIMITER + std::to_string(q.threadId) << DELIMITER << std::to_string(q.fromId) << DELIMITER << std::to_string(q.toId) << DELIMITER << std::to_string(q.anon) << DELIMITER << std::to_string(q.answered) << DELIMITER << q.text << DELIMITER << q.ans << '\n';
+      |                                                                                                  ^~~~~~~~~
+In file included from C:/msys64/mingw64/include/c++/12.1.0/ostream:833:
+C:/msys64/mingw64/include/c++/12.1.0/bits/ostream.tcc:302:5: note: candidate: 'template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, const char*)'
+  302 |     operator<<(basic_ostream<_CharT, _Traits>& __out, const char* __s)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/bits/ostream.tcc:302:5: note:   template argument deduction/substitution failed:
+..\database_manager.hpp:18:19: note:   'std::__cxx11::basic_string<char>' is not derived from 'std::basic_ostream<_CharT, _Traits>'
+   18 | #define DELIMITER ","
+      |                   ^~~
+..\questions_db.cpp:153:98: note: in expansion of macro 'DELIMITER'
+  153 |                         line += std::to_string(q.id) + DELIMITER + std::to_string(q.threadId) << DELIMITER << std::to_string(q.fromId) << DELIMITER << std::to_string(q.toId) << DELIMITER << std::to_string(q.anon) << DELIMITER << std::to_string(q.answered) << DELIMITER << q.text << DELIMITER << q.ans << '\n';
+      |                                                                                                  ^~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:615:5: note: candidate: 'template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, const char*)'
+  615 |     operator<<(basic_ostream<char, _Traits>& __out, const char* __s)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:615:5: note:   template argument deduction/substitution failed:
+..\database_manager.hpp:18:19: note:   'std::__cxx11::basic_string<char>' is not derived from 'std::basic_ostream<char, _Traits>'
+   18 | #define DELIMITER ","
+      |                   ^~~
+..\questions_db.cpp:153:98: note: in expansion of macro 'DELIMITER'
+  153 |                         line += std::to_string(q.id) + DELIMITER + std::to_string(q.threadId) << DELIMITER << std::to_string(q.fromId) << DELIMITER << std::to_string(q.toId) << DELIMITER << std::to_string(q.anon) << DELIMITER << std::to_string(q.answered) << DELIMITER << q.text << DELIMITER << q.ans << '\n';
+      |                                                                                                  ^~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:628:5: note: candidate: 'template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, const signed char*)'
+  628 |     operator<<(basic_ostream<char, _Traits>& __out, const signed char* __s)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:628:5: note:   template argument deduction/substitution failed:
+..\database_manager.hpp:18:19: note:   'std::__cxx11::basic_string<char>' is not derived from 'std::basic_ostream<char, _Traits>'
+   18 | #define DELIMITER ","
+      |                   ^~~
+..\questions_db.cpp:153:98: note: in expansion of macro 'DELIMITER'
+  153 |                         line += std::to_string(q.id) + DELIMITER + std::to_string(q.threadId) << DELIMITER << std::to_string(q.fromId) << DELIMITER << std::to_string(q.toId) << DELIMITER << std::to_string(q.anon) << DELIMITER << std::to_string(q.answered) << DELIMITER << q.text << DELIMITER << q.ans << '\n';
+      |                                                                                                  ^~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:633:5: note: candidate: 'template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, const unsigned char*)'
+  633 |     operator<<(basic_ostream<char, _Traits>& __out, const unsigned char* __s)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:633:5: note:   template argument deduction/substitution failed:
+..\database_manager.hpp:18:19: note:   'std::__cxx11::basic_string<char>' is not derived from 'std::basic_ostream<char, _Traits>'
+   18 | #define DELIMITER ","
+      |                   ^~~
+..\questions_db.cpp:153:98: note: in expansion of macro 'DELIMITER'
+  153 |                         line += std::to_string(q.id) + DELIMITER + std::to_string(q.threadId) << DELIMITER << std::to_string(q.fromId) << DELIMITER << std::to_string(q.toId) << DELIMITER << std::to_string(q.anon) << DELIMITER << std::to_string(q.answered) << DELIMITER << q.text << DELIMITER << q.ans << '\n';
+      |                                                                                                  ^~~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:754:5: note: candidate: 'template<class _Ostream, class _Tp> _Ostream&& std::operator<<(_Ostream&&, const _Tp&)'
+  754 |     operator<<(_Ostream&& __os, const _Tp& __x)
+      |     ^~~~~~~~
+C:/msys64/mingw64/include/c++/12.1.0/ostream:754:5: note:   template argument deduction/substitution failed:
+C:/msys64/mingw64/include/c++/12.1.0/ostream: In substitution of 'template<class _Ostream, class _Tp> _Ostream&& std::operator<<(_Ostream&&, const _Tp&) [with _Ostream = std::__cxx11::basic_string<char>; _Tp = char [2]]':
+..\questions_db.cpp:153:77:   required from here
+C:/msys64/mingw64/include/c++/12.1.0/ostream:754:5: error: no type named 'type' in 'struct std::enable_if<false, void>'
+01:50:39 **** Incremental Build of configuration Debug for project askme-project ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o questions_db.o "..\\questions_db.cpp" 
+g++ -o askme-project.exe app.o database_manager.o error.o login_handler.o main.o menu.o question.o questions_db.o signup_handler.o users_db.o 
+Info: Nothing to build for askme-project
